@@ -1,0 +1,2 @@
+require './greeby'
+run Greeby
