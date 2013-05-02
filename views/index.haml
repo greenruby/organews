@@ -107,14 +107,14 @@
     <script src="js/app.js"></script>
 
     :javascript
-      var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@config.stats.server}/" : "http://#{@config.stats.server}/");
+      var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@stats['server']}/" : "http://#{@stats['server']}/");
       document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
     :javascript
       try {
-        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", #{@config.stats.id});
+        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", #{@stats['id']});
         piwikTracker.trackPageView();
         piwikTracker.enableLinkTracking();
       } catch( err ) {}
     %noscript
       %p
-        %img{:alt => "", :src => "http://#{@config.stats.server}/piwik.php?idsite=#{@config.stats.id}", :style => "border:0"}/
+        %img{:alt => "", :src => "http://#{@stats['server']}/piwik.php?idsite=#{@stats['id']}", :style => "border:0"}/

@@ -1,38 +1,24 @@
-namespace :build do
+#!/usr/bin/env rake
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+end
+require 'bundler/setup'
 
-  desc "compiles the font from svg icons in stuff/icons"
-  task :fonts do
-    sh "fontcustom compile stuff/icons -n gwcicons -o fonts"
+require "rake/testtask"
+
+require "rspec/core/rake_task" # RSpec 2.0
+
+Dir.glob('lib/tasks/*_task.rb').each { |r| load r }
+
+task :spec do
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"]
+    t.pattern = 'spec/**/*_spec.rb'
   end
-
-  desc "compiles compass scss files and sprites"
-  task :css do
-    sh "compass compile"
-  end
-
-  desc "minifies vendor javascript libs"
-  require 'rake/minify'
-  Rake::Minify.new(:js) do
-    dir("stuff/js/") do
-      group("js/extra.min.js") do
-        add("resize-stop/jquery.resizeStop.js")
-        add("plax/js/plax.js")
-        add("sly/dist/sly.js")
-        add("espy/dist/jquery.espy.min.js")
-      end
-    end
-  end
-
 end
 
-desc "deploys on server"
-task :deploy do
+task :default => :spec
 
-end
 
-desc "compiles all"
-task :build do
-  Rake::Task['build:fonts'].invoke
-  Rake::Task['build:js'].invoke
-  Rake::Task['build:css'].invoke
-end

@@ -1,6 +1,13 @@
 ---
-db:
-  name: xxx
-stats:
-  server: xxx
-  id: x
+production: &default
+  db:
+    name: xxx
+  stats:
+    server: xxx
+    id: x
+
+development:
+  <<: *default
+
+test:
+  <<: *default

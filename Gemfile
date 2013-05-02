@@ -15,6 +15,7 @@ group :development do
   gem 'html2haml'
   gem 'oily_png'
   gem 'compass-h5bp'
+  gem 'awesome_print'
 end
 
 group :test do

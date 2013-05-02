@@ -1,11 +1,12 @@
 require 'rubygems'
 require 'bundler'
 
-require 'sinatra'
+require 'sinatra/base'
 require "sinatra/config_file"
 
 require 'mongo'
 require 'json'
+require 'awesome_print'
 
 Bundler.require
 
@@ -26,10 +27,11 @@ class Greeby < Sinatra::Base
   set :haml, :format => :html5
   set :views, ['views']
   set :environments, %w{development test production}
+  set :stats, { server: '', id: 0 }
 
   get '/' do
-    @config = settings
     @title = 'wip'
+    @stats = settings.stats
     haml :index
   end
 
