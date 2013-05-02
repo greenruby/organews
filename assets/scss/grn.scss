@@ -1,0 +1,197 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(http://fonts.googleapis.com/css?family=Inder);
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+::selection {
+  background: #000;
+  color: #fff;
+}
+body{
+  width:100% !important;
+  -webkit-text-size-adjust:none;
+  margin: 0;
+  padding: 0;
+  background-color:#11332f;
+  font-family: 'Source Code Pro', monospace;
+}
+img{
+  border:none;
+  font-size:14px;
+  font-weight:bold;
+  height:auto;
+  line-height:100%;
+  outline:none;
+  text-decoration:none;
+  text-transform:capitalize;
+}
+table#background {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+}
+.h2{
+  color:#202020;
+  display:block;
+  font-size:30px;
+  font-weight:bold;
+  line-height:100%;
+  margin-bottom:3px;
+  text-align:left;
+  border-top:1px solid #000;
+  border-bottom:1px dashed #ccc;
+  padding:5px 0 2px 0;
+  font-family: 'Inder', sans-serif;
+}
+.h3{
+  color:#202020;
+  display:block;
+  font-family:Courier New, monospace;
+  font-size:26px;
+  font-weight:bold;
+  line-height:100%;
+  margin-bottom:0;
+  text-align:left;
+  font-family: 'Inder', sans-serif;
+}
+.h4{
+  color:#202020;
+  display:block;
+  font-family:Courier New, monospace;
+  font-size:22px;
+  font-weight:bold;
+  line-height:100%;
+  margin-bottom:0;
+  text-align:left;
+  font-family: 'Inder', sans-serif;
+}
+ul{
+  padding-left:15px;
+  margin:5px 0;
+}
+input {
+  border: 1px solid #666;
+  padding: 3px 4px;
+}
+input[type=submit]:hover {
+  background-color: #393;
+  color: #fff;
+  border-radius: 3px;
+}
+input[type=submit] {
+  background-color: #131;
+  color: #fff;
+  border-radius: 3px;
+  padding: 2px 10px;
+  font-weight: bold;
+  border: 1px solid #000;
+}
+a {
+  color: #393;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+
+}
+#wrapper{
+  width: 600px;
+  text-align: left;
+}
+.cell {
+  box-shadow: 0 0 400px -70px #fff;
+}
+#logo {
+  text-align: center;
+  margin-top: 30px;
+}
+#titlebar {
+  margin-bottom: 20px;
+}
+#titlebar h1 {
+  color: #fff;
+  text-shadow: 0 5px 10px #000;
+  font-size: 56px;
+  letter-spacing: 4px;
+  line-height:100%;
+  margin-bottom:0px;
+  margin-top:0;
+  text-align:center;
+  font-family: 'Inder', sans-serif;
+}
+#signup {
+  background-color: #ccc;
+  padding: 10px 20px;
+}
+#content {
+  background-color: #fff;
+  text-align: left;
+}
+#content .meat {
+  padding: 10px 20px;
+}
+#content .meat blockquote {
+  font-size: 14px;
+  color: #666;
+  border-top: 2px dotted #ccc;
+  padding-top: 10px;
+}
+
+#content .menu {
+  width: 180px;
+  float: right;
+  text-align: right;
+  padding: 5px 20px;
+}
+#content .menu h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+#content .menu ul {
+  list-style: none;
+}
+#content .menu ul li span {
+  font-size: 12px;
+  color: #666;
+}
+#footer {
+  padding: 5px 20px;
+  background-color: #000;
+  color: #ccc;
+  font-size: 12px;
+}
+#footer .cg {
+  margin-right: 12px;
+  margin-left: -30px;
+  margin-top: -12px;
+}
+@media only screen and (max-width: 600px){
+  body{
+    width:auto !important;
+  }
+}
+@media only screen and (max-width: 600px){
+  body,table,td,p,a,li,blockquote{
+    -webkit-text-size-adjust:none !important;
+  }
+}
+@media only screen and (max-width: 600px){
+  #backgroundTable,#wrapper{
+    max-width:600px !important;
+    width:100% !important;
+  }
+}
+@media only screen and (max-width: 600px){
+  #templatePreheader{
+    display:none;
+  }
+}
+@media only screen and (max-width: 600px){
+  #templateBody{
+    padding:10px !important;
+  }
+}

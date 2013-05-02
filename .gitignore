@@ -1,3 +1,6 @@
 *.swo
 *.swp
 *~
+/manifest.yml
+/config.yml
+/.sass-cache
