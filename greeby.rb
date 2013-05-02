@@ -16,7 +16,9 @@ if ENV['VCAP_SERVICES']
 else
 end
 
-DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+unless ENV['RACK_ENV'] == 'test'
+  DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+end
 
 class Greeby < Sinatra::Base
   register Sinatra::ConfigFile

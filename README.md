@@ -1,6 +1,8 @@
 Greeby
 ================
 
+[![Build Status](https://travis-ci.org/mose/greeby.png?branch=master)](https://travis-ci.org/mose/greeby)
+
 Status: setup in progress
 
 Taskboard: [trello taskboard](https://trello.com/board/greeby-platform/513fd48aa7ed906115001a04)
