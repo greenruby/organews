@@ -472,21 +472,21 @@ textarea {
   padding: 0.2em 0;
 }
 
-/* line 3, ../../scss/grn.scss */
+/* line 4, ../../assets/scss/grn.scss */
 ::-moz-selection {
   background: #000;
   color: #fff;
 }
 
-/* line 7, ../../scss/grn.scss */
+/* line 8, ../../assets/scss/grn.scss */
 ::selection {
   background: #000;
   color: #fff;
 }
 
-/* line 11, ../../scss/grn.scss */
+/* line 12, ../../assets/scss/grn.scss */
 body {
-  width: 100%;
+  width: 100% !important;
   -webkit-text-size-adjust: none;
   margin: 0;
   padding: 0;
@@ -494,7 +494,7 @@ body {
   font-family: 'Source Code Pro', monospace;
 }
 
-/* line 19, ../../scss/grn.scss */
+/* line 20, ../../assets/scss/grn.scss */
 img {
   border: none;
   font-size: 14px;
@@ -506,15 +506,7 @@ img {
   text-transform: capitalize;
 }
 
-/* line 29, ../../scss/grn.scss */
-table#background {
-  height: 100% !important;
-  margin: 0;
-  padding: 0;
-  width: 100% !important;
-}
-
-/* line 35, ../../scss/grn.scss */
+/* line 30, ../../assets/scss/grn.scss */
 .h2 {
   color: #202020;
   display: block;
@@ -529,7 +521,7 @@ table#background {
   font-family: 'Inder', sans-serif;
 }
 
-/* line 48, ../../scss/grn.scss */
+/* line 43, ../../assets/scss/grn.scss */
 .h3 {
   color: #202020;
   display: block;
@@ -542,7 +534,7 @@ table#background {
   font-family: 'Inder', sans-serif;
 }
 
-/* line 59, ../../scss/grn.scss */
+/* line 54, ../../assets/scss/grn.scss */
 .h4 {
   color: #202020;
   display: block;
@@ -555,26 +547,26 @@ table#background {
   font-family: 'Inder', sans-serif;
 }
 
-/* line 70, ../../scss/grn.scss */
+/* line 65, ../../assets/scss/grn.scss */
 ul {
   padding-left: 15px;
   margin: 5px 0;
 }
 
-/* line 74, ../../scss/grn.scss */
+/* line 69, ../../assets/scss/grn.scss */
 input {
   border: 1px solid #666;
   padding: 3px 4px;
 }
 
-/* line 78, ../../scss/grn.scss */
+/* line 73, ../../assets/scss/grn.scss */
 input[type=submit]:hover {
   background-color: #393;
   color: #fff;
   border-radius: 3px;
 }
 
-/* line 83, ../../scss/grn.scss */
+/* line 78, ../../assets/scss/grn.scss */
 input[type=submit] {
   background-color: #131;
   color: #fff;
@@ -584,146 +576,135 @@ input[type=submit] {
   border: 1px solid #000;
 }
 
-/* line 91, ../../scss/grn.scss */
+/* line 86, ../../assets/scss/grn.scss */
 a {
   color: #393;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* line 96, ../../scss/grn.scss */
+/* line 91, ../../assets/scss/grn.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 100, ../../scss/grn.scss */
-#wrapper {
-  width: 600px;
+/* line 95, ../../assets/scss/grn.scss */
+#container {
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 98, ../../assets/scss/grn.scss */
+#container #wrapper {
+  width: 100%;
   text-align: left;
 }
-
-/* line 104, ../../scss/grn.scss */
-.cell {
+/* line 101, ../../assets/scss/grn.scss */
+#container #wrapper .cell {
   box-shadow: 0 0 400px -70px #fff;
 }
-
-/* line 107, ../../scss/grn.scss */
-#logo {
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* line 111, ../../scss/grn.scss */
-#titlebar {
+/* line 104, ../../assets/scss/grn.scss */
+#container #wrapper #titlebar {
   margin-bottom: 20px;
+  position: relative;
 }
-
-/* line 114, ../../scss/grn.scss */
-#titlebar h1 {
+/* line 107, ../../assets/scss/grn.scss */
+#container #wrapper #titlebar #logo {
+  position: absolute;
+  left: -10px;
+}
+/* line 111, ../../assets/scss/grn.scss */
+#container #wrapper #titlebar h1 {
   color: #fff;
   text-shadow: 0 5px 10px #000;
-  font-size: 56px;
+  font-size: 36px;
   letter-spacing: 4px;
-  line-height: 100%;
-  margin-bottom: 0px;
-  margin-top: 0;
-  text-align: center;
+  line-height: 90%;
+  margin: 10px 20px 0 0;
+  text-align: right;
+  padding-top: 5px;
   font-family: 'Inder', sans-serif;
 }
-
-/* line 125, ../../scss/grn.scss */
-#signup {
+/* line 123, ../../assets/scss/grn.scss */
+#container #wrapper #signup {
   background-color: #ccc;
   padding: 10px 20px;
+  text-align: right;
 }
-
-/* line 129, ../../scss/grn.scss */
-#content {
+/* line 128, ../../assets/scss/grn.scss */
+#container #wrapper #content {
   background-color: #fff;
   text-align: left;
 }
-
-/* line 133, ../../scss/grn.scss */
-#content .meat {
+/* line 133, ../../assets/scss/grn.scss */
+#container #wrapper #content .meat {
   padding: 10px 20px;
 }
-
-/* line 136, ../../scss/grn.scss */
-#content .meat blockquote {
+/* line 135, ../../assets/scss/grn.scss */
+#container #wrapper #content .meat blockquote {
   font-size: 14px;
   color: #666;
   border-top: 2px dotted #ccc;
   padding-top: 10px;
 }
-
-/* line 143, ../../scss/grn.scss */
-#content .menu {
+/* line 142, ../../assets/scss/grn.scss */
+#container #wrapper #content .menu {
   width: 180px;
   float: right;
   text-align: right;
   padding: 5px 20px;
 }
-
-/* line 149, ../../scss/grn.scss */
-#content .menu h2 {
+/* line 147, ../../assets/scss/grn.scss */
+#container #wrapper #content .menu h2 {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
 }
-
-/* line 154, ../../scss/grn.scss */
-#content .menu ul {
+/* line 152, ../../assets/scss/grn.scss */
+#container #wrapper #content .menu ul {
   list-style: none;
 }
-
-/* line 157, ../../scss/grn.scss */
-#content .menu ul li span {
+/* line 155, ../../assets/scss/grn.scss */
+#container #wrapper #content .menu ul li span {
   font-size: 12px;
   color: #666;
 }
-
-/* line 161, ../../scss/grn.scss */
-#footer {
+/* line 163, ../../assets/scss/grn.scss */
+#container #wrapper #footer {
   padding: 5px 20px;
   background-color: #000;
   color: #ccc;
   font-size: 12px;
 }
-
-/* line 167, ../../scss/grn.scss */
-#footer .cg {
+/* line 168, ../../assets/scss/grn.scss */
+#container #wrapper #footer .cg {
   margin-right: 12px;
   margin-left: -30px;
   margin-top: -12px;
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 173, ../../scss/grn.scss */
+  /* line 177, ../../assets/scss/grn.scss */
   body {
     width: auto !important;
   }
-}
-@media only screen and (max-width: 600px) {
-  /* line 178, ../../scss/grn.scss */
+
+  /* line 180, ../../assets/scss/grn.scss */
   body, table, td, p, a, li, blockquote {
     -webkit-text-size-adjust: none !important;
   }
-}
-@media only screen and (max-width: 600px) {
-  /* line 183, ../../scss/grn.scss */
+
+  /* line 183, ../../assets/scss/grn.scss */
   #backgroundTable, #wrapper {
     max-width: 600px !important;
     width: 100% !important;
   }
-}
-@media only screen and (max-width: 600px) {
-  /* line 189, ../../scss/grn.scss */
+
+  /* line 187, ../../assets/scss/grn.scss */
   #templatePreheader {
     display: none;
   }
-}
-@media only screen and (max-width: 600px) {
-  /* line 194, ../../scss/grn.scss */
+
+  /* line 190, ../../assets/scss/grn.scss */
   #templateBody {
     padding: 10px !important;
   }

@@ -20,31 +20,29 @@
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 
     %script{ type: "text/x-handlebars", :'data-template-name' => 'application' }
-      %table#background{:border => "0", :cellpadding => "0", :cellspacing => "0"}
-        %tr
-          %td{:align => "center", :valign => "center"}
-            #wrapper
-              #logo
-                %img{:alt => "Green Ruby", :height => "81", :src => "img/green-ruby-100.png", :width => "100"}/
-              #titlebar
-                %h1 Green Ruby News
-              .cell
-                %form#signup{:action => "http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", :method => "post", :target => "_blank"}
-                  Subscribe to the Green Ruby Weekly Newsletter
-                  %input.email{:name => "EMAIL", :placeholder => "email address", :type => "email", :value => ""}/
-                  %input.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
-                {{outlet}}
-                #footer
-                  %a{:href => "http://codegreenit.com"}
-                    %img.cg{:align => "left", :alt => "CG", :height => "57", :src => "img/codegreen.png", :width => "57"}/
-                  %a{:href => "mailto:news@greenruby.org", :style => "float:right"} contact
-                  The Green Ruby Newsletter is published by Mose
-                  %br/
-                  Sponsored by
-                  %a{:href => "http://codegreenit.com"} Code Green IT
-                  %br/
+      #container
+        #wrapper
+          #titlebar
+            #logo
+              %img{:alt => "Green Ruby", :height => "81", :src => "img/green-ruby-100.png", :width => "100"}/
+            %h1 Green Ruby News
+          .cell
+            %form#signup{:action => "http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", :method => "post", :target => "_blank"}
+              Subscribe to the Green Ruby Weekly Newsletter
+              %input.email{:name => "EMAIL", :placeholder => "email address", :type => "email", :value => ""}/
+              %input.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+            {{outlet}}
+            #footer
+              %a{:href => "http://codegreenit.com"}
+                %img.cg{:align => "left", :alt => "CG", :height => "57", :src => "img/codegreen.png", :width => "57"}/
+              %a{:href => "mailto:news@greenruby.org", :style => "float:right"} contact
+              The Green Ruby Newsletter is published by Mose
+              %br/
+              Sponsored by
+              %a{:href => "http://codegreenit.com"} Code Green IT
+              %br/
 
-    %script{ type: "text/x-handlebars", :'data-template-name' => 'home' }
+    %script{ type: "text/x-handlebars", :'data-template-name' => 'index' }
       #content
         .menu
           %h2 Archives

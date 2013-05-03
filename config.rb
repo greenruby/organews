@@ -3,7 +3,7 @@ require 'compass-h5bp'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-sass_dir = "assets/scss-base"
+sass_dir = "assets/scss"
 css_dir = "static/css"
 images_dir = "static/img"
 javascripts_dir = "static/js"
