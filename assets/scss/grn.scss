@@ -98,9 +98,6 @@ a:hover {
   #wrapper {
     width: 100%;
     text-align: left;
-    .cell {
-      box-shadow: 0 0 400px -70px #fff;
-    }
     #titlebar {
       margin-bottom: 20px;
       position: relative;
@@ -120,55 +117,83 @@ a:hover {
         font-family: 'Inder', sans-serif;
       }
     }
-    #signup {
-      background-color: #ccc;
-      padding: 10px 20px;
-      text-align: right;
-    }
-    #content {
-      background-color: #fff;
-      text-align: left;
-    }
-    #content {
-      .meat {
-        padding: 10px 20px;
-        blockquote {
-          font-size: 14px;
-          color: #666;
-          border-top: 2px dotted #ccc;
-          padding-top: 10px;
-        }
-      }
-      .menu {
-        width: 180px;
-        float: right;
-        text-align: right;
+    .cell {
+      box-shadow: 0 0 400px -70px #fff;
+      #signup {
+        background-color: #ccc;
         padding: 5px 20px;
-        h2 {
-          margin: 0;
-          margin-bottom: 10px;
-          padding: 0;
-        }
+        text-align: right;
+      }
+      #nav {
+        background-color: #fff;
         ul {
           list-style: none;
+          margin: 0 ;
+          padding: 5px 0;
           li {
-            span {
-              font-size: 12px;
-              color: #666;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            a {
+              padding: 5px 20px;
+              color: #aaa;
+              &:hover {
+                color: #999;
+                text-decoration: none;
+                border-bottom: 3px dotted #ddd;
+              }
+              &.active {
+                color: #000;
+                border-bottom: 3px dotted #bbb;
+              }
             }
           }
         }
       }
-    }
-    #footer {
-      padding: 5px 20px;
-      background-color: #000;
-      color: #ccc;
-      font-size: 12px;
-      .cg {
-        margin-right: 12px;
-        margin-left: -30px;
-        margin-top: -12px;
+      #content {
+        background-color: #fff;
+        text-align: left;
+        .meat {
+          padding: 20px;
+          min-height: 300px;
+          blockquote {
+            font-size: 14px;
+            color: #666;
+            border-top: 2px dotted #ccc;
+            padding-top: 10px;
+          }
+        }
+        .menu {
+          width: 180px;
+          float: right;
+          text-align: right;
+          padding: 5px 20px;
+          h2 {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+          }
+          ul {
+            list-style: none;
+            li {
+              span {
+                font-size: 12px;
+                color: #666;
+              }
+            }
+          }
+        }
+      }
+      #footer {
+        padding: 5px 20px;
+        background-color: #000;
+        color: #ccc;
+        font-size: 12px;
+        .cg {
+          margin-right: 12px;
+          margin-left: -30px;
+          margin-top: -12px;
+        }
       }
     }
   }

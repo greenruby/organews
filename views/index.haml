@@ -31,6 +31,10 @@
               Subscribe to the Green Ruby Weekly Newsletter
               %input.email{:name => "EMAIL", :placeholder => "email address", :type => "email", :value => ""}/
               %input.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+            #nav
+              %ul
+                %li {{#linkTo index}}Home{{/linkTo}}
+                %li {{#linkTo letters}}Archives{{/linkTo}}
             {{outlet}}
             #footer
               %a{:href => "http://codegreenit.com"}
@@ -42,7 +46,7 @@
               %a{:href => "http://codegreenit.com"} Code Green IT
               %br/
 
-    %script{ type: "text/x-handlebars", :'data-template-name' => 'index' }
+    %script{ type: "text/x-handlebars", :'data-template-name' => 'letters' }
       #content
         .menu
           %h2 Archives
@@ -81,9 +85,14 @@
               %span 12 feb 2013
               %a{:href => "http://eepurl.com/rnieH"} #001
         .meat
+          Archives
+
+
+    %script{ type: "text/x-handlebars", :'data-template-name' => 'index' }
+      #content
+        .meat
           The Green Ruby Newsletter is a weekly newsletter sent by mail to a bunch of
-          = succeed "." do
-            %b web developers
+          %b web developers.
           It gathers links to new content from the very past week,
           about web development, ruby language, but also javascript, html, css and other news
           of interest for web developers, coders, scripters, etc.

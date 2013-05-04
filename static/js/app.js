@@ -2,6 +2,9 @@ window.App = Ember.Application.create({});
 
 App.Router.map( function() {
   this.resource( 'index', { path: '/' } );
+  this.resource( 'archives', function() {
+    this.resource( 'letter', { path: '/newsletter/:num' } );
+  });
   this.resource( 'letters', function() {
     this.route( 'new' );
     this.route( 'edit' );
@@ -10,6 +13,12 @@ App.Router.map( function() {
     this.route( 'new' );
     this.route( 'edit' );
   });
+});
+
+App.LetterRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.Letter.find(params.num);
+  }
 });
 
 App.ApplicationRoute = Ember.Route.extend({});
