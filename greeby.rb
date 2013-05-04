@@ -17,7 +17,7 @@ else
 end
 
 unless ENV['RACK_ENV'] == 'test'
-  DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+  mongo_client = MongoClient.new("localhost", 27017).db("greenmongo", pool_size: 5, timeout: 5)
 end
 
 class Greeby < Sinatra::Base

@@ -3,16 +3,28 @@ window.App = Ember.Application.create({});
 App.Router.map( function() {
   this.resource( 'index', { path: '/' } );
   this.resource( 'archives', function() {
-    this.resource( 'letter', { path: '/newsletter/:num' } );
+    this.route( 'letter', { path: '/newsletter/:num' } );
   });
   this.resource( 'letters', function() {
     this.route( 'new' );
     this.route( 'edit' );
   });
   this.resource( 'articles', function() {
+    this.route( 'show', { path: '/:article_id' } );
     this.route( 'new' );
-    this.route( 'edit' );
+    this.route( 'edit', { path: '/:article_id/edit' } );
   });
+});
+
+
+App.ApplicationRoute = Ember.Route.extend({});
+
+App.IndexRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    jQuery.getJSON('/articles').then(function(json){
+      controller.set('articles', json.articles);
+    })
+  }
 });
 
 App.LetterRoute = Ember.Route.extend({
@@ -21,14 +33,27 @@ App.LetterRoute = Ember.Route.extend({
   }
 });
 
-App.ApplicationRoute = Ember.Route.extend({});
+App.ArticleRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.Article.find(params.num);
+  },
+  setupController: function(controller) {
+    jQuery.getJSON('/articles').then(function(json){
+      controller.set('articles', json.articles);
+      controller.set('isLoaded', true);
+    })
+  }
+});
 
+
+// ============== models
 App.Store = DS.Store.extend({
-  revision: 1
+  revision: 12,
+  adapter: DS.RESTAdapter.create({ bulkCommit: false })
 });
 
 App.Letter = DS.Model.extend({
-  num: DS.attr('integer'),
+  num: DS.attr('number'),
   edito: DS.attr('string'),
   pubdate: DS.attr('date'),
   articles: DS.hasMany('App.Section'),
@@ -40,7 +65,7 @@ App.Letter = DS.Model.extend({
 App.Section = DS.Model.extend({
   label: DS.attr('string'),
   intro: DS.attr('string'),
-  order: DS.attr('integer')
+  order: DS.attr('number')
 });
 
 App.Article = DS.Model.extend({

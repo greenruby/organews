@@ -16,6 +16,7 @@ group :development do
   gem 'oily_png'
   gem 'compass-h5bp'
   gem 'awesome_print'
+  gem 'pry'
 end
 
 group :test do

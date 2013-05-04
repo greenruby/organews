@@ -1,0 +1,8 @@
+---
+edition: "013"
+pubdate: "may 5th 2013"
+edito: "This week I worked a little more on the
+  <a href=\"https://github.com/mose/greeby\">greeby</a> project, that should
+  help me in the writing of this newsletter. But because I could not help it,
+  I choosed to use all the things I wanted to try and so I spend lot of time
+  exploring sinatra, mongo, and ember.js. A lot of fun, but it's not ready yet."

@@ -28,6 +28,7 @@ GEM
     bson_ext (1.8.5)
       bson (~> 1.8.5)
     chunky_png (1.2.8)
+    coderay (1.0.9)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -58,10 +59,15 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
+    method_source (0.8.1)
     mongo (1.8.5)
       bson (~> 1.8.5)
     oily_png (1.1.0)
       chunky_png (~> 1.2.7)
+    pry (0.9.12.1)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -88,6 +94,7 @@ GEM
       sexp_processor (~> 4.1)
     sass (3.2.8)
     sexp_processor (4.2.1)
+    slop (3.4.4)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -108,6 +115,7 @@ DEPENDENCIES
   json
   mongo
   oily_png
+  pry
   rack-test
   rake
   rake-minify
