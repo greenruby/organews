@@ -65,6 +65,7 @@
 			font-size:30px;
 			font-weight:bold;
 			line-height:100%;
+			margin-top:6px;
 			margin-bottom:3px;
 			text-align:left;
 			border-top:1px solid #000;
@@ -250,6 +251,45 @@
 		#poweredby a:hover{
 			color:#ffffff;
 		}
+		.baseline {
+			padding-bottom: 8px;
+		}
+		.duration {
+			font-size: 12px;
+			font-weight: bold;
+			color: #999;
+			font-family: Courier new, monospace;
+		}
+		table.meat {
+			width: 100%;
+			border: 0;
+		}
+		table.meat tr:hover td {
+			background-color: #eee;
+		}
+		.date {
+			text-align: right;
+			font-size: 12px;
+			font-weight: bold;
+			color: #999;
+			letter-spacing: .2em;
+			font-family: Courier new, monospace;
+		}
+		.month {
+			text-align: right;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: .2em;
+			border-top: 1px solid #eee;
+			border-bottom: 1px solid #eee;
+			margin-top: 3px;
+			padding-top: 3px;
+			font-family: Courier new, monospace;
+		}
+		table.meat tr td.comment {
+			padding-bottom: 8px;
+		}
 	@media only screen and (max-width: 600px){
 		body{
 			width:auto !important;
@@ -311,9 +351,8 @@
                 <div id="templateBody">
 <div mc:edit="std_content00">
 	<span class="h2">Edito</span>
-	This week I worked a little more on the <a href="https://github.com/mose/greeby">greeby</a> project, that should help me in the writing of this newsletter. But because I could not help it, I choosed to use all the things I wanted to try and so I spend lot of time exploring sinatra, mongo, and ember.js. A lot of fun, but it's not ready yet.
-	The big Rubyconf starts tomorrow, I bet we will have a bunch of nice video to watch, for the majhority of us that don&#39;t go there. This week we had already a bunch of Confreaks videos from recent conferences.<br>
-	For the more visual of us, have a look at <a href="http://www.goodui.org/" target="_self">GoodUI</a>, <a href="http://sensibleworld.com/news/year-of-icons/" target="_self">a Year of icons</a>, <a href="http://www.gamification.co/" target="_self">Gamification News</a>, <a href="http://designmodo.com/flat-icons-examples/" target="_self">Flat icons examples</a>, <a href="http://pinterest.com/JRMYLFBV/web-modern-ui-flat-design-2013-trends/" target="_self">Pinterest 2013 flat design trends</a> and I suspect I should have a section for that kind of eye sweeties, maybe?<br>
+	This week I worked a little more on the <a href="https://github.com/mose/greeby">greeby</a> project, that should help me in the writing of this newsletter. I spent lot of time exploring sinatra, mongo, and ember.js. A lot of fun, but it's not ready yet. So I made a <a href="https://github.com/mose/greeby/blob/master/lib/tasks/generate_task.rb">rake task</a> for the generation in the while. You can check (and participate) on the <a href="https://trello.com/board/greeby-platform/513fd48aa7ed906115001a04">taskboard at Trello</a>.
+<br>
 <br>
 	<em>&nbsp; mose</em><em> - the green ruby editor</em><br>
 	<em>&nbsp; xenor - the informer</em><br>
@@ -321,165 +360,620 @@
 <br>
 <br>
 
+
 <h2>Listen</h2>
-What could be heard last week ..
-<ul>
-	<li>
-		<a href="http://rubyrogues.com/102-rr-rhetoric-with-joseph-wilk/" target="_self">RubyRogues 102</a> (1h06)<br>
-		<span style="font-size:11px;">apr 24,</span> discussion about rhetoric woth Joseph Wilk</li>
-	<li>
-		<a href="http://episodes.gitminutes.com/2013/04/gitminutes-05-martin-woodward-on-visual.html" target="_self">Git Minutes 05</a> (1h12)<br>
-		<span style="font-size:11px;">apr 22,</span> with Martin Woodward about git and visual studio</li>
-	<li>
-		<a href="http://ruby5.envylabs.com/episodes/368-episode-364-april-23th-2013" target="_self">Ruby5 #364</a> (5m)<br>
-		<span style="font-size:11px;">apr 23</span>, rails4 on heroku, sync, bash, railsconf</li>
-	<li>
-		<a href="http://ruby5.envylabs.com/episodes/369-episode-365-april-26-2013" target="_self">Ruby5 #365</a> (5m)<br>
-		<span style="font-size:11px;">apr 26,</span> mocking, batch email, triggerino, rvm, nunes, amanda</li>
-	<li>
-		<a href="http://rubyfreelancers.com/the-ruby-freelancers-show-058-convincing-clients-of-the-value-of-testing-refactoring-documentation-etc/" target="_self">Ruby Freelancer</a> (56m)<br>
-		<span style="font-size:11px;">apr 25,</span> convincing clients about value of testing<br>
-		(well, the panellists are not so much convinced themselves haha)</li>
-	<li>
-		<a href="http://thechangelog.com/085/" target="_self">The Changelog 0.8.5</a><br>
-		<span style="font-size:11px;">apr 22,</span> the return of The Changelog after 8 months of absence</li>
-</ul>
-<br>
+<div class="baseline">What could be heard last week ..</div>
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+		<tr>
+			<td>
+				<a href="http://rubyrogues.com/103-rr-ruby-gems/">RubyRogues 103</a>
+				<span class="duration">(1h25)</span>
+			</td>
+			<td class="date">
+				may 1
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				Discussion about Rubygems, what and how
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+				<a href="http://episodes.gitminutes.com/2013/04/gitminutes-06-roberto-tyley-on.html">Git Minutes #06</a>
+				<span class="duration">(1h08)</span>
+			</td>
+			<td class="date">
+				apr 29
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				with Roberto Tyley about git history tools with BFG.
+			</td>
+		</tr>
+	
+</table>
 
 <h2>Watch</h2>
-Screencasts and conferences videos, or other video feeds ...
-<ul>
-	<li>
-		<a href="http://devblog.avdi.org/2013/04/22/rubytapas-freebie-the-end-of-mocking/" target="_self">Ruby Tapas: The end of mocking</a> (5m)<br>
-		<span style="font-size:11px;">apr 22,</span> on how to decide what to mock and what to really test.</li>
-	<li>
-		<a href="http://www.sdruby.org/podcast/131" target="_self">SDRuby 131: profiling ruby</a> (32m)<br>
-		<span style="font-size:11px;">apr 23,</span> techniques and tricks for profiling and fixing ruby code</li>
-	<li>
-		<a href="http://www.confreaks.com/events/mwrc2013" target="_self">Mountainwest Rubyconf</a> (15 videos)<br>
-		<span style="font-size:11px;">apr 26,</span> a lot of talks abotu devops this year, brought by Confreaks</li>
-	<li>
-		<a href="http://www.confreaks.com/videos/2385-rmw2013-keynote" target="_self">Ruby Midwest</a> (19 videos)<br>
-		<span style="font-size:11px;">apr 26,</span> another batch of Confreaks, wow that&#39;s a lot at same time.</li>
-</ul>
-<br>
+<div class="baseline">Screencasts and conferences videos, or other video feeds ...</div>
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+		<tr>
+			<td>
+				<a href="">xx</a>
+				
+			</td>
+			<td class="date">
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				
+			</td>
+		</tr>
+	
+</table>
 
 <h2>Read</h2>
-From the blogosphere or news feeds ...
-<ul>
-	<li>
-		<a href="http://rubysource.com/rubymotion-early-gray-with-sugar/" target="_self">RubyMotion, Earl Gray with Sugar</a><br>
-		<span style="font-size:11px;">apr 22,</span> an interview with Colin gray, about <a href="https://github.com/rubymotion/sugarcube" target="_self">Sugarcube</a>, a rubymotion DSL</li>
-	<li>
-		<a href="http://net.tutsplus.com/tutorials/javascript-ajax/meet-the-connect-framework/" target="_self">Connect, a node.js middleware</a><br>
-		<span style="font-size:11px;">apr 22,</span> another simple way to fire a web server with node.</li>
-	<li>
-		<a href="http://whitequark.org/blog/2013/04/26/lets-play-with-ruby-code/" target="_self">Parser and ruby code</a><br>
-		<span style="font-size:11px;">apr 26,</span> a way to now more about what happens below the hood.</li>
-	<li>
-		<a href="http://net.tutsplus.com/tutorials/javascript-ajax/promise-based-validation/" target="_self">Promise based validations in javascript</a><br>
-		<span style="font-size:11px;">apr 25,</span> a good introduction on what the heck are promises over a pratical example.</li>
-	<li>
-		<a href="http://robots.thoughtbot.com/post/48933156625/5-useful-tips-for-a-better-commit-message" target="_self">Tips for better commit messages</a><br>
-		<span style="font-size:11px;">apr 26,</span> some common sense about this communication medium that a commit message is</li>
-	<li>
-		<a href="http://webreflection.blogspot.tw/2013/04/few-modern-javascript-inconsistencies.html" target="_self">Few modern javascript inconsistencies</a><br>
-		<span style="font-size:11px;">apr 27,</span> some javascript specificities and compatibility with old browsers.</li>
-	<li>
-		<a href="http://blog.meldium.com/home/2013/4/22/dont-spam-your-users-batch-notifications-in-rails" target="_self">Don&#39;t spam users, batch notifications</a><br>
-		<span style="font-size:11px;">apr 22</span>, a nice presentation on how to use mailboxer for batching emails</li>
-	<li>
-		<a href="http://chrismccord.com/blog/2013/04/21/sync-realtime-rails-partials/" target="_self">Sync - Realtime rails partials</a><br>
-		<span style="font-size:11px;">apr 21,</span> an interesting technique for making more dynamic sync from models to views in rails</li>
-	<li>
-		<a href="http://net.tutsplus.com/tutorials/tools-and-tips/test-driving-shell-scripts/" target="_self">Test-driven shell scripting</a><br>
-		<span style="font-size:11px;">apr 26,</span> while shell scripts are not not so much into TDD, here is a proof of &#39;why not&#39;</li>
-</ul>
-<br>
+<div class="baseline">From the blogosphere or news feeds ...</div>
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+		<tr>
+			<td>
+				<a href="">xx</a>
+				
+			</td>
+			<td class="date">
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				
+			</td>
+		</tr>
+	
+</table>
 
 <h2>Install</h2>
-A selection of gems or applications updated during past week.
-<ul>
-	<li>
-		<a href="https://trace.gl/index.html" target="_self">TraceGL</a> for javascript, is like an oscilloscope, for code</li>
-	<li>
-		<a href="https://github.com/mose/rails-i18nterface" target="_self">Rails-i18nterface</a> is a frontend for working on rails translations</li>
-	<li>
-		<a href="http://blog.mattwynne.net/2013/04/22/cucumber-1-3-1-released/" target="_self">Cucumber</a> just released version 1.3.1, fatser and a bunch of fixes</li>
-	<li>
-		<a href="http://ninjasandrobots.com/rails-ab-testing" target="_self">Simple AB</a> makes it easier to do AB testing in rails</li>
-	<li>
-		<a href="http://hiddentao.github.io/squel/" target="_self">Sequel.js</a> is a js lib for building sql queries</li>
-	<li>
-		<a href="http://getpinry.com/" target="_self">Pinry</a> is a little bit like pinterest, but in python and open source</li>
-	<li>
-		<a href="http://subprotocol.com/2013/04/18/introducing-verlet-js.html" target="_self">Verlet</a> is a js library for simulating physics engine, impressive</li>
-	<li>
-		<a href="http://www.sequencejs.com/" target="_self">Sequence.js</a> is a modern slider js library</li>
-</ul>
-<br>
+<div class="baseline">A selection of gems or applications updated during past week.</div>
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+		<tr>
+			<td>
+				<a href="">xx</a>
+				
+			</td>
+			<td class="date">
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				
+			</td>
+		</tr>
+	
+</table>
 
 <h2>Use</h2>
-It&#39;s hard to pass it, there are so many Saas out there. This week let&#39;s focus on some API-oriented services.<br>
-<ul>
-	<li>
-		<a href="https://zapier.com/" target="_self">Zapier</a><br>
-		Automating interconnexions between various APIs</li>
-	<li>
-		<a href="https://ifttt.com/" target="_self">IFTTT</a><br>
-		If This Then That is another very similar service for linking actions together</li>
-	<li>
-		<a href="http://pipes.yahoo.com/pipes/" target="_self">Yahoo pipes</a><br>
-		Yet another way to pipe actions from sources to destination, a bit more advanced, but also&nbsp; more bound to the yahoo galaxy.</li>
-</ul>
-<br>
+<div class="baseline">It's hard to pass it, there are so many Saas out there. This week let's focus on some API-oriented services.</div>
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+		<tr>
+			<td>
+				<a href="">xx</a>
+				
+			</td>
+			<td class="date">
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="comment">
+				
+			</td>
+		</tr>
+	
+</table>
+
 
 <h2>Join</h2>
 For frenetic travelers, here is your roadmap of ruby/js/web confs over the world.<br>
-<br>
-<span style="font-size:12px;"><span style="font-family: courier new,courier,lucida sans typewriter,lucida typewriter,monospace;">&nbsp;apr 29 - may 2</span></span> <a href="http://railsconf.com" target="_blank">Railsconf 2013</a> - Portland, OR, USA (full)<br>
-<span style="font-size:12px;"><span style="font-family: courier new,courier,lucida sans typewriter,lucida typewriter,monospace;">&nbsp;apr 29 - may 2</span></span> <a href="http://futureinsightslive.com/las-vegas-2013/" target="_self">Future Insight</a> - Las Vegas, CO, USA (<a href="http://futureinsightslive.com/las-vegas-2013/register/" target="_self">reg</a>)<br>
-<span style="font-size:12px;"><span style="font-family: courier new,courier,lucida sans typewriter,lucida typewriter,monospace;">&nbsp;&nbsp; &nbsp;&nbsp; may 09-10</span></span> <a href="http://2013.la-conf.org" target="_blank">La conf at Paris</a> - Paris, France (<a href="http://tickets.la-conf.org/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp; &nbsp;&nbsp; may 09-11</span></span> <a href="http://git-merge.com/" target="_self">Git Merge</a> - Berlin, Germany (full)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp; &nbsp;&nbsp; may 12-13</span></span> <a href="http://2013.scottishrubyconference.com" target="_blank">Scottish RubyConf</a> - Perthshire, Scotland (<a href="http://2013.scottishrubyconference.com/tickets/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp; &nbsp; may 15-17</span></span> <a href="http://mobilism.nl/2013" target="_self">Mobilism</a> - Amsterdam, Holland (<a href="http://mobilism.nl/2013/tickets" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp; &nbsp;&nbsp; may 17-18</span></span> <a href="http://sudweb.fr/2013/" target="_self">Sub Web</a> - Avignon, France (<a href="http://sudweb.fr/2013/#inscription" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp; &nbsp; may 18-19</span></span> <a href="http://jsdc.tw/" target="_self">JSDC</a> - Taipei, Taiwan (full)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp; &nbsp; &nbsp; may 20-21</span></span> <a href="http://spreeconf.com/" target="_self">SpreeConf</a> - Washingtom, DC, USA (<a href="https://spreeconf2013.busyconf.com/bookings/new" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp; &nbsp;&nbsp; may 23-24</span></span> <a href="http://webrebels.org/" target="_self">Web Rebels</a> - Oslo, Norway (full)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp; &nbsp; &nbsp; may 28-30</span></span> <a href="http://fluentconf.com/fluent2013" target="_blank">FluentConf</a> - SanFrancisco, CA, USA (<a href="https://en.oreilly.com/fluent2013/public/register" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp; &nbsp;&nbsp; may 29-31</span></span> <a href="http://2013.jsconf.us" target="_self">JsConf.us</a> - Amelia island, FL, USA (<a href="https://tito.io/jsconf-us/jsconf-us-2013?release_id=8r-qfngzot4" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">may 30 - june 1</span></span> <a href="http://rubykaigi.org/2013" target="_self">RubyKaigi</a> - Tokyo, Japan (<a href="http://rubykaigi.doorkeeper.jp/events/2980" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 05-06</span></span> <a href="http://london.leweb.co/" target="_self">LeWeb London</a> - London. UK (<a href="http://london.leweb.co/register" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 05-07</span></span> <a href="http://www.magmaconf.com" target="_blank">Magma Conf</a> - Manzanillo, Mexico (<a href="https://magmaconf.boletia.com/210ed6c666/pick-tickets" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 07-08</span></span> <a href="http://reddotrubyconf.com" target="_self">Red Dot RubyConf</a> - Singapore (<a href="http://reddotrubyconf.com/registrations/new" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 06-09</span></span> <a href="http://www.nordicruby.org" target="_blank">Nordic Ruby</a> - Stockholm, Sweden (<a href="http://www.nordicruby.org/register" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 14-15</span></span> <a href="http://www.rubynation.org/" target="_self">RubyNation</a> - Washington, DC, USA (<a href="http://rubynation.ticketleap.com/2013/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 22-23</span></span> <a href="http://rubyconfindia.org/2013/" target="_self">RubyConf India</a> - Pune, India (<a href="http://rubyconfindia.doattend.com/" target="_self">reg</a>) (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; june 28-29</span></span> <a href="http://euruko2013.org" target="_blank">Euroko 2013</a> - Athens, Greece (<a href="https://www.eventora.com/en/Events/euruko-2013-athens" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; july 16-18</span></span> <a href="http://2013.eurucamp.org/" target="_self">Eurucamp</a> - Berlin, Germany (<a href="http://tickets.eurucamp.org/" target="_self">reg</a>) (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; july 18-20</span></span> <a href="http://www.lonestarruby.org/2013/lsrc" target="_blank">Lone star RubyConf</a> - Austin, TX, USA (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp; july 20-21</span></span> <a href="http://hacked.io" target="_self">Hacked</a> - London, UK (<a href="http://hacked.io/tickets/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 03-04</span></span> <a href="http://burlingtonruby.com/" target="_self">Burlington RubyConf</a> - Burlington, VT, USA (<a href="http://burlingtonruby.com/index.html#tickets" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 08-09</span></span> <a href="https://distill.engineyard.com/" target="_self">Distill</a> - Treasure Island, CA, USA (<a href="https://distill.engineyard.com/register" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 14-15</span></span> <a href="http://2013.jrubyconf.eu/" target="_self">JRubyConf</a> - Berlin, Germany (cfp) (<a href="http://tickets.jrubyconf.eu/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 15-16</span></span> <a href="http://hybridconf.net/" target="_self">Hybrid Conf</a> - Cardif, Whales, UK (<a href="http://hybridconf.net/tickets" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 16-17</span></span> <a href="http://steelcityrubyconf.org" target="_blank">Steel City Ruby</a> - Pittsburgh, PA, USA (<a href="http://steelcityruby.org/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 22-23</span></span> <a href="http://puppetconf.com/" target="_self">PuppetConf</a> - San Francisco, CA, USA (<a href="http://puppetconf2013.eventbrite.com/#" target="_self">reg</a>) (+)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 23-24</span></span> <a href="http://madisonruby.org" target="_blank">Madison Ruby</a> - Madison, WI, USA (cfp) (<a href="http://2013.madisonruby.org/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aug 29-30</span></span> <a href="http://cfp.rubyconf.com.br/" target="_self">RubyConf Brasil</a> - Sao Paulo, Brasil (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sep 12-13</span></span> <a href="http://www.windycityrails.org" target="_self">WindyCityRails</a> - Chcago, USA (<a href="http://www.windycityrails.org/register/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sep 14-15</span></span> <a href="http://www.baruco.org" target="_blank">Baruco : barcelona RubyConf</a> - Barcelona, Spain (<a href="http://www.baruco.org/tickets" target="_self">reg</a>) (<a href="http://www.youtube.com/watch?v=a6qOVMRyiz4" target="_self">vid</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sep 21-21</span></span> <a href="http://nickelcityruby.com/" target="_self">Nickel City Ruby</a> - Buffalo, NY, USA (<a href="https://tito.io/nickelcityruby/nickelcityruby-2013" target="_self">reg</a>) (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sep 25-27</span></span> <a href="http://rockymtnruby.com/" target="_self">Rocky Mountain Ruby</a> - Boulder, CO, USA (pre)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oct 03-04</span></span> <a href="http://arrrrcamp.be/" target="_self">ArrrrCamp</a> - Ghent, Belgium (cfp)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oct 05-06</span></span> <a href="http://wickedgoodruby.com" target="_blank">Wicked Good RubyConf</a> - Boston, MA , USA (cfp) (<a href="http://wickedgoodruby2013.eventbrite.com/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oct 11-14</span></span> <a href="http://rupy.eu/" target="_self">Rupy</a> - Budapest, Hungary (pre)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oct 18</span></span> <a href="http://www.dotrb.eu" target="_blank">Dot-rb</a> - Paris, France (<a href="http://dotrb2013.eventbrite.com/" target="_self">reg</a>)<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oct 25-26</span></span> <a href="http://www.startechconf.com/en/" target="_self">StarTechConf</a> - Satiago, Chile<br>
-<span style="font-family:courier new,courier,lucida sans typewriter,lucida typewriter,monospace;"><span style="font-size: 12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dec 10-12</span></span> <a href="http://paris.leweb.co/" target="_self">LeWeb Paris</a> - Paris, France (<a href="http://paris.leweb.co/register" target="_self">reg</a>)<br>
-<span style="font-size:11px;">(dates with a (+) have been added this week, (pre) means cfp is not begun yet, (cfp) call for proposals are open, (reg) registration is open, (full) means it&#39;s too late, but check it out they may have a waiting list)</span><br>
-<br>
+
+<table cellpadding="0" cellspacing="0" border="0" class="meat">
+	
+	<tr><td class="month" colspan="4">may</td></tr>
+		
+			<tr>
+				<td><a href="http://2013.la-conf.org/">La Conf</a></td>
+				<td>Paris, France</td>
+				<td>
+					
+						Full
+					
+				</td>
+				<td class="date">9-10</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://git-merge.com/">Git Merge</a></td>
+				<td>Berlin, Germany</td>
+				<td>
+					
+						Full
+					
+				</td>
+				<td class="date">9-11</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://2013.scottishrubyconference.com/">Scottish RubyConf</a></td>
+				<td>Perthshire, Scotland</td>
+				<td>
+					
+						<a href="http://2013.scottishrubyconference.com/tickets/">reg</a>
+						
+					
+				</td>
+				<td class="date">12-13</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://mobilism.nl/2013">Mobilism</a></td>
+				<td>Amsterdam, Holland</td>
+				<td>
+					
+						<a href="http://mobilism.nl/2013/tickets">reg</a>
+						
+					
+				</td>
+				<td class="date">15-17</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://sudweb.fr/2013/">Sud web</a></td>
+				<td>Avignon, France</td>
+				<td>
+					
+						<a href="http://sudweb.fr/2013/#inscription">reg</a>
+						
+					
+				</td>
+				<td class="date">17-18</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://jsdc.tw/">JSDC</a></td>
+				<td>Taipei, Taiwan</td>
+				<td>
+					
+						Full
+					
+				</td>
+				<td class="date">18-19</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://spreeconf.com/">SpreeConf</a></td>
+				<td>Washingtom, DC, USA</td>
+				<td>
+					
+						<a href="https://spreeconf2013.busyconf.com/bookings/new">reg</a>
+						
+					
+				</td>
+				<td class="date">20-21</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://webrebels.org/">Web Rebels</a></td>
+				<td>Oslo, Norway</td>
+				<td>
+					
+						Full
+					
+				</td>
+				<td class="date">23-24</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://fluentconf.com/fluent2013">FluentConf</a></td>
+				<td>SanFrancisco, CA, USA</td>
+				<td>
+					
+						<a href="https://en.oreilly.com/fluent2013/public/register">reg</a>
+						
+					
+				</td>
+				<td class="date">28-30</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://2013.jsconf.us/">JsConf US</a></td>
+				<td>Amelia island, FL, USA</td>
+				<td>
+					
+						<a href="https://tito.io/jsconf-us/jsconf-us-2013?release_id=8r-qfngzot4">reg</a>
+						
+					
+				</td>
+				<td class="date">29-31</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://rubykaigi.org/2013">RubyKaigi</a></td>
+				<td>Tokyo, Japan</td>
+				<td>
+					
+						<a href="http://rubykaigi.doorkeeper.jp/events/2980">reg</a>
+						
+					
+				</td>
+				<td class="date">30-1</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">june</td></tr>
+		
+			<tr>
+				<td><a href="http://london.leweb.co/">LeWeb London</a></td>
+				<td>London, UK</td>
+				<td>
+					
+						<a href="http://london.leweb.co/register">reg</a>
+						
+					
+				</td>
+				<td class="date">5-6</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.magmaconf.com/">Magma Conf</a></td>
+				<td>Manzanillo, Mexico</td>
+				<td>
+					
+						<a href="https://magmaconf.boletia.com/210ed6c666/pick-tickets">reg</a>
+						
+					
+				</td>
+				<td class="date">5-7</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.nordicruby.org/">Nordic Ruby</a></td>
+				<td>Stockholm, Sweden</td>
+				<td>
+					
+						Full
+					
+				</td>
+				<td class="date">6-9</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://reddotrubyconf.com/">Red Dot RubyConf</a></td>
+				<td>Singapore</td>
+				<td>
+					
+						<a href="http://reddotrubyconf.com/registrations/new">reg</a>
+						
+					
+				</td>
+				<td class="date">7-8</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.rubynation.org/">RubyNation</a></td>
+				<td>Washington, DC, USA</td>
+				<td>
+					
+						<a href="http://rubynation.ticketleap.com/2013/">reg</a>
+						
+					
+				</td>
+				<td class="date">14-15</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.magmaconf.com/">RubyConf India</a></td>
+				<td>Pune, India</td>
+				<td>
+					
+						<a href="http://rubyconfindia.doattend.com/">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">22-23</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://euruko2013.org/">Euroko 2013</a></td>
+				<td>Athens, Greece</td>
+				<td>
+					
+						<a href="https://www.eventora.com/en/Events/euruko-2013-athens">reg</a>
+						
+					
+				</td>
+				<td class="date">28-29</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">july</td></tr>
+		
+			<tr>
+				<td><a href="http://2013.eurucamp.org/">Eurucamp</a></td>
+				<td>Berlin, Germany</td>
+				<td>
+					
+						<a href="http://tickets.eurucamp.org/">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">10-18</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.lonestarruby.org/2013/lsrc">Lone star RubyConf</a></td>
+				<td>Austin, TX, USA</td>
+				<td>
+					
+						<a href="https://lonestarruby.thundertix.com/orders/new?performance_id=1014961">reg</a>
+						
+					
+				</td>
+				<td class="date">18-20</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://hacked.io/">Hacked</a></td>
+				<td>London, UK</td>
+				<td>
+					
+						<a href="http://hacked.io/tickets/">reg</a>
+						
+					
+				</td>
+				<td class="date">20-21</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">august</td></tr>
+		
+			<tr>
+				<td><a href="http://burlingtonruby.com/">Burlington RubyConf</a></td>
+				<td>Burlington, VT, USA</td>
+				<td>
+					
+						<a href="http://burlingtonruby.com/index.html#tickets">reg</a>
+						
+					
+				</td>
+				<td class="date">3-4</td>
+			</tr>
+		
+			<tr>
+				<td><a href="https://distill.engineyard.com/">Distill</a></td>
+				<td>Treasure Island, CA, USA</td>
+				<td>
+					
+						<a href="https://distill.engineyard.com/register">reg</a>
+						
+					
+				</td>
+				<td class="date">8-9</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://2013.jrubyconf.eu/">JRubyConf</a></td>
+				<td>Berlin, Germany</td>
+				<td>
+					
+						<a href="http://tickets.jrubyconf.eu/">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">14-15</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://hybridconf.net/">Hybrid Conf</a></td>
+				<td>Cardif, Whales, UK</td>
+				<td>
+					
+						<a href="http://hybridconf.net/tickets">reg</a>
+						
+					
+				</td>
+				<td class="date">15-16</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://steelcityrubyconf.org/">Steel City Ruby</a></td>
+				<td>Pittsburgh, PA, USA</td>
+				<td>
+					
+						<a href="http://www.showclix.com/event/SteelCityRuby2013">reg</a>
+						
+					
+				</td>
+				<td class="date">16-17</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://puppetconf.com/">PuppetConf</a></td>
+				<td>San Francisco, CA, USA</td>
+				<td>
+					
+						<a href="http://puppetconf2013.eventbrite.com/">reg</a>
+						
+					
+				</td>
+				<td class="date">22-23</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://madisonruby.org/">Madison Ruby</a></td>
+				<td>Madison, WI, USA</td>
+				<td>
+					
+						<a href="http://2013.madisonruby.org/">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">23-24</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://rubyconf.com.br/en/page/home">RubyConf Brasil</a></td>
+				<td>Sao Paulo, Brasil</td>
+				<td>
+					
+						
+						CFP
+					
+				</td>
+				<td class="date">29-30</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">september</td></tr>
+		
+			<tr>
+				<td><a href="http://www.windycityrails.org/">WindyCityRails</a></td>
+				<td>Chcago, USA</td>
+				<td>
+					
+						<a href="http://www.windycityrails.org/register/">reg</a>
+						
+					
+				</td>
+				<td class="date">12-13</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.baruco.org/">Baruco</a></td>
+				<td>Barcelona, Spain</td>
+				<td>
+					
+						<a href="http://www.baruco.org/tickets">reg</a>
+						
+					
+				</td>
+				<td class="date">14-15</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://nickelcityruby.com/">Nickel City Ruby</a></td>
+				<td>Buffalo, NY, USA</td>
+				<td>
+					
+						<a href="https://tito.io/nickelcityruby/nickelcityruby-2013">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">20-21</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://rockymtnruby.com/">Rocky Mountain Ruby</a></td>
+				<td>Boulder, CO, USA</td>
+				<td>
+					
+						
+						
+					
+				</td>
+				<td class="date">12-13</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">october</td></tr>
+		
+			<tr>
+				<td><a href="http://arrrrcamp.be/">ArrrrCamp</a></td>
+				<td>Ghent, Belgium</td>
+				<td>
+					
+						<a href="http://arrrrcamp.fikket.com/event/arrrrcamp-7--2">reg</a>
+						
+					
+				</td>
+				<td class="date">3-4</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://wickedgoodruby.com/">Wicked Good RubyConf</a></td>
+				<td>Boston, MA , USA</td>
+				<td>
+					
+						<a href="http://wickedgoodruby2013.eventbrite.com/">reg</a>
+						CFP
+					
+				</td>
+				<td class="date">5-6</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://rupy.eu/">Rupy</a></td>
+				<td>Budapest, Hungary</td>
+				<td>
+					
+						
+						
+					
+				</td>
+				<td class="date">11-14</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.dotrb.eu/">Dot-rb</a></td>
+				<td>Paris, France</td>
+				<td>
+					
+						<a href="http://dotrb2013.eventbrite.com/">reg</a>
+						
+					
+				</td>
+				<td class="date">18</td>
+			</tr>
+		
+			<tr>
+				<td><a href="http://www.startechconf.com/en/">StarTechConf</a></td>
+				<td>Satiago, Chile</td>
+				<td>
+					
+						
+						
+					
+				</td>
+				<td class="date">25-26</td>
+			</tr>
+		
+	
+	<tr><td class="month" colspan="4">december</td></tr>
+		
+			<tr>
+				<td><a href="http://paris.leweb.co/">LeWeb Paris</a></td>
+				<td>Paris, France</td>
+				<td>
+					
+						<a href="http://paris.leweb.co/register">reg</a>
+						
+					
+				</td>
+				<td class="date">10-12</td>
+			</tr>
+		
+	
+</table>
+
+
 <hr>
 <p>
 	EOF<br>
