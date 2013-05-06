@@ -156,6 +156,13 @@ a:hover {
         .meat {
           padding: 20px;
           min-height: 300px;
+          h2 {
+            margin-top: 0;
+          }
+          h3 {
+            margin: 0;
+            border-bottom: 1px dotted #999;
+          }
           blockquote {
             font-size: 14px;
             color: #666;

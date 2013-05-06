@@ -17,7 +17,11 @@ else
 end
 
 unless ENV['RACK_ENV'] == 'test'
-  mongo_client = MongoClient.new("localhost", 27017).db("greenmongo", pool_size: 5, timeout: 5)
+  begin
+    mongo_client = MongoClient.new("localhost", 27017).db("greenmongo", pool_size: 5, timeout: 5)
+  rescue
+    puts "Mongo disabled"
+  end
 end
 
 class Greeby < Sinatra::Base

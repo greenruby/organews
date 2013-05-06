@@ -6,6 +6,7 @@ gem 'mongo'
 gem 'haml'
 gem 'json'
 gem 'bson_ext'
+gem 'redcarpet'
 
 group :development do
   gem 'thin'
