@@ -95,6 +95,8 @@ GEM
       sexp_processor (~> 4.1)
     sass (3.2.8)
     sexp_processor (4.2.1)
+    sinatra-ember (0.0.2)
+      sinatra
     slop (3.4.4)
     thin (1.5.1)
       daemons (>= 1.0.9)
@@ -124,4 +126,5 @@ DEPENDENCIES
   rspec
   sinatra!
   sinatra-contrib!
+  sinatra-ember
   thin

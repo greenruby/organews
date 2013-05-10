@@ -7,6 +7,7 @@ gem 'haml'
 gem 'json'
 gem 'bson_ext'
 gem 'redcarpet'
+gem 'sinatra-ember', :require => 'sinatra/ember'
 
 group :development do
   gem 'thin'

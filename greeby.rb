@@ -26,6 +26,11 @@ end
 
 class Greeby < Sinatra::Base
   register Sinatra::ConfigFile
+  register Sinatra::Ember
+
+  ember {
+    templates ['templates/**/*.hbs'], :relative_to => 'templates'
+  }
 
   config_file 'config.yml'
 
