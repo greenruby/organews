@@ -8,6 +8,7 @@ gem 'json'
 gem 'bson_ext'
 gem 'redcarpet'
 gem 'sinatra-ember', :require => 'sinatra/ember'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
 group :development do
   gem 'thin'

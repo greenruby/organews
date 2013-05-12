@@ -11,6 +11,8 @@
     %title Green Ruby
     %meta{:content => "A Newsletter dedicated to weekly fresh news about ruby, web development, javascript, and related topics.", :name => "description"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
+    != css :application, :media => 'screen'
+    != js :app
     %link{:href => "css/normalize.css", :rel => "stylesheet"}/
     %link{:href => "css/main.css", :rel => "stylesheet"}/
     %link{:href => "css/grn.css", :rel => "stylesheet"}/
@@ -204,6 +206,7 @@
     <script src="js/extra.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/app.js"></script>
+    != js :app
 
     :javascript
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@stats['server']}/" : "http://#{@stats['server']}/");

@@ -25,13 +25,31 @@ unless ENV['RACK_ENV'] == 'test'
 end
 
 class Greeby < Sinatra::Base
-  register Sinatra::ConfigFile
-  register Sinatra::Ember
 
+  set :root, File.dirname(__FILE__)
+  register Sinatra::AssetPack
+  assets {
+    serve '/js', from: 'app/js'
+    serve '/css', from: 'app/css'
+    serve '/images', from: 'app/images'
+    js :app, '/js/app.js', [
+      '/js/vendor/**/*.js',
+      '/js/lib/**/*.js'
+    ]
+    css :application, '/css/application.css', [
+      '/css/screen.scss'
+    ]
+    js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
+    css_compression :sass     # :simple | :sass | :yui | :sqwish
+  }
+
+  register Sinatra::Ember
   ember {
     templates ['templates/**/*.hbs'], :relative_to => 'templates'
   }
 
+
+  register Sinatra::ConfigFile
   config_file 'config.yml'
 
   set :public_folder, File.dirname(__FILE__) + '/static'
