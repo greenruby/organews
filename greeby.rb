@@ -43,10 +43,10 @@ class Greeby < Sinatra::Base
     css_compression :sass     # :simple | :sass | :yui | :sqwish
   }
 
-  register Sinatra::Ember
-  ember {
-    templates ['templates/**/*.hbs'], :relative_to => 'templates'
-  }
+  # register Sinatra::Ember
+  # ember {
+  #   templates ['templates/**/*.hbs'], :relative_to => 'templates'
+  # }
 
 
   register Sinatra::ConfigFile
