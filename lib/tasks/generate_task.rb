@@ -24,9 +24,10 @@ namespace :generate do
   task :html do
     @c = to_ostruct(YAML::load_file(File.join(WHERE, 'grn.yml')))
     erb = ERB.new(File.read(File.join(WHERE, 'grn.html.erb')))
-    File.open(File.join(WHERE, "GRN-#{@c.edition}.html"), 'w') do |f|
+    File.open(File.join(WHERE, 'html', "GRN-#{@c.edition}.html"), 'w') do |f|
       f.puts erb.result
     end
+    FileUtils.cp(File.join(WHERE, 'grn.yml'), File.join(WHERE, 'html', "grm-#{@c.edition}.yml"))
   end
 
 end
