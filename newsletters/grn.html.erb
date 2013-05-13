@@ -158,11 +158,10 @@
 			background-color:#eee;
 		}
 		#templateBody div, #templateBody td {
-			color:#505050;
-			font-family:Arial, sans serif;
-			font-size:14px;
-			line-height:120%;
-			text-align:left;
+			color: #505050;
+			font-family: Arial, sans serif;
+			font-size: 14px;
+			line-height: 150%;
 		}
 		#templateBody div a:link,#templateBody div a:visited{
 			color:#297b4e;
@@ -171,7 +170,6 @@
 		}
 		#templateBody img{
 			display:inline;
-			margin-bottom:10px;
 		}
 		#templateBody li{
 			margin-top:5px;
@@ -253,6 +251,7 @@
 		}
 		.baseline {
 			padding-bottom: 8px;
+			text-align: left;
 		}
 		.duration {
 			font-size: 12px;
@@ -274,6 +273,24 @@
 			color: #999;
 			letter-spacing: .2em;
 			font-family: Courier new, monospace;
+		}
+		.icon {
+			position: relative;
+			top: 2px;
+			margin-left: 5px;
+		}
+		.eventicon {
+			width: 22px;
+		}
+		.eventicon img {
+			position: relative;
+			top: 2px;
+			margin-right: 5px;
+		}
+		.flagicon {
+			position: relative;
+			top: 6px;
+			margin-right: 5px;
 		}
 		.month {
 			text-align: right;
@@ -318,38 +335,38 @@
 
 }</style></head>
   <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-    <center>
-      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
-        <tr>
-          <td align="center" valign="top">
-            <div id="wrapper">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+      <tr>
+        <td align="center" valign="top">
+          <div id="wrapper">
 
-              <div id="templatePreheader">
+            <div id="templatePreheader">
+              <div>
+                <div class="title">
+                  Green Ruby News
+                </div>
+                <div class="view">
+                  <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                    Is this email not displaying correctly?
+                    <a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
+                  <!-- *|END:IF|* -->
+                </div>
+              </div>
+            </div>
+
+            <div id="templateContainer">
+
+              <div id="templateHeader">
+                <img src="http://codegreenit.com/images/green-ruby-68.png" id="headerImage">
                 <div>
-                  <div class="title">
-                    Green Ruby News
-                  </div>
-                  <div class="view">
-                    <!-- *|IFNOT:ARCHIVE_PAGE|* -->
-                      Is this email not displaying correctly?
-                      <a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
-                    <!-- *|END:IF|* -->
-                  </div>
+                  <div class="h1">Green Ruby News #<%= @c.edition %></div>
+                  <div><%= @c.pubdate %></div>
                 </div>
               </div>
 
-              <div id="templateContainer">
-
-                <div id="templateHeader">
-                  <img src="http://codegreenit.com/images/green-ruby-68.png" id="headerImage">
-                  <div>
-                    <div class="h1">Green Ruby News #<%= @c.edition %></div>
-                    <div><%= @c.pubdate %></div>
-                  </div>
-                </div>
-
-                <div id="templateBody">
+              <div id="templateBody">
 <div>
+	<div class="baseline">
 	<h3>Edito</h3>
 	<%= @c.edito %>
 <br>
@@ -358,7 +375,7 @@
 	<em>&nbsp; xenor - the informer</em><br>
 	&nbsp; <a href="http://greenruby.org" target="_self">http://greenruby.org</a>
 <br>
-<br>
+</div>
 
 <% @c.topics.each do |t| %>
 <h2><%= t.title %></h2>
@@ -372,6 +389,11 @@
 			</td>
 			<td class="date">
 				<%= l.pubdate %>
+				<% if l.tags %>
+					<% l.tags.each do |tag| %>
+						<img class="icon" src="http://greenruby.org/ico/<%= tag %>.png" height"18" width="18" align="right" alt="<%= tag %>" />
+					<% end %>
+				<% end %>
 			</td>
 		</tr>
 		<tr>
@@ -384,15 +406,26 @@
 <% end %>
 
 <h2>Join</h2>
+<div class="baseline">
 For frenetic travelers, here is your roadmap of ruby/js/web confs over the world.<br>
-
+</div>
 <table cellpadding="0" cellspacing="0" border="0" class="meat">
 	<% @c.events.each do |e| %>
-	<tr><td class="month" colspan="4"><%= e.month %></td></tr>
+	<tr><td class="month" colspan="5"><%= e.month %></td></tr>
 		<% e.dates.each do |d| %>
 			<tr>
+				<td class="eventicon">
+					<% if d.tags %>
+						<% d.tags.each do |tag| %>
+						<img class="icon" src="http://greenruby.org/ico/<%= tag %>.png" height"18" width="18" align="left" alt="<%= tag %>" style="float:left" />
+						<% end %>
+					<% end %>
+				</td>
 				<td><a href="<%= d.url %>"><%= d.title %></a></td>
-				<td><%= d.location %></td>
+				<td>
+					<img class="flagicon" src="http://greenruby.org/flags/<%= d.country %>.png" alt="<%= d.country %>" height="11" width="16" style="float:left" />
+					<%= d.location %>
+				</td>
 				<td>
 					<% if d.full %>
 						Full
@@ -408,10 +441,11 @@ For frenetic travelers, here is your roadmap of ruby/js/web confs over the world
 </table>
 
 <hr>
-<p>
+<div class="baseline">
 	EOF<br>
 	<br>
-	<em>Feel free to send us feedback or information at <a href="mailto:news@greenruby.org" target="_self">news@greenruby.org</a></em></p>
+	<em>Feel free to send us feedback or information at <a href="mailto:news@greenruby.org" target="_self">news@greenruby.org</a></em>
+</div>
 </div>
 </div>
 
@@ -465,34 +499,33 @@ For frenetic travelers, here is your roadmap of ruby/js/web confs over the world
 		*|USER:ADDRESS_HTML|*</div>
 </div>
 *|END:IF|* </div>
-                  </div>
-
-                </div>
-
-                <div id="copyright">
-                  Copyright &copy; *|CURRENT_YEAR|* Mose Ltd &amp; Code Green IT<br>
-                  <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-                    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png">
-                  </a>
-                  <br>
-                  This publication is licensed under a
-                  <br>
-                  <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
-                    Creative Commons Attribution-ShareAlike 3.0 License
-                  </a>.
                 </div>
 
               </div>
+
+              <div id="copyright">
+                Copyright &copy; *|CURRENT_YEAR|* Mose Ltd &amp; Code Green IT<br>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+                  <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png">
+                </a>
+                <br>
+                This publication is licensed under a
+                <br>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+                  Creative Commons Attribution-ShareAlike 3.0 License
+                </a>.
+              </div>
+
             </div>
+          </div>
 
 
-            <div id="poweredby">
-              *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
-            </div>
+          <div id="poweredby">
+            *|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+          </div>
 
-          </td>
-        </tr>
-      </table>
-    </center>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
