@@ -39,15 +39,18 @@ else
 fi
 
 # If you use bundler, this might be useful to you:
-# if [[ -s Gemfile ]] && {
-#   ! builtin command -v bundle >/dev/null ||
-#   builtin command -v bundle | GREP_OPTIONS= \grep $rvm_path/bin/bundle >/dev/null
-# }
-# then
-#   printf "%b" "The rubygem 'bundler' is not installed. Installing it now.\n"
-#   gem install bundler
-# fi
-# if [[ -s Gemfile ]] && builtin command -v bundle >/dev/null
-# then
-#   bundle install | GREP_OPTIONS= \grep -vE '^Using|Your bundle is complete'
-# fi
+if [[ -s Gemfile ]] && {
+  ! builtin command -v bundle >/dev/null ||
+  builtin command -v bundle | GREP_OPTIONS= \grep $rvm_path/bin/bundle >/dev/null
+}
+then
+  printf "%b" "The rubygem 'bundler' is not installed. Installing it now.\n"
+  gem install bundler
+fi
+if [[ -s Gemfile ]] && builtin command -v bundle >/dev/null
+then
+  bundle install | GREP_OPTIONS= \grep -vE '^Using|Your bundle is complete'
+fi
+
+# hooking on node version
+nvm use 0.8.16

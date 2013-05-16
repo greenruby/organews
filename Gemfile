@@ -1,14 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'sinatra', :github => "sinatra/sinatra"
-gem 'sinatra-contrib', :github => "sinatra/sinatra-contrib"
+gem 'sinatra', github: "sinatra/sinatra"
+gem 'sinatra-contrib', github: "sinatra/sinatra-contrib"
 gem 'mongo'
 gem 'haml'
 gem 'json'
 gem 'bson_ext'
 gem 'redcarpet'
-gem 'sinatra-ember', :require => 'sinatra/ember'
-gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+gem 'sinatra-ember', require: 'sinatra/ember'
+gem 'sinatra-assetpack', require: 'sinatra/assetpack'
+gem "sinatra-support", require: "sinatra/support"
+gem 'pistol'
 
 group :development do
   gem 'thin'
@@ -17,6 +19,7 @@ group :development do
   gem 'fontcustom'
   gem 'html2haml'
   gem 'oily_png'
+  gem 'compass'
   gem 'compass-h5bp'
   gem 'awesome_print'
   gem 'pry'

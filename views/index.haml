@@ -11,11 +11,11 @@
     %title Green Ruby
     %meta{:content => "A Newsletter dedicated to weekly fresh news about ruby, web development, javascript, and related topics.", :name => "description"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
-    != css :application, :media => 'screen'
-    != js :app
+
     %link{:href => "css/normalize.css", :rel => "stylesheet"}/
     %link{:href => "css/main.css", :rel => "stylesheet"}/
     %link{:href => "css/grn.css", :rel => "stylesheet"}/
+    = css :main, :media => 'screen'
     %script{:src => "js/vendor/modernizr-2.6.2.min.js"}
   %body
     /[if lt IE 7]
@@ -197,16 +197,7 @@
           %br/
           purist &gt; ...
 
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="js/vendor/handlebars-1.0.0-rc.3.js"></script>
-    <script src="js/vendor/ember-1.0.0-rc.3.min.js"></script>
-    <script src="js/vendor/ember-data-latest.min.js"></script>
-    <script src="js/extra.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/app.js"></script>
-    != js :app
+    = js :app
 
     :javascript
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@stats['server']}/" : "http://#{@stats['server']}/");
