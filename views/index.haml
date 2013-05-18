@@ -12,8 +12,8 @@
     %meta{ content: "A Newsletter dedicated to weekly fresh news about ruby, web development, javascript, and related topics.", name: "description" }
     %meta{ content: "width=device-width", name: "viewport" }
 
-    %link{ href: "css/screen.css", rel: "stylesheet" }
-    %script{ src: "js/vendor/modernizr-2.6.2-responbd-1.1.0.min.js" }
+    %link{ href: "css/screen.min.css", rel: "stylesheet" }
+    %script{ src: "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" }
   %body
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -28,7 +28,7 @@
     %script{ src: "js/vendor/handlebars-1.0.0-rc4.runtime.js"}
     %script{ src: "js/vendor/ember-1.0.0-rc.3.min.js"}
     %script{ src: "js/vendor/ember-data-130516.min.js"}
-    %script{ src: "js/app.js"}
+    %script{ src: "js/app.min.js"}
 
     :javascript
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@stats['server']}/" : "http://#{@stats['server']}/");

@@ -28,21 +28,34 @@ Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
 class Greeby < Sinatra::Base
 
-  set :root, File.dirname(__FILE__)
 
   register Sinatra::ConfigFile
   config_file 'config.yml'
 
-  set :public_folder, File.dirname(__FILE__) + '/static'
-  set :haml, :format => :html5
-  set :views, ['views']
+  set :root, File.dirname(__FILE__)
+  set :static, true
+  set :public_folder, ->{ File.join(root, "static") }
+  set :views, ->{ File.join(root, "views") }
   set :environments, %w{development test production}
+  set :environment, :development
+  set :sessions, true
   set :stats, { server: '', id: 0 }
+  set :haml, :format => :html5
 
-  get '/' do
-    @title = 'wip'
-    @stats = settings.stats
-    haml :index
+  configure :development, :test do
+    get '/' do
+      @title = 'wip (dev)'
+      @stats = settings.stats
+      haml :dev
+    end
+  end
+
+  configure :production do
+    get '/' do
+      @title = 'wip'
+      @stats = settings.stats
+      haml :index
+    end
   end
 
   run! if app_file == $0

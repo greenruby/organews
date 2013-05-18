@@ -6,6 +6,6 @@ App.ArticleRoute = Ember.Route.extend({
     jQuery.getJSON('/articles').then(function(json){
       controller.set('articles', json.articles);
       controller.set('isLoaded', true);
-    })
+    });
   }
 });

@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-          config: 'config.rb',
+          config: 'app/config/compass.rb',
           force: true
         }
       }
@@ -49,12 +49,15 @@ module.exports = function(grunt) {
     },
     regarde: {
       js: {
-        files: ['Gruntfile.js', 'js/main.js', 'js/plugins.js'],
-        tasks: ['jshint', 'concat', 'uglify'],
-        spawn: true
+        files: ['app/js/**/*.js'],
+        tasks: ['jshint:ember', 'concat', 'uglify']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js'],
+        tasks: ['jshint:gruntfile']
       },
       css: {
-        files: 'scss/*.scss',
+        files: 'app/css/*.scss',
         tasks: ['compass'],
         events: true
       }
@@ -64,11 +67,7 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc',
          "force": true
       },
-      all: [
-        'Gruntfile.js',
-        'js/main.js',
-        'js/plugins.js'
-      ],
+      ember: [ 'app/js/**/*.js' ],
       gruntfile: ['Gruntfile.js']
     },
     deploy: {
@@ -103,30 +102,30 @@ module.exports = function(grunt) {
         syncDest: true,
         exclude: '<%= rsync.staging.exclude %>'
       }
-    }    compass: {
-      dist: {
-        options: {
-          config: 'config.rb',
-          force: true
-        }
-      }
     },
-  emblem: {
-    compile: {
-      files: {
-        'path/to/result.js': 'path/to/source.emblem', //1:1 compile
-        'path/to/another.js': ['path/to/sources/*.emblem', 'path/to/more/*.emblem'] //compile and concat into single file
-      },
-      options: {
-        root: 'app/templates/',
-        dependencies: {
-          jquery: 'js/vendor/jquery-1.9.1.js',
-          ember: 'js/vendor/ember-1.0.0-rc.1.js',
-          emblem: 'js/vendor/emblem.js',
-          handlebars: 'js/vendor/handlebars-1.0.0-rc.3.js'
+    emblem: {
+      compile: {
+        files: {
+          'path/to/result.js': 'path/to/source.emblem', //1:1 compile
+          'path/to/another.js': ['path/to/sources/*.emblem', 'path/to/more/*.emblem'] //compile and concat into single file
+        },
+        options: {
+          root: 'app/templates/',
+          dependencies: {
+            jquery: 'js/vendor/jquery-1.9.1.js',
+            ember: 'js/vendor/ember-1.0.0-rc.1.js',
+            emblem: 'js/vendor/emblem.js',
+            handlebars: 'js/vendor/handlebars-1.0.0-rc.3.js'
+          }
         }
       }
     }
-  }
+  });
+
+  grunt.registerTask('default', [
+     'regarde'
+  ]);
+
+  grunt.renameTask('rsync', 'deploy');
 
 };
