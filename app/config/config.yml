@@ -1,0 +1,13 @@
+---
+production: &default
+  db:
+    name: greenruby
+  stats:
+    server: track.codegreenit.com
+    id: 6
+
+development:
+  <<: *default
+
+test:
+  <<: *default

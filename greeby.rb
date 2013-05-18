@@ -3,9 +3,6 @@ require 'bundler'
 
 require 'sinatra/base'
 require "sinatra/config_file"
-require 'sinatra/assetpack'
-require 'compass'
-require 'sinatra/support'
 
 require 'mongo'
 require 'json'
@@ -33,40 +30,8 @@ class Greeby < Sinatra::Base
 
   helpers Sinatra::ContentFor
   helpers Sinatra::UserAgentHelpers
-  helpers Rtopia
 
   set :root, File.dirname(__FILE__)
-
-  register Sinatra::CompassSupport
-  c = Compass.configuration
-  c.project_path = root
-  c.images_dir = "static/icons"
-  c.http_generated_images_path = "/images"
-
-  register Sinatra::Ember
-  ember {
-    templates '/app/js/templates.js', ['templates/**/*.hbs'], :relative_to => 'templates'
-  }
-
-  register Sinatra::AssetPack
-  assets do
-    js :app, '/app.js', %w[
-      /js/vendor/*.js
-      /js/lib/*.js
-      /js/app/*.js
-    ]
-    css :main, '/main.css', %w[
-      css/screen.scss
-    ]
-    js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
-    css_compression :sass     # :simple | :sass | :yui | :sqwish
-  end
-
-  configure :development do
-    require 'pistol'
-    use(Pistol, Dir[root("./{lib,app}/**/*.rb")]) { reset! and load(root('init.rb')) }
-  end
-
 
   register Sinatra::ConfigFile
   config_file 'config.yml'

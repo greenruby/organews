@@ -1,6 +1,6 @@
 {
   "modules": "cjs",
-  "appDir": "js",
+  "appDir": "static/js",
   "withData": true
 }
 
