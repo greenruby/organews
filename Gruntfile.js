@@ -5,6 +5,22 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    emblem: {
+      compile: {
+        files: {
+          'app/js/templates.js': ['app/js/templates/**/*.emblem'] //compile and concat into single file
+        },
+        options: {
+          root: 'app/js/templates/',
+          dependencies: {
+            jquery: 'static/js/vendor/jquery-1.9.1.min.js',
+            emblem: 'static/js/vendor/emblem.min.js',
+            ember: 'static/js/vendor/ember-1.0.0-rc.3.min.js',
+            handlebars: 'static/js/vendor/handlebars-1.0.0-rc.3.js'
+          }
+        }
+      }
+    },
     concat: {
       dist: {
         src: [
@@ -16,7 +32,8 @@ module.exports = function(grunt) {
           'app/js/controllers/*.js',
           'app/js/views/*.js',
           'app/js/helpers/*.js',
-          'app/js/lib/*.js'
+          'app/js/lib/*.js',
+          'app/js/templates.js'
         ],
         dest: 'static/js/app.js'
       }
@@ -60,6 +77,10 @@ module.exports = function(grunt) {
         files: 'app/css/*.scss',
         tasks: ['compass'],
         events: true
+      },
+      emblem: {
+        files: 'app/js/templates/*.emblem',
+        tasks: ['emblem', 'concat', 'uglify']
       }
     },
     jshint: {
@@ -67,7 +88,7 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc',
          "force": true
       },
-      ember: [ 'app/js/**/*.js' ],
+      ember: [ 'app/js/**/*.js', '!app/js/templates.js' ],
       gruntfile: ['Gruntfile.js']
     },
     deploy: {
@@ -101,23 +122,6 @@ module.exports = function(grunt) {
         recursive: true,
         syncDest: true,
         exclude: '<%= rsync.staging.exclude %>'
-      }
-    },
-    emblem: {
-      compile: {
-        files: {
-          'path/to/result.js': 'path/to/source.emblem', //1:1 compile
-          'path/to/another.js': ['path/to/sources/*.emblem', 'path/to/more/*.emblem'] //compile and concat into single file
-        },
-        options: {
-          root: 'app/templates/',
-          dependencies: {
-            jquery: 'js/vendor/jquery-1.9.1.js',
-            ember: 'js/vendor/ember-1.0.0-rc.1.js',
-            emblem: 'js/vendor/emblem.js',
-            handlebars: 'js/vendor/handlebars-1.0.0-rc.3.js'
-          }
-        }
       }
     }
   });

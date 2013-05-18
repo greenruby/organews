@@ -58,5 +58,10 @@ class Greeby < Sinatra::Base
     end
   end
 
+  get '/articles' do
+    content_type :json
+    { title: '1', url: 'aa' }.to_json
+  end
+
   run! if app_file == $0
 end

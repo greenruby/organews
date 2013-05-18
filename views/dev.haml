@@ -19,26 +19,15 @@
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 
     %script{ type: "text/x-handlebars", :'data-template-name' => 'application' }
+      {{outlet}}
 
     %script{ src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
     :javascript
       window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
 
     %script{ src: "js/vendor/jquery-1.9.1.min.js"}
-    %script{ src: "js/vendor/handlebars-1.0.0-rc4.runtime.js"}
-    %script{ src: "js/vendor/ember-1.0.0-rc.3.min.js"}
-    %script{ src: "js/vendor/ember-data-130516.min.js"}
+    %script{ src: "js/vendor/handlebars-1.0.0-rc.3.js"}
+    %script{ src: "js/vendor/ember-1.0.0-rc.3.js"}
+    %script{ src: "js/vendor/ember-data-latest.js"}
     %script{ src: "js/app.js"}
 
-    :javascript
-      var pkBaseURL = (("https:" == document.location.protocol) ? "https://#{@stats['server']}/" : "http://#{@stats['server']}/");
-      document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-    :javascript
-      try {
-        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", #{@stats['id']});
-        piwikTracker.trackPageView();
-        piwikTracker.enableLinkTracking();
-      } catch( err ) {}
-    %noscript
-      %p
-        %img{:alt => "", :src => "http://#{@stats['server']}/piwik.php?idsite=#{@stats['id']}", :style => "border:0"}/
