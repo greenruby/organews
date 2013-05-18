@@ -28,9 +28,6 @@ Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
 class Greeby < Sinatra::Base
 
-  helpers Sinatra::ContentFor
-  helpers Sinatra::UserAgentHelpers
-
   set :root, File.dirname(__FILE__)
 
   register Sinatra::ConfigFile
