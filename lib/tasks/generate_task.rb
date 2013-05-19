@@ -2,7 +2,7 @@ require 'yaml'
 require 'erb'
 require 'fileutils'
 
-WHERE = File.expand_path('../../../newsletters/', __FILE__)
+WHERE = File.expand_path('../../../app/newsletters/', __FILE__)
 
 def to_ostruct(obj)
   result = obj
@@ -26,6 +26,10 @@ namespace :generate do
     erb = ERB.new(File.read(File.join(WHERE, 'grn.html.erb')))
     File.open(File.join(WHERE, 'html', "GRN-#{@c.edition}.html"), 'w') do |f|
       f.puts erb.result
+    end
+    txt = ERB.new(File.read(File.join(WHERE, 'grn.txt.erb')))
+    File.open(File.join(WHERE, 'txt', "GRN-#{@c.edition}.txt"), 'w') do |f|
+      f.puts txt.result
     end
     FileUtils.cp(File.join(WHERE, 'grn.yml'), File.join(WHERE, 'archives', "grm-#{@c.edition}.yml"))
   end
