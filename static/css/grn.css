@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(http://fonts.googleapis.com/css?family=Inder);
 /* line 4, ../../app/css/grn.scss */
 ::-moz-selection {
   background: #000;
@@ -51,7 +53,7 @@ img {
 .h3 {
   color: #202020;
   display: block;
-  font-family: Courier New, monospace;
+  font-family: 'Source Code Pro', monospace;
   font-size: 26px;
   font-weight: bold;
   line-height: 100%;
@@ -64,7 +66,7 @@ img {
 .h4 {
   color: #202020;
   display: block;
-  font-family: Courier New, monospace;
+  font-family: 'Source Code Pro', monospace;
   font-size: 22px;
   font-weight: bold;
   line-height: 100%;

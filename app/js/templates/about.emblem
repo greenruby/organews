@@ -1,2 +1,2 @@
 .meat
-  = content
+  == content

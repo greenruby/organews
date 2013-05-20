@@ -1,12 +1,15 @@
 Ember.TEMPLATES["about"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Ember.Handlebars.helpers; data = data || {};
-  var buffer = '', hashTypes, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, hashTypes;
 
 
   data.buffer.push("<div class=\"meat\">");
-  hashTypes = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "content", {hash:{},contexts:[depth0],types:["ID"],hashTypes:hashTypes,data:data})));
+  hashTypes = {'unescaped': "STRING"};
+  stack1 = helpers._triageMustache.call(depth0, "content", {hash:{
+    'unescaped': ("true")
+  },contexts:[depth0],types:["ID"],hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</div>");
   return buffer;
   
@@ -41,7 +44,7 @@ function program7(depth0,data) {
   data.buffer.push("Archives");
   }
 
-  data.buffer.push("<div id=\"container\"><div id=\"wrapper\"><div id=\"titlebar\"><div id=\"logo\"><img alt=\"Green Ruby\" height=\"81\" src=\"img/green-ruby-100.png\" width=\"100\" /></div><h1>Green Ruby News</h1></div><div class=\"cell\"><form id=\"signup\" action=\"http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf\" method=\"post\" target=\"_blank\">Subscribe to the Green Ruby Weekly Newsletter<input class=\"email\" name=\"EMAIL\" placeholder=\"email address\" type=\"email\" /><input class=\"button\" name=\"subscribe\" type=\"submit\" value=\"Subscribe\" /></form><div id=\"nav\"><ul><li>");
+  data.buffer.push("<div id=\"container\"><div id=\"wrapper\"><div id=\"titlebar\"><div id=\"logo\"><img alt=\"Green Ruby\" height=\"81\" src=\"img/green-ruby-100.png\" width=\"100\" /></div><h1>Green Ruby News</h1></div><div class=\"cell\"><form id=\"signup\" action=\"http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf\" method=\"post\" target=\"_blank\">Subscribe to the Green Ruby Weekly Newsletter <input class=\"email\" name=\"EMAIL\" placeholder=\"email address\" type=\"email\" /><input class=\"button\" name=\"subscribe\" type=\"submit\" value=\"Subscribe\" /></form><div id=\"nav\"><ul><li>");
   hashTypes = {};
   options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "linkTo", "index", options));
@@ -59,7 +62,7 @@ function program7(depth0,data) {
   data.buffer.push("</li></ul></div><div id=\"content\">");
   hashTypes = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashTypes:hashTypes,data:data})));
-  data.buffer.push("</div><div id=\"footer\"><a href=\"http://codegreenit.com\"><img class=\"cg\" align=\"left\" alt=\"CG\" width=\"57\" height=\"57\" src=\"img/codegreen.png\" /></a><a href=\"mailto:news@greenruby.org\" style=\"float:right\">| contact</a>The Green Ruby Newsletter is published by Mose<br />Sponsored by<a href=\"http://codegreenit.com\">| Code Green IT</a><br /></div></div></div></div>");
+  data.buffer.push("</div><div id=\"footer\"><a href=\"http://codegreenit.com\"><img class=\"cg\" align=\"left\" alt=\"CG\" width=\"57\" height=\"57\" src=\"img/codegreen.png\" /></a><a href=\"mailto:news@greenruby.org\" style=\"float:right\">contact</a>The Green Ruby Newsletter is published by Mose<br />Sponsored by <a href=\"http://codegreenit.com\">Code Green IT</a><br /></div></div></div></div>");
   return buffer;
   
 });

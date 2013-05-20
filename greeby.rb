@@ -53,5 +53,9 @@ class Greeby < Sinatra::Base
     { title: '1', url: 'aa' }.to_json
   end
 
+  get '/about' do
+    markdown File.read('app/pages/about.md')
+  end
+
   run! if app_file == $0
 end
