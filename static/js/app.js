@@ -1,6 +1,4 @@
-// require('moment');
-
-App = Ember.Application.create({});
+window.App = Em.Application.create();
 
 
 App.Router.map( function() {
@@ -39,11 +37,7 @@ App.ArticleRoute = Ember.Route.extend({
   }
 });
 App.IndexRoute = Ember.Route.extend({
-  setupController: function(controller) {
-    jQuery.getJSON('/articles').then(function(json){
-      controller.set('articles', json.articles);
-    });
-  }
+
 });
 App.LetterRoute = Ember.Route.extend({
   model: function(params) {

@@ -1,3 +1,2 @@
-<script type="text/x-emblem">
-  .meat
-    = content
+.meat
+  = content

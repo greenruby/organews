@@ -42,20 +42,10 @@ class Greeby < Sinatra::Base
   set :stats, { server: '', id: 0 }
   set :haml, :format => :html5
 
-  configure :development, :test do
-    get '/' do
-      @title = 'wip (dev)'
-      @stats = settings.stats
-      haml :dev
-    end
-  end
-
-  configure :production do
-    get '/' do
-      @title = 'wip'
-      @stats = settings.stats
-      haml :index
-    end
+  get '/' do
+    @title = 'wip (dev)'
+    @stats = settings.stats
+    haml :dev
   end
 
   get '/articles' do

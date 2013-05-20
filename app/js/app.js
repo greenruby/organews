@@ -1,4 +1,3 @@
-// require('moment');
+window.App = Em.Application.create();
 
-App = Ember.Application.create({});
-
+App.deferReadiness();

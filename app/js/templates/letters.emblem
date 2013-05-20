@@ -1,10 +1,9 @@
-<script type="text/x-emblem">
-  .menu
-    h2 Archives
-    ul
-      each letter in letters
-        li
-          span | date
-          a href=url | #011
-  .meat
-    | Archives
+.menu
+  h2 Archives
+  ul
+    each letter in letters
+      li
+        span | date
+        a href=url | #011
+.meat
+  | Archives
