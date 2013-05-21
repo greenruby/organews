@@ -73,8 +73,8 @@ class App < Sinatra::Base
   end
 
   get '/pages/:page' do
-    if File.exist? "app/pages/#{page}.md"
-      markdown File.read("app/pages/#{page}.md")
+    if File.exist? "app/pages/#{params[:page]}.md"
+      markdown File.read("app/pages/#{params[:page]}.md")
     end
   end
 
