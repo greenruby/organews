@@ -1,2 +1,2 @@
-require './greeby'
-run Greeby
+require './app'
+run App

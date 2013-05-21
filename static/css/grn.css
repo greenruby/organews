@@ -116,27 +116,27 @@ a:hover {
   text-decoration: underline;
 }
 
-/* line 95, ../../app/css/grn.scss */
+/* line 94, ../../app/css/grn.scss */
 #container {
   width: 90%;
   margin: 0 auto;
 }
-/* line 98, ../../app/css/grn.scss */
+/* line 97, ../../app/css/grn.scss */
 #container #wrapper {
   width: 100%;
   text-align: left;
 }
-/* line 101, ../../app/css/grn.scss */
+/* line 100, ../../app/css/grn.scss */
 #container #wrapper #titlebar {
   margin-bottom: 20px;
   position: relative;
 }
-/* line 104, ../../app/css/grn.scss */
+/* line 103, ../../app/css/grn.scss */
 #container #wrapper #titlebar #logo {
   position: absolute;
   left: -10px;
 }
-/* line 108, ../../app/css/grn.scss */
+/* line 107, ../../app/css/grn.scss */
 #container #wrapper #titlebar h1 {
   color: #fff;
   text-shadow: 0 5px 10px #000;
@@ -148,104 +148,104 @@ a:hover {
   padding-top: 5px;
   font-family: 'Inder', sans-serif;
 }
-/* line 120, ../../app/css/grn.scss */
+/* line 119, ../../app/css/grn.scss */
 #container #wrapper .cell {
   box-shadow: 0 0 400px -70px #fff;
 }
-/* line 122, ../../app/css/grn.scss */
+/* line 121, ../../app/css/grn.scss */
 #container #wrapper .cell #signup {
   background-color: #ccc;
   padding: 5px 20px;
   text-align: right;
 }
-/* line 127, ../../app/css/grn.scss */
+/* line 126, ../../app/css/grn.scss */
 #container #wrapper .cell #nav {
   background-color: #fff;
 }
-/* line 129, ../../app/css/grn.scss */
+/* line 128, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul {
   list-style: none;
   margin: 0;
   padding: 5px 0;
 }
-/* line 133, ../../app/css/grn.scss */
+/* line 132, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 137, ../../app/css/grn.scss */
+/* line 136, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a {
   padding: 5px 20px;
   color: #aaa;
 }
-/* line 140, ../../app/css/grn.scss */
+/* line 139, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a:hover {
   color: #999;
   text-decoration: none;
   border-bottom: 3px dotted #ddd;
 }
-/* line 145, ../../app/css/grn.scss */
+/* line 144, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a.active {
   color: #000;
   border-bottom: 3px dotted #bbb;
 }
-/* line 153, ../../app/css/grn.scss */
+/* line 152, ../../app/css/grn.scss */
 #container #wrapper .cell #content {
   background-color: #fff;
   text-align: left;
 }
-/* line 156, ../../app/css/grn.scss */
+/* line 155, ../../app/css/grn.scss */
 #container #wrapper .cell #content .meat {
   padding: 20px;
   min-height: 300px;
 }
-/* line 159, ../../app/css/grn.scss */
+/* line 158, ../../app/css/grn.scss */
 #container #wrapper .cell #content .meat h2 {
   margin-top: 0;
 }
-/* line 162, ../../app/css/grn.scss */
+/* line 161, ../../app/css/grn.scss */
 #container #wrapper .cell #content .meat h3 {
   margin: 0;
   border-bottom: 1px dotted #999;
 }
-/* line 166, ../../app/css/grn.scss */
+/* line 165, ../../app/css/grn.scss */
 #container #wrapper .cell #content .meat blockquote {
   font-size: 14px;
   color: #666;
   border-top: 2px dotted #ccc;
   padding-top: 10px;
 }
-/* line 173, ../../app/css/grn.scss */
+/* line 172, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu {
   width: 180px;
   float: right;
   text-align: right;
   padding: 5px 20px;
 }
-/* line 178, ../../app/css/grn.scss */
+/* line 177, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu h2 {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
 }
-/* line 183, ../../app/css/grn.scss */
+/* line 182, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu ul {
   list-style: none;
 }
-/* line 186, ../../app/css/grn.scss */
+/* line 185, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu ul li span {
   font-size: 12px;
   color: #666;
 }
-/* line 194, ../../app/css/grn.scss */
+/* line 193, ../../app/css/grn.scss */
 #container #wrapper .cell #footer {
   padding: 5px 20px;
   background-color: #000;
   color: #ccc;
   font-size: 12px;
 }
-/* line 199, ../../app/css/grn.scss */
+/* line 198, ../../app/css/grn.scss */
 #container #wrapper .cell #footer .cg {
   margin-right: 12px;
   margin-left: -30px;
@@ -253,28 +253,28 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 209, ../../app/css/grn.scss */
+  /* line 208, ../../app/css/grn.scss */
   body {
     width: auto !important;
   }
 
-  /* line 212, ../../app/css/grn.scss */
+  /* line 211, ../../app/css/grn.scss */
   body, table, td, p, a, li, blockquote {
     -webkit-text-size-adjust: none !important;
   }
 
-  /* line 215, ../../app/css/grn.scss */
+  /* line 214, ../../app/css/grn.scss */
   #backgroundTable, #wrapper {
     max-width: 600px !important;
     width: 100% !important;
   }
 
-  /* line 219, ../../app/css/grn.scss */
+  /* line 218, ../../app/css/grn.scss */
   #templatePreheader {
     display: none;
   }
 
-  /* line 222, ../../app/css/grn.scss */
+  /* line 221, ../../app/css/grn.scss */
   #templateBody {
     padding: 10px !important;
   }
