@@ -10,12 +10,7 @@ require 'mongo'
 require 'json'
 require 'awesome_print'
 
-require 'greeby/mongo'
-
-# detect appfog environment
-if ENV['VCAP_SERVICES']
-else
-end
+require 'greeby'
 
 DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
 
@@ -24,6 +19,7 @@ Encoding.default_external = 'utf-8' if defined?(::Encoding)
 class App < Sinatra::Base
 
   include Greeby::Mongo
+  include Greeby::Tools
 
   register Sinatra::ConfigFile
   config_file 'config.yml'
@@ -69,8 +65,9 @@ class App < Sinatra::Base
   end
 
   get '/pages/:page' do
-    if File.exist? "app/pages/#{params[:page]}.md"
-      markdown File.read("app/pages/#{params[:page]}.md")
+    page = clean(params[:page])
+    if File.exist? "app/pages/#{page}.md"
+      markdown File.read("app/pages/#{page}.md")
     end
   end
 
