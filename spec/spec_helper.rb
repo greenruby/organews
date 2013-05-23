@@ -1,6 +1,6 @@
 $LOAD_PATH << File.expand_path('../..',__FILE__)
 
-require 'greeby'
+require 'app'
 
 require 'sinatra'
 require "rspec"
@@ -15,7 +15,7 @@ set :raise_errors, true
 set :logging, false
 
 def app
-  Greeby
+  App
 end
 
 RSpec.configure do |config|

@@ -1,3 +1,5 @@
+$LOAD_PATH << File.expand_path('../lib',__FILE__)
+
 require 'rubygems'
 require 'bundler'
 
@@ -8,20 +10,14 @@ require 'mongo'
 require 'json'
 require 'awesome_print'
 
-require_relative 'lib/greeby/mongo'
+require 'greeby/mongo'
 
 # detect appfog environment
 if ENV['VCAP_SERVICES']
 else
 end
 
-unless ENV['RACK_ENV'] == 'test'
-  begin
-    DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
-  rescue
-    puts "Mongo disabled"
-  end
-end
+DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
 
 Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
