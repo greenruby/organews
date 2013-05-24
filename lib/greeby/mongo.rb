@@ -1,6 +1,6 @@
 require "bson"
 
-class Greeby
+module Greeby
   module Mongo
 
     def tobsonid(id)

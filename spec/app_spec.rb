@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Greeby general behaviour' do
+describe 'App general behaviour' do
   include Rack::Test::Methods
 
   it 'responds to homepage' do
