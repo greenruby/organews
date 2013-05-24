@@ -18,14 +18,30 @@
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 
-    %script{ src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-    :javascript
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
-
-    %script{ src: "js/vendor/handlebars-1.0.0-rc.3.min.js"}
-    %script{ src: "js/vendor/ember-1.0.0-rc.3.min.js"}
-    %script{ src: "js/vendor/ember-data-latest.min.js"}
-    %script{ src: "js/app.min.js"}
+    #container
+      #wrapper
+        #titlebar
+          #logo
+            %img{ alt: "Green Ruby", height: "81", width: "100", src: "img/green-ruby-100.png"}
+          %h1 Green Ruby News
+        .cell
+          %form{ id: "signup", action: "http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", method: "post", target: "_blank"}
+            Subscribe to the Green Ruby Weekly Newsletter
+            %input{ class: 'email', name: 'EMAIL', placeholder: 'email address', type: 'email' }
+            %input{ class: 'button', name: 'subscribe', type: 'submit', value: 'Subscribe' }
+          #content
+            = page['content']
+          #footer
+            %a{ href: "http://codegreenit.com" }
+              %img{ class: "cg", align: 'left', alt: 'CG', width: '57', height: '57', src: 'img/codegreen.png'}
+            %a{ href: 'mailto:news@greenruby.org', style: 'float:left;'}
+              contact
+            The Green Ruby Newsletter is published by Mose
+            %br
+            Sponsored by
+            %a{ href: 'http://codegreenit.com' }
+              Code Green
+            %br
 
 
     :javascript

@@ -6,7 +6,8 @@ gem 'mongo'
 gem 'haml'
 gem 'json'
 gem 'bson_ext'
-gem 'redcarpet'
+gem 'rdiscount'
+gem 'typogruby'
 gem 'sinatra-ember', require: 'sinatra/ember'
 
 group :development do
