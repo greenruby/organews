@@ -1,16 +1,16 @@
 -------------------------------
-Green Ruby News #<%= @c.edition %> - <%= @c.pubdate %>
+Green Ruby News #<%= c.edition %> - <%= c.pubdate %>
 -------------------------------
 
 Edito
 -----------------
-<%= @c.edito %>
+<%= c.edito %>
 
 mose - the green ruby editor
 xenor - the informer
 http://greenruby.org
 
-<% @c.topics.each do |t| %>
+<% c.topics.each do |t| %>
 <%= t.title %>
 -----------------
 <%= t.baseline %>

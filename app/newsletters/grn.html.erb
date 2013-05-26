@@ -278,15 +278,15 @@ Is this email not displaying correctly?
 <div id="templateHeader">
 <img src="http://codegreenit.com/images/green-ruby-68.png" id="headerImage">
 <div>
-<h1>Green Ruby News #<%= @c.edition %></h1>
-<div><%= @c.pubdate %></div>
+<h1>Green Ruby News #<%= c.edition %></h1>
+<div><%= c.pubdate %></div>
 </div>
 </div>
 <div id="templateBody">
 <div>
 	<div class="baseline">
 	<h3>Edito</h3>
-	<%= @c.edito %>
+	<%= c.edito %>
 <br>
 <br>
 <em>&nbsp; mose - the green ruby editor</em><br>
@@ -295,7 +295,7 @@ Is this email not displaying correctly?
 <br>
 </div>
 
-<% @c.topics.each do |t| %>
+<% c.topics.each do |t| %>
 <h2><%= t.title %></h2>
 <div class="baseline"><%= t.baseline %></div>
 <table cellpadding="0" cellspacing="0" border="0" class="meat">
