@@ -1,5 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
-@import url(http://fonts.googleapis.com/css?family=Inder);
 /* line 4, ../../app/css/grn.scss */
 ::-moz-selection {
   background: #000;
@@ -175,7 +173,7 @@ a:hover {
   z-index: 1;
 }
 /* line 143, ../../app/css/grn.scss */
-#container #wrapper .cell #signup {
+#container #wrapper .cell #intro {
   position: relative;
   background-color: #fff;
   padding: 5px 20px;
@@ -186,65 +184,69 @@ a:hover {
 /* line 151, ../../app/css/grn.scss */
 #container #wrapper .cell #nav {
   position: relative;
-  background-color: #fff;
 }
-/* line 154, ../../app/css/grn.scss */
+/* line 153, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul {
   list-style: none;
   margin: 0;
   padding: 5px 0;
 }
-/* line 158, ../../app/css/grn.scss */
+/* line 157, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-/* line 162, ../../app/css/grn.scss */
+/* line 161, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a {
   padding: 5px 20px;
   color: #aaa;
 }
-/* line 165, ../../app/css/grn.scss */
+/* line 164, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a:hover {
   color: #999;
   text-decoration: none;
   border-bottom: 3px dotted #ddd;
 }
-/* line 170, ../../app/css/grn.scss */
+/* line 169, ../../app/css/grn.scss */
 #container #wrapper .cell #nav ul li a.active {
   color: #000;
   border-bottom: 3px dotted #bbb;
 }
-/* line 178, ../../app/css/grn.scss */
+/* line 173, ../../app/css/grn.scss */
+#container #wrapper .cell #nav ul li a .date {
+  font-size: 12px;
+  float: right;
+}
+/* line 184, ../../app/css/grn.scss */
 #container #wrapper .cell #content {
   background-color: #fff;
   text-align: left;
   position: relative;
   z-index: 10;
 }
-/* line 183, ../../app/css/grn.scss */
+/* line 189, ../../app/css/grn.scss */
 #container #wrapper .cell #content .nav {
   float: left;
   width: 160px;
   padding: 20px;
   z-index: 50;
 }
-/* line 188, ../../app/css/grn.scss */
+/* line 194, ../../app/css/grn.scss */
 #container #wrapper .cell #content .nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 192, ../../app/css/grn.scss */
+/* line 198, ../../app/css/grn.scss */
 #container #wrapper .cell #content .nav ul li a {
   display: block;
   padding: 1px 5px;
 }
-/* line 195, ../../app/css/grn.scss */
+/* line 201, ../../app/css/grn.scss */
 #container #wrapper .cell #content .nav ul li a:hover {
   background-color: #eec;
 }
-/* line 202, ../../app/css/grn.scss */
+/* line 208, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column {
   position: relative;
   padding: 20px;
@@ -253,64 +255,64 @@ a:hover {
   z-index: 100;
   color: #323232;
 }
-/* line 209, ../../app/css/grn.scss */
+/* line 215, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column h2 {
   margin-top: 20px;
 }
-/* line 212, ../../app/css/grn.scss */
+/* line 218, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column h3 {
   margin: 0;
   border-bottom: 1px dotted #999;
 }
-/* line 216, ../../app/css/grn.scss */
+/* line 222, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column blockquote {
   font-size: 14px;
   color: #666;
   border-top: 2px dotted #ccc;
   padding-top: 10px;
 }
-/* line 222, ../../app/css/grn.scss */
+/* line 228, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column .comment {
   padding-bottom: 17px;
 }
-/* line 225, ../../app/css/grn.scss */
+/* line 231, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column .date {
   text-align: right;
   color: #999;
 }
-/* line 228, ../../app/css/grn.scss */
+/* line 234, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column .date img {
   position: relative;
   top: 2px;
   margin-left: 10px;
 }
-/* line 234, ../../app/css/grn.scss */
+/* line 240, ../../app/css/grn.scss */
 #container #wrapper .cell #content .column .baseline {
   padding-bottom: 20px;
 }
-/* line 238, ../../app/css/grn.scss */
+/* line 244, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu {
   width: 180px;
   float: right;
   text-align: right;
   padding: 5px 20px;
 }
-/* line 243, ../../app/css/grn.scss */
+/* line 249, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu h2 {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
 }
-/* line 248, ../../app/css/grn.scss */
+/* line 254, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu ul {
   list-style: none;
 }
-/* line 251, ../../app/css/grn.scss */
+/* line 257, ../../app/css/grn.scss */
 #container #wrapper .cell #content .menu ul li span {
   font-size: 12px;
   color: #666;
 }
-/* line 259, ../../app/css/grn.scss */
+/* line 265, ../../app/css/grn.scss */
 #container #wrapper .cell #footer {
   position: relative;
   padding: 5px 20px;
@@ -320,57 +322,57 @@ a:hover {
   z-index: 10;
   margin-bottom: 5%;
 }
-/* line 267, ../../app/css/grn.scss */
+/* line 273, ../../app/css/grn.scss */
 #container #wrapper .cell #footer .cg {
   margin-right: 12px;
   margin-left: -30px;
   margin-top: -12px;
 }
-/* line 272, ../../app/css/grn.scss */
+/* line 278, ../../app/css/grn.scss */
 #container #wrapper .cell #footer .contact {
   float: right;
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 280, ../../app/css/grn.scss */
+  /* line 286, ../../app/css/grn.scss */
   body {
     width: auto !important;
   }
 
-  /* line 283, ../../app/css/grn.scss */
+  /* line 289, ../../app/css/grn.scss */
   body, table, td, p, a, li, blockquote {
     -webkit-text-size-adjust: none !important;
   }
 
-  /* line 286, ../../app/css/grn.scss */
+  /* line 292, ../../app/css/grn.scss */
   #backgroundTable, #wrapper {
     max-width: 600px !important;
     width: 100% !important;
   }
 
-  /* line 290, ../../app/css/grn.scss */
+  /* line 296, ../../app/css/grn.scss */
   #templatePreheader {
     display: none;
   }
 
-  /* line 293, ../../app/css/grn.scss */
+  /* line 299, ../../app/css/grn.scss */
   #templateBody {
     padding: 10px !important;
   }
 
-  /* line 296, ../../app/css/grn.scss */
+  /* line 302, ../../app/css/grn.scss */
   #container {
     width: 100%;
   }
-  /* line 299, ../../app/css/grn.scss */
+  /* line 305, ../../app/css/grn.scss */
   #container #wrapper #titlebar {
     margin-bottom: 0;
   }
-  /* line 301, ../../app/css/grn.scss */
+  /* line 307, ../../app/css/grn.scss */
   #container #wrapper #titlebar #logo {
     display: none;
   }
-  /* line 304, ../../app/css/grn.scss */
+  /* line 310, ../../app/css/grn.scss */
   #container #wrapper #titlebar .head {
     text-align: center;
     font-size: 32px;
@@ -378,25 +380,25 @@ a:hover {
     margin: 5px 0;
     padding: 0;
   }
-  /* line 312, ../../app/css/grn.scss */
+  /* line 318, ../../app/css/grn.scss */
   #container #wrapper .cell {
     box-shadow: none;
   }
-  /* line 314, ../../app/css/grn.scss */
+  /* line 320, ../../app/css/grn.scss */
   #container #wrapper .cell #signup {
     text-align: center;
     padding: 10px;
   }
-  /* line 317, ../../app/css/grn.scss */
+  /* line 323, ../../app/css/grn.scss */
   #container #wrapper .cell #signup input {
     width: 130px;
   }
-  /* line 322, ../../app/css/grn.scss */
+  /* line 328, ../../app/css/grn.scss */
   #container #wrapper .cell #content .nav {
     float: none;
     width: auto;
   }
-  /* line 326, ../../app/css/grn.scss */
+  /* line 332, ../../app/css/grn.scss */
   #container #wrapper .cell #content .column {
     padding: 10px;
     margin: 0;

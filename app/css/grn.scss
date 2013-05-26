@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
-@import url(http://fonts.googleapis.com/css?family=Inder);
+// @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+// @import url(http://fonts.googleapis.com/css?family=Inder);
 
 ::-moz-selection {
   background: #000;
@@ -140,7 +140,7 @@ a:hover {
     .cell {
       box-shadow: 0 0 300px -50px #ccc;
       z-index: 1;
-      #signup {
+      #intro {
         position: relative;
         background-color: #fff;
         padding: 5px 20px;
@@ -150,7 +150,6 @@ a:hover {
       }
       #nav {
         position: relative;
-        background-color: #fff;
         ul {
           list-style: none;
           margin: 0 ;
@@ -171,8 +170,15 @@ a:hover {
                 color: #000;
                 border-bottom: 3px dotted #bbb;
               }
+              .date {
+                font-size: 12px;
+                float: right;
+              }
             }
           }
+        }
+        #signup {
+
         }
       }
       #content {

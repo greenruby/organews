@@ -32,11 +32,9 @@
           </div>
         </div>
         <div class='cell'>
-          <form action='http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;amp;id=7136c985cf' id='signup' method='post' target='_blank'>
-            Get the Weekly Newsletter
-            <input class='email' name='EMAIL' placeholder='email address' type='email'>
-            <input class='button' name='subscribe' type='submit' value='Subscribe'>
-          </form>
+          <div id='intro'>
+            This is a curation feed of frehs links of the week about ruby, javascript and web development.
+          </div>
           <div id='content'>
             <div class='nav'>
               <ul>
@@ -48,17 +46,7 @@
                 </li>
               </ul>
               <h4>Archives</h4>
-              <ul>
-                <li>
-                  <a href='015.html'>015</a>
-                </li>
-                <li>
-                  <a href='014.html'>014</a>
-                </li>
-                <li>
-                  <a href='013.html'>013</a>
-                </li>
-              </ul>
+              <ul class='letters'></ul>
               <h4>More</h4>
               <ul>
                 <li>
@@ -71,6 +59,11 @@
                   <a href='http://twitter.com/greenrubist'>@greenrubist</a>
                 </li>
               </ul>
+              <form action='http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;amp;id=7136c985cf' id='signup' method='post' target='_blank'>
+                Get the Weekly Newsletter
+                <input class='email' name='EMAIL' placeholder='email address' type='email'>
+                <input class='button' name='subscribe' type='submit' value='Subscribe'>
+              </form>
             </div>
             <div class='column'>
               <h1>About Green Ruby</h1>
@@ -160,18 +153,20 @@
         </div>
       </div>
     </div>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script>
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+    <script src='js/static.js'></script>
+    <!-- :javascript -->
+    <!-- document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E")); -->
+    <!-- :javascript -->
+    <!-- try { -->
+    <!-- var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6); -->
+    <!-- piwikTracker.trackPageView(); -->
+    <!-- piwikTracker.enableLinkTracking(); -->
+    <!-- } catch( err ) {} -->
+    <!-- %noscript -->
+    <!-- %img{ alt: "", src: "http://track.codegreenit.com/piwik.php?idsite=6", style: "border:0"} -->
   </body>
-  <script>
-    document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script>
-    try {
-      var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6);
-      piwikTracker.trackPageView();
-      piwikTracker.enableLinkTracking();
-    } catch( err ) {}
-  </script>
-  <noscript>
-    <img alt='' src='http://track.codegreenit.com/piwik.php?idsite=6' style='border:0'>
-  </noscript>
 </html>

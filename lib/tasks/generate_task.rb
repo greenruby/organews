@@ -3,6 +3,7 @@ require 'erb'
 require 'fileutils'
 require 'rdiscount'
 require 'haml'
+require 'json'
 require 'awesome_print'
 
 YAML::ENGINE.yamler = 'psych'
@@ -47,19 +48,20 @@ namespace :generate do
       f.puts partial.result
     end
 
+    letters = JSON.parse(File.read(File.join('static', 'editions.json')))
+    letters[@c.edition] = { link: "grn-#{@c.edition}.html", date: @c.pubdate }
+    File.open(File.join('static', 'editions.json'),'w') do |f|
+      f.puts letters.to_json
+    end
+
     template = File.read(File.join(VIEWS_PATH, 'static.haml'))
     haml_engine = Haml::Engine.new(template)
-    letters = {}
-    Dir.glob(File.join(NEWS_PATH, 'partials', '*.html')).sort.reverse.each do |v|
-      k = File.basename(v,'.html').sub(/GRN-/,'')
-      letters[k] = v
-    end
     page = OpenStruct.new
     page.letters = letters
     page.name = @c.edition
     page.content = partial.result
     html = haml_engine.render(page)
-    File.open("static/#{page.name}.html",'w') do |f|
+    File.open("static/grn-#{page.name}.html",'w') do |f|
       f.puts html
     end
     File.open("static/index.html",'w') do |f|
@@ -74,14 +76,8 @@ namespace :generate do
     template = File.read(File.join(VIEWS_PATH, 'static.haml'))
     haml_engine = Haml::Engine.new(template)
     pages = Dir.glob(File.join(PAGES_PATH, '*.md'))
-    letters = {}
-    Dir.glob(File.join(NEWS_PATH, 'partials', '*.html')).sort.reverse.each do |v|
-      k = File.basename(v,'.html').sub(/GRN-/,'')
-      letters[k] = v
-    end
     pages.each do |p|
       page = OpenStruct.new
-      page.letters = letters
       page.name = File.basename(p, '.md')
       page.content = RDiscount.new(File.read(p)).to_html
       html = haml_engine.render(page)
