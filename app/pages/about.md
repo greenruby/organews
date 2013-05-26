@@ -1,6 +1,6 @@
-## About Green Ruby
+# About Green Ruby
 
-### Genesis
+## Genesis
 
 The Newsletter began in june 2012 from the habit I had to
 send weekly newsletter in [Codegreen][1] for our team to know what is
@@ -13,7 +13,7 @@ at the bottom of it. So I decided to separate that links gathering bunch in
 another newsletter. But then it could also be useful for my friends, out of
 the scope of our team.
 
-### Green Birth
+## Green Birth
 
 At that time I had to test [Mailchimp][2] service for one of our projects, so because
 they offer a free package when volume is not too big, I thought I should just create
@@ -23,7 +23,7 @@ So in february 2013 I sent the first Green Ruby Newsletter to 3 subscribers. Wel
 mostly our team :) Then it became a weekly habit, so I got a domain name for it,
 and organicaly it's growing slowly.
 
-### The redactor gear
+## The redactor gear
 
 Codegreen paid for my [Newsblur][3] account so I can
 follow a bunch of feeds. Google reader was my first tool but well, they are closing,
@@ -38,14 +38,14 @@ and the support in podcast clients is not as good as it should be. So I don't
 stick on it, maybe it will evolve and I will get back to it.
 
 But I also get a lot of news by just wandering around on [Geekli.st][10], on [Coderbits][11],
-hacker news, and I subscribed to a bunch of various newsletters. I also watch teh new gems
-feeds from [@rubygems-alt][12] and I retweet stuff of interest on [@cogtw][13] account
-(those 2 are my alternate twitter identities).
+hacker news, and I subscribed to a bunch of various newsletters. I also watch the new gems
+feeds from [@rubygems-alt][12] and I retweet stuff of interest on [@mo5e][17], [@cogtw][13] and/or
+[@greenrubist][16] (those 3 are my alternate twitter identities).
 
 Each week [William][14] (aka xenor) also sends me a list of links. But I definately
 don't use any facebook feeds. For some reason, this is a place I avoid the most I can.
 
-### What next ?
+## What next ?
 
 My ambition there is to keep it non-comercial, and change it to be more community
 driven. The preparation of the letter is eating a big part of my saturdays for the last
@@ -82,4 +82,6 @@ on the top of [Sinatra][15] with [mongoDB][8], and there will be much more on th
   [13]: https://twitter.com/cogtw "Technical News tweet feed from mose at code green"
   [14]: https://github.com/tubaxenor "The Xenor with his tuba"
   [15]: http://www.sinatrarb.com/ "Put this in your pipe and smoke it"
+  [16]: https://twitter.com/grenrubist "New tweet feed from Green Ruby"
+  [17]: https://twitter.com/mo5e "Personal tweet feed of mose"
   [42]: https://twitter.com/mo5e "Mose on twitter"

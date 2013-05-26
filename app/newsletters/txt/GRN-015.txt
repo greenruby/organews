@@ -1,6 +1,6 @@
-------------------------------------
+-------------------------------
 Green Ruby News #015 - may 19th 2013
-------------------------------------
+-------------------------------
 
 Edito
 -----------------
@@ -146,47 +146,47 @@ Install
 A selection of gems or applications updated during past week.
 
 * Ruby 2.0.0-p195
-  rb -
+  rb - 
   http://www.ruby-lang.org/en/news/2013/05/14/ruby-2-0-0-p195-is-released/
   This is a security upgrade for ruby version 2, plus some bugfixes and optimizations.
 
 * Unveil.js
-  js -
+  js - 
   http://luis-almeida.github.io/unveil/
   A jQuery pugin for image lazy loading. Load only when in the viewport.
 
 * CSS wizardry grid
-  css3 -
+  css3 - 
   https://github.com/csswizardry/csswizardry-grids
   Yet another css base for mobile first, responsive design.
 
 * ProMotion
-  rb -
+  rb - 
   http://blog.rubymotion.com/post/50523137515/introducing-promotion-a-full-featured-rubymotion
   A RubyMotion application framework.
 
 * Polymer
-  js -
+  js - 
   http://polymer-project.appspot.com/
   A very interesting polyfills-based implementation of web components (design your tags).
 
 * Minitest
-  rb -
+  rb - 
   https://github.com/seattlerb/minitest
-  Minitest just shipped version 5.0.0,
+  Minitest just shipped version 5.0.0, 
 
 * Ruboto
-  rb -
+  rb - 
   http://ruboto.org/2013/05/11/Ruboto-0.12.0-release-doc.html
   Version 0.12.0 just came out, few new features, some bugfixes.
 
 * Agility.js
-  js -
+  js - 
   http://agilityjs.com/
   Another javascript MVC framework, supposedly easier, over jQuery lib.
 
 * Level up
-  rb -
+  rb - 
   http://kmatrah.github.io/level_up/
   A simple rails engine for creating graphs based on jobs.
 
@@ -196,17 +196,17 @@ Use
 Web applications, available for making our life easier.
 
 * Clipping Magic
-  tool -
+  tool - 
   http://clippingmagic.com/
   Remove background from image according to your markings, pretty neat.
 
 * Breakouts
-  tool -
+  tool - 
   http://city41.github.io/breakouts/
   The TodoMVC of javascript game tools. Simple game made with various JS frameworks.
 
 * Froont
-  tool -
+  tool - 
   http://froont.com/
   Responsive web designer.
 
@@ -228,7 +228,7 @@ forward to a friend
 *|LIST:SUBSCRIBE|*
 Subscribe
 
-Copyright (c) *|CURRENT_YEAR|* Mose Ltd &amp; Code Green IT<br>
+Copyright (c) *|CURRENT_YEAR|* Mose Ltd &amp; Code Green IT
 http://creativecommons.org/licenses/by-sa/3.0/
 This publication is licensed under a Creative Commons Attribution-ShareAlike 3.0 License
 
