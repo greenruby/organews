@@ -1,5 +1,7 @@
-// @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
-// @import url(http://fonts.googleapis.com/css?family=Inder);
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(http://fonts.googleapis.com/css?family=Inder);
 
 ::-moz-selection {
   background: #000;
@@ -127,7 +129,7 @@ a:hover {
         letter-spacing: 2px;
         line-height: 80%;
         margin: 10px 20px 0 0;
-        padding-left: 80px;
+        padding-left: 100px;
         text-align: right;
         padding-top: 5px;
         font-family: 'Inder', sans-serif;
@@ -143,10 +145,12 @@ a:hover {
       #intro {
         position: relative;
         background-color: #fff;
-        padding: 5px 20px;
+        padding: 5px 20px 5px 100px;
         text-align: right;
         box-shadow: 0 10px 20px -10px #ddd;
         z-index: 40;
+        font-size: 1.2em;
+        color: #425242;
       }
       #nav {
         position: relative;
@@ -170,15 +174,8 @@ a:hover {
                 color: #000;
                 border-bottom: 3px dotted #bbb;
               }
-              .date {
-                font-size: 12px;
-                float: right;
-              }
             }
           }
-        }
-        #signup {
-
         }
       }
       #content {
@@ -189,7 +186,7 @@ a:hover {
         .nav {
           float: left;
           width: 160px;
-          padding: 20px;
+          padding: 10px 10px 0 20px;
           z-index: 50;
           ul {
             margin: 0;
@@ -201,7 +198,28 @@ a:hover {
                 &:hover {
                   background-color: #eec;
                 }
+                .date {
+                  font-size: 11px;
+                  float: right;
+                  position: relative;
+                  top: 4px;
+                  color: #9b9;
+                }
               }
+            }
+          }
+          #signup {
+            margin-top: 20px;
+            text-align: center;
+            .label {
+              font-size: 0.8em;
+            }
+            input {
+              @include box-sizing(border-box);
+              display: block;
+              width: 100%;
+              margin: 0;
+              margin-top: 2px;
             }
           }
         }
@@ -317,15 +335,18 @@ a:hover {
       }
       .cell {
         box-shadow: none;
+        #intro {
+          font-size: 1em;
+          padding: 10px;
+          text-align: center;
+        }
         #signup {
           text-align: center;
           padding: 10px;
-          input {
-            width: 130px;
-          }
         }
         #content {
           .nav {
+            padding: 10px;
             float: none;
             width: auto;
           }

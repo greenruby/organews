@@ -9,6 +9,12 @@ namespace :generate do
     builder.make_archives('grn.yml')
   end
 
+  desc "re-generate all letters html file"
+  task :all do
+    builder = Greeby::Builder.new
+    builder.make_all
+  end
+
   desc "updates static website"
   task :web do
     builder = Greeby::Builder.new

@@ -69,8 +69,15 @@ module Greeby
       File.open(File.join(@static_path, "grn-#{page.name}.html"),'w') do |f|
         f.puts html
       end
-      File.open(File.join(@static_path, 'index.haml'),'w') do |f|
+      File.open(File.join(@static_path, 'index.html'),'w') do |f|
         f.puts html
+      end
+    end
+
+    def make_all
+      letters = JSON.parse(File.read(File.join(@static_path, 'editions.json')))
+      letters.each do |letter,c|
+        make_archives("archives/grn-#{letter}.yml")
       end
     end
 
@@ -81,7 +88,7 @@ module Greeby
       pages.each do |p|
         page = OpenStruct.new
         page.name = File.basename(p, '.md')
-        page.c = RDiscount.new(File.read(p)).to_html
+        page.content = RDiscount.new(File.read(p)).to_html
         html = haml_engine.render(page)
         File.open(File.join(@static_path, "#{page.name}.html"),'w') do |f|
           f.puts html
