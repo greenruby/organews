@@ -13,7 +13,7 @@
       016
     </title>
     <meta content='A Newsletter dedicated to weekly fresh news about ruby, web development, javascript, and related topics.' name='description'>
-    <meta content='width=device-width' name='viewport'>
+    <meta content='width=device-width, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
     <link href='css/screen.css' rel='stylesheet'>
     <script src='js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'></script>
   </head>
@@ -781,15 +781,18 @@
       window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
     </script>
     <script src='js/static.js'></script>
-    <!-- :javascript -->
-    <!-- document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E")); -->
-    <!-- :javascript -->
-    <!-- try { -->
-    <!-- var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6); -->
-    <!-- piwikTracker.trackPageView(); -->
-    <!-- piwikTracker.enableLinkTracking(); -->
-    <!-- } catch( err ) {} -->
-    <!-- %noscript -->
-    <!-- %img{ alt: "", src: "http://track.codegreenit.com/piwik.php?idsite=6", style: "border:0"} -->
+    <script>
+      document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+      try {
+        var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+      } catch( err ) {}
+    </script>
+    <noscript>
+      <img alt='' src='http://track.codegreenit.com/piwik.php?idsite=6' style='border:0'>
+    </noscript>
   </body>
 </html>
