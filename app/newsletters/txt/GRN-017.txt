@@ -23,7 +23,7 @@ What could be heard last week ..
 * Giant robots 50
   rb - may 27 - 43m
   http://learn.thoughtbot.com/podcast/50
-  Interview with Jeff Casimir and Katrina Owen talking abotu conferences, learning and stuff.
+  Interview with Jeff Casimir and Katrina Owen talking about conferences, learning and stuff.
 
 * Ruby5 373
   rb - may 28 - 5m
