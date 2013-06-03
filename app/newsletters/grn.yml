@@ -190,8 +190,11 @@ topics:
     tags:
       - js
 
-
-
+  - title: Madeye
+    url: http://madeye.io/get-started
+    comment: "Remote pair programming made easy."
+    tags:
+      - js
 
 - title: Use
   baseline:

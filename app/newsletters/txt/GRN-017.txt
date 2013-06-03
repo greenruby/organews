@@ -145,6 +145,11 @@ A selection of gems or applications updated during past week.
   https://github.com/jsoverson/plato
   JavaScript source code visualization, static analysis, and complexity tool.
 
+* Madeye
+  js - 
+  http://madeye.io/get-started
+  Remote pair programming made easy.
+
 
 Use
 -----------------
