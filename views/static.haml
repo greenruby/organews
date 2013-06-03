@@ -73,15 +73,15 @@
 
     %script{ src: "js/static.js" }
 
-    / :javascript
-    /   document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    :javascript
+      document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E"));
 
-    / :javascript
-    /   try {
-    /     var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6);
-    /     piwikTracker.trackPageView();
-    /     piwikTracker.enableLinkTracking();
-    /   } catch( err ) {}
+    :javascript
+      try {
+        var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+      } catch( err ) {}
 
-    / %noscript
-    /   %img{ alt: "", src: "http://track.codegreenit.com/piwik.php?idsite=6", style: "border:0"}
+    %noscript
+      %img{ alt: "", src: "http://track.codegreenit.com/piwik.php?idsite=6", style: "border:0"}
