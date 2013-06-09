@@ -33,7 +33,7 @@
         </div>
         <div class='cell'>
           <div id='intro'>
-            This is a curation feed of fresh links of the week about ruby, javascript and web development.
+            This is a curated feed of fresh links of the week about ruby, javascript and web development.
             Watch out every sunday.
           </div>
           <div id='content'>
@@ -159,15 +159,18 @@
       window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
     </script>
     <script src='js/static.js'></script>
-    <!-- :javascript -->
-    <!-- document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E")); -->
-    <!-- :javascript -->
-    <!-- try { -->
-    <!-- var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6); -->
-    <!-- piwikTracker.trackPageView(); -->
-    <!-- piwikTracker.enableLinkTracking(); -->
-    <!-- } catch( err ) {} -->
-    <!-- %noscript -->
-    <!-- %img{ alt: "", src: "http://track.codegreenit.com/piwik.php?idsite=6", style: "border:0"} -->
+    <script>
+      document.write(unescape("%3Cscript src='http://track.codegreenit.com/piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+      try {
+        var piwikTracker = Piwik.getTracker("http://track.codegreenit.com/piwik.php", 6);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+      } catch( err ) {}
+    </script>
+    <noscript>
+      <img alt='' src='http://track.codegreenit.com/piwik.php?idsite=6' style='border:0'>
+    </noscript>
   </body>
 </html>
