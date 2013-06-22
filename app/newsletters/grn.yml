@@ -1,6 +1,6 @@
 ---
-edition: "019"
-pubdate: "jun 16th 2013"
+edition: "020"
+pubdate: "jun 22th 2013"
 edito:
   "There is so much noise about iOs7, it's hard to avoid referring to it a bit. But hopefully there is other news, like the new <a href=\"http://www.ruby-lang.org/en/news/2013/06/12/new-ruby-lang-org-released/\">Ruby-lang</a> website, now collaborative via github."
 
@@ -12,112 +12,36 @@ topics:
     "Web applications and tools, available for making our life easier."
   links:
 
-  - title: Google Trends
-    url: "http://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5"
-    comment: "Realtime animated display of search keywords on google."
+  - title: The OAuth Bible
+    url: "http://oauthbible.com/"
+    comment: "The final version of the Oauth Bible by mashape."
     tags:
       - tool
 
-  - title: Atomic design
-    url: "http://bradfrostweb.com/blog/post/atomic-web-design/"
-    comment: "A component approach to web design."
-    tags:
-      - html5
 
-  - title: Space invader 404
-    url: "http://www.masswerk.at/404"
-    comment: "Just put some vintage game on your 404 page."
-    tags:
-      - web
-
-  - title: Loon
-    url: "http://www.google.com/loon/"
-    comment: "The google project involving internet access by the way of balloons."
-    tags:
-      - tool
-
-  - title: Unicode table
-    url: "http://unicode-table.com/en/"
-    comment: "The table of unicode characters."
-    tags:
-      - tool
-
-  - title: DPI love
-    url: "http://dpi.lv/"
-    comment: "A table to calculate the ppi/dpi conversion for all screen sizes."
-    tags:
-      - tool
-
-  - title: Creative Button Styles
-    url: "http://tympanus.net/Development/CreativeButtons/"
-    comment: "A list of button effects in the flat kind of flavor."
-    tags:
-      - css3
-
-  - title: Easel.ly
-    url: "https://www.easel.ly"
-    comment: "A creative design builder online in beta stage."
-    tags:
-      - tool
-
-  - title: Easel.io
-    url: "https://www.easel.io"
-    comment: "Another online page builder that is not to be confused with the previous one."
-    tags:
-      - tool
 
 
 - title: Install
   baseline: "A selection of gems or applications updated during past week."
   links:
 
-  - title: Rails 4.0.0-rc2
-    url: http://weblog.rubyonrails.org/2013/6/11/Rails-4-0-release-candidate-2/
-    comment: "Another step towards a final version next weekend (if this rc is good enough)."
-    tags:
-      - rb
-
-  - title: Ruboto
-    url: http://ruboto.org/2013/06/09/Ruboto-0.13.0-release-doc.html
-    comment: "Version 0.13.0 of this ruby mobile environment for android."
-    tags:
-      - rb
-
-  - title: Can I Use this widget
-    url: http://andismith.github.io/caniuse-widget/
-    comment: "Mostly for technical writers, this widget enables displaying information from caniuse.com."
-    tags:
-      - html5
-
-  - title: Github notifier
-    url: https://github.com/sindresorhus/GitHub-Notifier
-    comment: "Browser extension that displays your GitHub notifications unread count."
-    tags:
-      - tool
-
-  - title: Conditioner
-    url: http://conditionerjs.com/
-    comment: "A javascript library for loading and unloading behavior based on environment conditions."
+  - title: Flippant.js
+    url: http://mintchaos.github.io/flippant.js/
+    comment: "An alternative to modal windows, the flippable div."
     tags:
       - js
 
-  - title: DevTools Snippets
-    url: http://bgrins.github.io/devtools-snippets/
-    comment: "Dev snippets for chrome and firefox."
-    tags:
-      - tool
-
-  - title: Gist-dep
-    url: https://github.com/eric1234/gist-dep
-    comment: "A tool to make it easy to share snippets of code between projects and developers."
-    tags:
-      - tool
-
-  - title: Fontawesome
-    url: http://fontawesome.io/
-    comment: "This icon-font ships version 3.2.0 with 50 more icons."
+  - title: CSS magic
+    url: "http://www.minimamente.com/magic-css3-animations/"
+    comment: "A great collection of css3 effects on buttons."
     tags:
       - css3
+
+  - title: HTML inspector
+    url: "https://github.com/philipwalton/html-inspector/"
+    comment: "Nice tool to check webpage quality, on the html/css side."
+    tags:
+      - js
 
 
 
@@ -125,119 +49,41 @@ topics:
   baseline: "From the blogosphere or news feeds ..."
   links:
 
-  - title: "Using WebP with Modernizr"
-    url: http://www.stucox.com/blog/using-webp-with-modernizr/
-    pubdate: jun 5
-    comment: "A use case of very good use of Modernizr js lib for delivering lighter images."
+  - title: "How I TRAINed to learn Rails"
+    url: https://medium.com/how-i-learned-ruby-rails
+    pubdate: jun 12
+    comment: "Learn rails in 2 months, pointers and advices."
+    tags:
+      - rb
+
+  - title: "Getting started with Ember.js"
+    url: http://blog.balancedpayments.com/getting-started-with-ember.js/
+    pubdate: jun 14
+    comment: "A quick overview of the basics of emberjs, maybe the start of more blog posts."
     tags:
       - js
 
-  - title: "Irregular shape rollovers with Canvas and PNG"
-    url: http://christianheilmann.com/2013/06/10/irregular-shape-rollovers-with-canvas-and-png/
-    pubdate: jun 10
-    comment: "The upgrade in twitter api was announced a while ago and is now effective."
-    tags:
-      - tool
-
-  - title: "Twitter API v1 Retirement is Complete"
-    url: https://dev.twitter.com/blog/api-v1-is-retired
-    pubdate: jun 11
-    comment: "The upgrade in twitter api was announced a while ago and is now effective."
-    tags:
-      - tool
-
-  - title: "iOS 7 And The Transition To Flat"
-    url: http://blog.mengto.com/ios-7-transition-flat/
-    pubdate: jun 11
-    comment: "A moderate analysis of the new iOS design, that disappointed so many."
-    tags:
-      - css3
-
-  - title: "Yes, you really can make complex webapps responsive"
-    url: http://adioso.com/blog/2013/06/responsifying-adioso/
-    pubdate: jun 12
-    comment: "A showcase of using zurb foundation for responsive design css."
-    tags:
-      - css3
-
-  - title: "Nobody understands the GIL (1)"
-    url: http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil
-    pubdate: jun 12
-    comment: "Part 1 of a deep exploration of ruby Global Interpreter Lock."
+  - title: "Production Is All That Matters"
+    url: http://naildrivin5.com/blog/2013/06/16/production-is-all-that-matters.html
+    pubdate: jun 16
+    comment: "On how code is all about production mode, not about being beautiful."
     tags:
       - rb
 
-  - title: "Interviewing Rogues – James Edward Gray II"
-    url: rubysource.com/interviewing-rogues-james-edward-gray-ii/
-    pubdate: jun 13
-    comment: "In the serie of interviews of the Rogues, now it's JEG2 turn."
-    tags:
-      - rb
-
-  - title: "Nobody understands the GIL (2)"
-    url: http://www.jstorimer.com/blogs/workingwithcode/8100871-nobody-understands-the-gil-part-2-implementation
-    pubdate: jun 14
-    comment: "Part 2 about the GIL, implementation details."
-    tags:
-      - rb
-
-  - title: "Making Infield Form Labels Suck Less"
-    url: http://viget.com/inspire/making-infield-form-labels-suck-less
-    pubdate: jun 14
-    comment: "An alternative for labeling in html forms."
-    tags:
-      - css3
-
-  - title: "Seamlessly Navigate Vim and tmux Splits"
-    url: http://robots.thoughtbot.com/post/53022241323/seamlessly-navigate-vim-and-tmux-splits
-    pubdate: jun 15
-    comment: "Those tips are going in the current trend about remote pair-programming."
-    tags:
-      - tool
 
 
 - title: Watch
   baseline: "Screencasts and conferences videos, or other video feeds ..."
   links:
 
-  - title: "Wait, Chrome DevTools can do THAT?"
-    url: https://www.youtube.com/watch?v=S9sktFzL3tQ
-    pubdate: jun 7
-    duration: 45m
-    comment: "Plenty of tricks about chrome devtools."
-    tags:
-      - tool
-
-  - title: RubyKaigi videos
-    url: https://gist.github.com/yhara/5705717
-    pubdate: jun 10
-    comment: "A list of all talks from rubykeigi with links to videos and slides."
+  - title: "Railscast (free): Zurb foundation"
+    url: http://railscasts.com/episodes/417-foundation
+    pubdate: jun 16
+    duration: 11m
+    comment: "Quick presentation on how to integrate teh foundation css framework in rails."
     tags:
       - rb
 
-  - title: "Ember.js Tutorial With Rails 4"
-    url: http://www.railsonmaui.com/blog/2013/06/11/emberjs-rails4-tutorial/
-    pubdate: jun 11
-    duration: 42m
-    comment: "This post covers setting up Rails4 as the persistence engine."
-    tags:
-      - rb
-
-  - title: "webpagetest.org : Waterfall Antipatterns"
-    url: https://developers.google.com/live/shows/779042419
-    pubdate: jun 13
-    duration: 50m
-    comment: "Review of major features of webpagetest.org and focus on the waterfall graph."
-    tags:
-      - tool
-
-  - title: "Content Security Policy "
-    url: "https://www.youtube.com/watch?v=pocsv39pNXA"
-    pubdate: jun 14
-    duration: 33m
-    comment: "A new feature in browsers for addressing the XSS problem."
-    tags:
-      - html5
 
 
 - title: Listen
