@@ -1,6 +1,7 @@
 Greeby
 ================
 
+[![Dependency Status](https://gemnasium.com/mose/greeby.png)](https://gemnasium.com/mose/greeby)
 [![Build Status](https://travis-ci.org/mose/greeby.png?branch=master)](https://travis-ci.org/mose/greeby)
 
 Status: setup in progress

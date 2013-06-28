@@ -19,6 +19,9 @@ group :development do
   gem 'compass-h5bp'
   gem 'awesome_print'
   gem 'pry'
+  gem 'coveralls', require: false
+  gem 'simplecov'
+  gem 'rubocop'
 end
 
 group :test do
