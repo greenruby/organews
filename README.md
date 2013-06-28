@@ -3,6 +3,8 @@ Greeby
 
 [![Dependency Status](https://gemnasium.com/mose/greeby.png)](https://gemnasium.com/mose/greeby)
 [![Build Status](https://travis-ci.org/mose/greeby.png?branch=master)](https://travis-ci.org/mose/greeby)
+[![Coverage Status](https://coveralls.io/repos/mose/greeby/badge.png?branch=master)](https://coveralls.io/r/mose/greeby)
+[![Code Climate](https://codeclimate.com/github/mose/greeby.png)](https://codeclimate.com/github/mose/greeby)
 
 Status: setup in progress
 
