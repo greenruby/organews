@@ -12,9 +12,7 @@ require 'awesome_print'
 
 require 'greeby'
 
-unless ENV['RAKE_ENV'] == 'test'
-  DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
-end
+DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
 
 Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
