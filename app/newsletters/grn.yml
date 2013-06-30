@@ -84,6 +84,14 @@ topics:
     tags:
       - rb
 
+  - title: "Make Sure Something Is an Array"
+    url: http://batsov.com/articles/2013/06/28/the-elements-of-style-in-ruby-number-3-make-sure-something-is-an-array/
+    pubdate: jun 28
+    comment: "A small tip about checking arrays in ruby."
+    tags:
+      - rb
+
+
 
 
 - title: Watch
