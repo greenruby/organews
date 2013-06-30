@@ -22,6 +22,7 @@ group :development do
   gem 'coveralls', require: false
   gem 'simplecov'
   gem 'rubocop'
+  gem 'nokogiri'
 end
 
 group :test do
