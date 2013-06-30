@@ -52,6 +52,13 @@ Contribute
 * do not change the changelog it will be modified at merge
 * do not increment the version number it will be done at release
 
+Contributors
+---------------
+
+* @mose project lead
+* @eguitarz dev
+* @tubaxenor dev
+
 License - MIT
 -----------
 

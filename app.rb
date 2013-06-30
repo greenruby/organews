@@ -35,29 +35,33 @@ class App < Sinatra::Base
   set :haml, :format => :html5
 
   get '/' do
-    @title = 'wip (dev)'
+    redirect "/index.html"
+  end
+
+  get '/newsroom' do
+    @title = 'Newsroom'
     @stats = settings.stats
-    haml :dev
+    haml :newsroom
   end
 
   get '/v1/:thing' do
     DB.collection(params[:thing]).find.toa.map{ |t| frombsonid(t) }.to_json
   end
 
-  get '/api/:thing/:id' do
+  get '/v1/:thing/:id' do
     frombsonid(DB.collection(params[:thing]).findone(tobsonid(params[:id]))).to_json
   end
 
-  post '/api/:thing' do
+  post '/v1/:thing' do
     oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read.tos))
     "{\"id\": \"#{oid.to_s}\"}"
   end
 
-  delete '/api/:thing/:id' do
+  delete '/v1/:thing/:id' do
     DB.collection(params[:thing]).remove('id' => tobson_id(params[:id]))
   end
 
-  put '/api/:thing/:id' do
+  put '/v1/:thing/:id' do
     DB.collection(params[:thing]).update({
       'id' => tobsonid(params[:id])},
       {'$set' => JSON.parse(request.body.read.tos).reject{|k,v| k == 'id'}
