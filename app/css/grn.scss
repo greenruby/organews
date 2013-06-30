@@ -152,7 +152,7 @@ a:hover {
         font-size: 1.2em;
         color: #425242;
       }
-      #nav {
+      .topnav {
         position: relative;
         ul {
           list-style: none;
@@ -192,6 +192,7 @@ a:hover {
             margin: 0;
             padding: 0;
             li {
+              display: block;
               a {
                 display: block;
                 padding: 1px 5px;

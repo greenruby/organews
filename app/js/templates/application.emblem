@@ -6,7 +6,7 @@
 
   .cell
     #content
-      .nav: ul
+      .topnav: ul
         li: linkTo "index" | Home
         li: linkTo "about" | About
         li: linkTo "letters" | Archives

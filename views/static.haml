@@ -38,6 +38,10 @@
                   %a{ href: 'index.html'} Home
                 %li
                   %a{ href: 'about.html'} About
+              %form{ id: "signup", action: "http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", method: "post", target: "_blank"}
+                .label Weekly Newsletter
+                %input{ class: 'email', name: 'EMAIL', placeholder: 'email address', type: 'email' }
+                %input{ class: 'button', name: 'subscribe', type: 'submit', value: 'Subscribe' }
               %h4 Archives
               %ul.letters
               %h4 More
@@ -48,10 +52,6 @@
                   %a{ href: 'mailto:news@greenruby.org'} Contact
                 %li
                   %a{ href: 'http://twitter.com/greenrubist'} @greenrubist
-              %form{ id: "signup", action: "http://codegreenit.us6.list-manage1.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", method: "post", target: "_blank"}
-                .label Get the Weekly Newsletter
-                %input{ class: 'email', name: 'EMAIL', placeholder: 'email address', type: 'email' }
-                %input{ class: 'button', name: 'subscribe', type: 'submit', value: 'Subscribe' }
 
             .column
               = content
