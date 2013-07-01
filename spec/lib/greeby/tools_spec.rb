@@ -5,7 +5,7 @@ describe Greeby::Tools do
 
   include Greeby::Tools
 
-  it "cleans names" do
+  it ".clean(str) cleans names very strictly" do
     str = "a.b-cde()"
     expected = "abcde"
     expect(clean(str)).to eq expected
