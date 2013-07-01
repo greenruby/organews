@@ -15,22 +15,13 @@ App.Router.map( function() {
     this.route( 'new' );
     this.route( 'edit', { path: '/:article_id/edit' } );
   });
-  this.route( 'about', { path: '/about' } );
+  this.route( 'help', { path: '/help' } );
 });
 
 App.Store = DS.Store.extend({
   revision: 12,
   adapter: 'DS.RESTAdapter'
 });
-
-App.AboutRoute = Ember.Route.extend({
-  setupController: function(controller) {
-    jQuery.ajax("/pages/about").done(function(data) {
-      controller.set('content', data);
-    });
-  }
-});
-
 
 App.ApplicationRoute = Ember.Route.extend({});
 
@@ -45,6 +36,14 @@ App.ArticleRoute = Ember.Route.extend({
     });
   }
 });
+App.HelpRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    jQuery.ajax("/pages/help").done(function(data) {
+      controller.set('content', data);
+    });
+  }
+});
+
 App.IndexRoute = Ember.Route.extend({
 
 });
@@ -146,7 +145,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   
-  data.buffer.push("About");
+  data.buffer.push("Help");
   }
 
 function program7(depth0,data) {
@@ -165,7 +164,7 @@ function program7(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
+  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "help", options) : helperMissing.call(depth0, "linkTo", "help", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li><li>");
   hashTypes = {};

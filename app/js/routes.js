@@ -12,5 +12,5 @@ App.Router.map( function() {
     this.route( 'new' );
     this.route( 'edit', { path: '/:article_id/edit' } );
   });
-  this.route( 'about', { path: '/about' } );
+  this.route( 'help', { path: '/help' } );
 });

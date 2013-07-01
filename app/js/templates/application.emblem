@@ -8,7 +8,7 @@
     #content
       .topnav: ul
         li: linkTo "index" | Home
-        li: linkTo "about" | About
+        li: linkTo "help" | Help
         li: linkTo "letters" | Archives
 
       .column
