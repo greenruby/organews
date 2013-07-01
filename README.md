@@ -39,9 +39,9 @@ Run it
 ```
 bundle
 rackup
-open htt://localhost:9292
+open http://localhost:9292
 ```
-The simatra server is serving the frontend and the backend.
+The sinatra server is serving the frontend and the backend.
 
 
 Contribute
