@@ -9,6 +9,7 @@ gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
 gem 'sinatra-ember', require: 'sinatra/ember'
+gem 'nokogiri'
 
 group :development do
   gem 'thin'
@@ -22,7 +23,6 @@ group :development do
   gem 'coveralls', require: false
   gem 'simplecov'
   gem 'rubocop'
-  gem 'nokogiri'
 end
 
 group :test do

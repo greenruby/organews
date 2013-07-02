@@ -38,6 +38,7 @@ module Greeby
         @channel = @xml.xpath('//channel/title').inner_text
         @language = @xml.xpath('//channel/language').inner_text
 
+        threads = []
         @xml.xpath('//item').each do |i|
           title = i.xpath('title').inner_text
           link = i.xpath('link').inner_text
@@ -54,13 +55,16 @@ module Greeby
           feed.link = link
           feed.published_at = published_at
           if content.nil?
-            feed.content = Page.new(link).content
+            threads << Thread.new {
+              feed.content = Page.new(link).content
+              @feeds.push feed
+            }
           else
             feed.content = content
+            @feeds.push feed
           end
-          @feeds.push feed
         end
-
+        threads.each { |t| t.join }
       end
 
       def to_json(options = {})
@@ -74,7 +78,7 @@ module Greeby
 
     class Page
       def initialize(url)
-        puts "open #{url[0..50]} as web page"
+        p "open #{url[0..50]} as web page"
         @url = url
         @html = Nokogiri::HTML open(url)
         parse
