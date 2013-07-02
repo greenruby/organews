@@ -1,8 +1,7 @@
-App.AboutRoute = Ember.Route.extend({
+App.HelpRoute = Ember.Route.extend({
   setupController: function(controller) {
-    jQuery.ajax("/pages/about").done(function(data) {
+    jQuery.ajax("/pages/help").done(function(data) {
       controller.set('content', data);
     });
   }
 });
-

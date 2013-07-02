@@ -36,7 +36,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   
-  data.buffer.push("About");
+  data.buffer.push("Help");
   }
 
 function program7(depth0,data) {
@@ -45,7 +45,7 @@ function program7(depth0,data) {
   data.buffer.push("Archives");
   }
 
-  data.buffer.push("<div id=\"container\"><div id=\"wrapper\"><div id=\"titlebar\"><div id=\"logo\"><img alt=\"Green Ruby\" height=\"81\" src=\"img/green-ruby-100.png\" width=\"100\" /></div><h1>Green Ruby NewsRoom</h1></div><div class=\"cell\"><div id=\"content\"><div class=\"nav\"><ul><li>");
+  data.buffer.push("<div id=\"container\"><div id=\"wrapper\"><div id=\"titlebar\"><div id=\"logo\"><img alt=\"Green Ruby\" height=\"81\" src=\"img/green-ruby-100.png\" width=\"100\" /></div><h1 class=\"head\">Green Ruby NewsRoom</h1></div><div class=\"cell\"><div id=\"content\"><div class=\"topnav\"><ul><li>");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -55,7 +55,7 @@ function program7(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
+  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "help", options) : helperMissing.call(depth0, "linkTo", "help", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li><li>");
   hashTypes = {};

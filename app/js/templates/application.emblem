@@ -2,13 +2,13 @@
   #titlebar
     #logo
       img alt="Green Ruby" height="81" src="img/green-ruby-100.png" width="100"
-    h1 Green Ruby NewsRoom
+    h1.head Green Ruby NewsRoom
 
   .cell
     #content
       .topnav: ul
         li: linkTo "index" | Home
-        li: linkTo "about" | About
+        li: linkTo "help" | Help
         li: linkTo "letters" | Archives
 
       .column
