@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'digest/md5'
 require 'json'
+require 'readability'
 
 module Greeby
   module Engine
@@ -80,17 +81,20 @@ module Greeby
       def initialize(url)
         p "open #{url[0..50]} as web page"
         @url = url
-        @html = Nokogiri::HTML open(url)
-        parse
+        begin 
+          @html = open(url).read
+          parse
+        rescue Exception => e
+          puts "Error in parsing #{url[0..50]} : #{e.message}"
+        end
       end
 
       def digest
         Digest::MD5.hexdigest @url
       end
 
-      # TODO: implement this
       def parse
-        @content = @html.to_s
+        @content = Readability::Document.new(@html).content
       end
 
       def content

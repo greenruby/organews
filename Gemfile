@@ -10,6 +10,7 @@ gem 'rdiscount'
 gem 'typogruby'
 gem 'sinatra-ember', require: 'sinatra/ember'
 gem 'nokogiri'
+gem "ruby-readability", :require => 'readability'
 
 group :development do
   gem 'thin'
