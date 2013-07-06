@@ -21,6 +21,27 @@ module.exports = function(grunt) {
         }
       }
     },
+    coffee: {
+      dist: {
+        files: [{
+          // rather than compiling multiple files here you should
+          // require them into your main .coffee file
+          expand: true,
+          cwd: 'app/js/',
+          src: '*.coffee',
+          dest: '.tmp/scripts',
+          ext: '.js'
+        }]
+      },
+      test: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/spec',
+          src: '*.coffee',
+          dest: 'test/spec'
+        }]
+      }
+    },
     concat: {
       dist: {
         src: [
@@ -68,6 +89,10 @@ module.exports = function(grunt) {
       js: {
         files: ['app/js/**/*.js'],
         tasks: ['jshint:ember', 'concat', 'uglify']
+      },
+      coffee: {
+        files: ['app/js/**/*.coffee'],
+        tasks: ['coffee:dist']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
@@ -127,6 +152,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
+    'coffee',
     'concat',
     'uglify',
     'compass',

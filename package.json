@@ -11,6 +11,7 @@
     "matchdep": "~0.1.2",
     "grunt-emblem": "~0.1.0",
     "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-coffee": "~0.4.0",
     "grunt-webfont": "~0.1.4",
     "grunt-rsync": "~0.1.1",
     "grunt-regarde": "~0.1.1",

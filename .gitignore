@@ -4,4 +4,5 @@
 /manifest.yml
 /config.yml
 /.sass-cache
+/.tmp
 /coverage/
