@@ -9,8 +9,6 @@ require "rake/testtask"
 
 require "rspec/core/rake_task" # RSpec 2.0
 
-Dir.glob('lib/tasks/*_task.rb').each { |r| load r }
-
 task :spec do
   RSpec::Core::RakeTask.new(:spec) do |t|
     t.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"]

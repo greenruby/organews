@@ -35,13 +35,9 @@ class App < Sinatra::Base
   set :haml, :format => :html5
 
   get '/' do
-    redirect "/index.html"
-  end
-
-  get '/newsroom' do
     @title = 'Newsroom'
     @stats = settings.stats
-    haml :newsroom
+    haml :index
   end
 
   get '/v1/:thing' do
