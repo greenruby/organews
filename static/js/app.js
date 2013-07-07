@@ -1,27 +1,48 @@
-window.App = Em.Application.create();
+(function() {
 
+  this.App = Em.Application.create();
 
-App.Router.map( function() {
-  this.resource( 'index', { path: '/' } );
-  this.resource( 'archives', function() {
-    this.route( 'letter', { path: '/newsletter/:num' } );
-  });
-  this.resource( 'letters', function() {
-    this.route( 'new' );
-    this.route( 'edit' );
-  });
-  this.resource( 'articles', function() {
-    this.route( 'show', { path: '/:article_id' } );
-    this.route( 'new' );
-    this.route( 'edit', { path: '/:article_id/edit' } );
-  });
-  this.route( 'help', { path: '/help' } );
-});
+}).call(this);
 
-App.Store = DS.Store.extend({
-  revision: 12,
-  adapter: 'DS.RESTAdapter'
-});
+(function() {
+
+  this.App.Router.map(function() {
+    this.resource('index', {
+      path: '/'
+    });
+    this.resource('archives', (function() {
+      return this.route('letter', {
+        path: '/newsletter/:num'
+      });
+    }));
+    this.resource('letters', (function() {
+      this.route('new');
+      return this.route('edit');
+    }));
+    this.resource('articles', (function() {
+      this.route('show', {
+        path: '/:article_id'
+      });
+      this.route('new');
+      return this.route('edit', {
+        path: '/:article_id/edit'
+      });
+    }));
+    return this.route('help', {
+      path: '/help'
+    });
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Store = DS.Store.extend({
+    revision: 12,
+    adapter: 'DS.RESTAdapter'
+  });
+
+}).call(this);
 
 App.ApplicationRoute = Ember.Route.extend({});
 

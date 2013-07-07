@@ -1,0 +1,2 @@
+@App = Em.Application.create()
+

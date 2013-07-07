@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'app/js/',
           src: '*.coffee',
-          dest: '.tmp/scripts',
+          dest: '.tmp/js',
           ext: '.js'
         }]
       },
@@ -45,9 +45,9 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'app/js/app.js',
-          'app/js/routes.js',
-          'app/js/store.js',
+          '.tmp/js/app.js',
+          '.tmp/js/routes.js',
+          '.tmp/js/store.js',
           'app/js/routes/*.js',
           'app/js/models/*.js',
           'app/js/controllers/*.js',
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
       },
       coffee: {
         files: ['app/js/**/*.coffee'],
-        tasks: ['coffee:dist']
+        tasks: ['coffee:dist', 'concat', 'uglify']
       },
       gruntfile: {
         files: ['Gruntfile.js'],
