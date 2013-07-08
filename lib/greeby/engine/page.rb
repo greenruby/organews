@@ -1,5 +1,5 @@
 require 'readability'
-require 'open-uri'
+
 module Greeby
   module Engine
     class Page
