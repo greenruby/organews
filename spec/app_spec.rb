@@ -5,11 +5,6 @@ describe 'App general behaviour' do
 
   it 'responds to homepage' do
     get '/'
-    last_response.should be_redirect
-  end
-
-  it 'has an index' do
-    get '/index.html'
     last_response.should be_ok
   end
 

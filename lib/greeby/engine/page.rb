@@ -1,10 +1,12 @@
+require 'readability'
+
 module Greeby
   module Engine
     class Page
       def initialize(url)
         p "open #{url[0..50]} as web page"
         @url = url
-        begin 
+        begin
           @html = open(url).read
           parse
         rescue Exception => e

@@ -1,10 +1,14 @@
+require 'nokogiri'
+require 'ostruct'
+require 'greeby/engine/page'
+
 module Greeby
   module Engine
     class RSS
-      attr_accessor :channel, :language, :feeds, :xml
+      attr_accessor :channel, :language, :items, :xml
 
       def initialize(url)
-        @feeds = []
+        @items = []
         @url = url
         puts "open #{url} as RSS node"
         @xml = Nokogiri::XML open(url)
@@ -30,18 +34,18 @@ module Greeby
             content = nil
           end
 
-          feed = OpenStruct.new
-          feed.title = title
-          feed.link = link
-          feed.published_at = published_at
+          item = OpenStruct.new
+          item.title = title
+          item.link = link
+          item.published_at = published_at
           if content.nil?
             threads << Thread.new {
-              feed.content = Page.new(link).content
-              @feeds << feed
+              item.content = Page.new(link).content
+              @items << item
             }
           else
-            feed.content = content
-            @feeds << feed
+            item.content = content
+            @items << item
           end
         end
         threads.each { |t| t.join }
@@ -51,7 +55,7 @@ module Greeby
         {
           channel: @channel,
           language: @language,
-          feeds: @feeds
+          items: @items
         }.to_json options
       end
     end
