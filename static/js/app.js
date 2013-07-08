@@ -44,35 +44,55 @@
 
 }).call(this);
 
-App.ApplicationRoute = Ember.Route.extend({});
+(function() {
 
-App.ArticleRoute = Ember.Route.extend({
-  model: function(params) {
-    return App.Article.find(params.num);
-  },
-  setupController: function(controller) {
-    jQuery.getJSON('/articles').then(function(json){
-      controller.set('articles', json.articles);
-      controller.set('isLoaded', true);
-    });
-  }
-});
-App.HelpRoute = Ember.Route.extend({
-  setupController: function(controller) {
-    jQuery.ajax("/pages/help").done(function(data) {
-      controller.set('content', data);
-    });
-  }
-});
+  this.App.ApplicationRoute = Ember.Route.extend({});
 
-App.IndexRoute = Ember.Route.extend({
+}).call(this);
 
-});
-App.LetterRoute = Ember.Route.extend({
-  model: function(params) {
-    return App.Letter.find(params.num);
-  }
-});
+(function() {
+
+  this.App.ArticleRoute = Ember.Route.extend({
+    model: function(params) {
+      return App.Article.find(params.num);
+    },
+    setupController: function(controller) {
+      return jQuery.getJSON('/articles').then(function(json) {
+        controller.set('articles', json.articles);
+        return controller.set('isLoaded', true);
+      });
+    }
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.HelpRoute = Ember.Route.extend({
+    setupController: function(controller) {
+      return jQuery.ajax("/pages/help").done(function(data) {
+        return controller.set('content', data);
+      });
+    }
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.IndexRoute = Ember.Route.extend({});
+
+}).call(this);
+
+(function() {
+
+  this.App.LetterRoute = Ember.Route.extend({
+    model: function(params) {
+      return App.Letter.find(params.num);
+    }
+  });
+
+}).call(this);
 
 App.Article = DS.Model.extend({
   title: DS.attr('string'),

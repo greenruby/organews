@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           // require them into your main .coffee file
           expand: true,
           cwd: 'app/js/',
-          src: '*.coffee',
+          src: '**/*.coffee',
           dest: '.tmp/js',
           ext: '.js'
         }]
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
           '.tmp/js/app.js',
           '.tmp/js/routes.js',
           '.tmp/js/store.js',
-          'app/js/routes/*.js',
+          '.tmp/js/routes/*.js',
           'app/js/models/*.js',
           'app/js/controllers/*.js',
           'app/js/views/*.js',
