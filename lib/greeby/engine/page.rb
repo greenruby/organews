@@ -1,13 +1,13 @@
 require 'readability'
-
+require 'open-uri'
 module Greeby
   module Engine
     class Page
       def initialize(url)
+        @url = URI.parse(url[url.index("http")..-1])
         p "open #{url[0..50]} as web page"
-        @url = url
         begin
-          @html = open(url).read
+          @html = open(@url).read
           parse
         rescue Exception => e
           puts "Error in parsing #{url[0..50]} : #{e.message}"
