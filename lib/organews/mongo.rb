@@ -1,6 +1,6 @@
 require "bson"
 
-module Greeby
+module Organews
   module Mongo
 
     def tobsonid(id)

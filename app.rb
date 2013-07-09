@@ -10,7 +10,7 @@ require 'mongo'
 require 'json'
 require 'awesome_print'
 
-require 'greeby'
+require 'Organews'
 
 DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
 
@@ -18,8 +18,8 @@ Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
 class App < Sinatra::Base
 
-  include Greeby::Mongo
-  include Greeby::Tools
+  include Organews::Mongo
+  include Organews::Tools
 
   register Sinatra::ConfigFile
   config_file 'config.yml'

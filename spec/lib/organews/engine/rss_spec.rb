@@ -1,20 +1,20 @@
 require 'spec_helper'
 
-require 'lib/greeby/engine/rss.rb'
+require 'lib/organews/engine/rss.rb'
 
-describe Greeby::Engine::RSS do
+describe Organews::Engine::RSS do
 	before(:each) do
 		@rss_source = "spec/dummies/fakerss.xml"
 	end
 
   it "initialize feeds array and Nokogiri XML object by given source" do
-    rss = Greeby::Engine::RSS.new @rss_source
+    rss = Organews::Engine::RSS.new @rss_source
     expect(rss.items).to eq []
     expect(rss.xml).to be_an_instance_of Nokogiri::XML::Document
   end
 
   it "can parse rss feed" do
-  	rss = Greeby::Engine::RSS.new @rss_source
+  	rss = Organews::Engine::RSS.new @rss_source
   	rss.parse
   	expect(rss.items.count).to be > 0
   	rss.items.each do |f|

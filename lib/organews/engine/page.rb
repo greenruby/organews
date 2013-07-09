@@ -1,6 +1,6 @@
 require 'readability'
 
-module Greeby
+module Organews
   module Engine
     class Page
       def initialize(url)

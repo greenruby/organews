@@ -1,4 +1,4 @@
-module Greeby
+module Organews
   module Tools
 
     def clean(s)

@@ -1,9 +1,9 @@
 require_relative '../../spec_helper'
-require 'lib/greeby/tools.rb'
+require 'lib/organews/tools.rb'
 
-describe Greeby::Tools do
+describe Organews::Tools do
 
-  include Greeby::Tools
+  include Organews::Tools
 
   it ".clean(str) cleans names very strictly" do
     str = "a.b-cde()"

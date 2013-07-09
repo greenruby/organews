@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'ostruct'
 require 'greeby/engine/page'
 
-module Greeby
+module Organews
   module Engine
     class RSS
       attr_accessor :channel, :language, :items, :xml
