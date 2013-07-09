@@ -21,7 +21,6 @@ group :development do
   gem 'awesome_print'
   gem 'pry'
   gem 'coveralls', require: false
-  gem 'simplecov'
   gem 'rubocop'
 end
 

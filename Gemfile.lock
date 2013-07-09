@@ -131,7 +131,6 @@ DEPENDENCIES
   rspec
   rubocop
   ruby-readability
-  simplecov
   sinatra!
   sinatra-contrib!
   sinatra-ember
