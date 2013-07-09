@@ -15,7 +15,6 @@ gem "ruby-readability", :require => 'readability'
 group :development do
   gem 'thin'
   gem 'rake'
-  gem 'html2haml'
   gem 'oily_png'
   gem 'compass'
   gem 'compass-h5bp'
