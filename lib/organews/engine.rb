@@ -1,4 +1,3 @@
-require 'open-uri'
 require 'digest/md5'
 require 'json'
 require 'organews/engine/rss'
