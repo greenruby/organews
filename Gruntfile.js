@@ -53,6 +53,7 @@ module.exports = function(grunt) {
           'app/js/views/*.js',
           'app/js/helpers/*.js',
           '.tmp/js/routes.js',
+          '.tmp/js/routes/*.js',
           'app/js/templates.js'
         ],
         dest: 'static/js/app.js'

@@ -1,5 +1,5 @@
 @App.LettersRoute = Ember.Route.extend 
   model: ()->
-    @App.Letter.find()
+    App.Letter.find()
   setupController: (c, m)->
     console.log(m)

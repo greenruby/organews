@@ -6,4 +6,4 @@
         span | date
         a href=url | #011
 .meat
-  | Archives
+  = outlet
