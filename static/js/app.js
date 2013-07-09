@@ -94,37 +94,6 @@
 
 }).call(this);
 
-App.Article = DS.Model.extend({
-  title: DS.attr('string'),
-  url: DS.attr('string'),
-  pubdate: DS.attr('date'),
-  comment: DS.attr('string'),
-  tags: DS.hasMany('App.Tag'),
-  letter: DS.belongsTo('App.Letter'),
-  section: DS.belongsTo('App.Section'),
-  reporter: DS.belongsTo('App.User')
-});
-App.Letter = DS.Model.extend({
-  num: DS.attr('number'),
-  edito: DS.attr('string'),
-  pubdate: DS.attr('date'),
-  articles: DS.hasMany('App.Section'),
-  number: function() {
-    return ("000" + this.get('num')).slice(-3);
-  }.property('num')
-});
-App.Section = DS.Model.extend({
-  label: DS.attr('string'),
-  intro: DS.attr('string'),
-  order: DS.attr('number')
-});
-App.Tag = DS.Model.extend({
-  label: DS.attr('string')
-});
-App.User = DS.Model.extend({
-  name: DS.attr('string'),
-  email: DS.attr('string')
-});
 // Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
@@ -228,7 +197,7 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
   
 
 
-  data.buffer.push("<div class=\"meat\">The Green Ruby Newsletter is a weekly newsletter sent by mail to a bunch of web developers.It gathers links to new content from the very past week,about web development, ruby language, but also javascript, html, css and other newsof interest for web developers, coders, scripters, etc.<br /><blockquote>purist &gt; WTF! Rubies are red, you heretic!<br />editor &gt; yeah but if it passes all tests it gets green<br />purist &gt; ...</blockquote></div>");
+  data.buffer.push("<h1>Organews</h1><h2>A ruby based newsletter processor.</h2>");
   
 });
 
