@@ -3,7 +3,7 @@ Organews
 
 [![Dependency Status](https://gemnasium.com/greenruby/organews.png)](https://gemnasium.com/greenruby/organews)
 [![Build Status](https://travis-ci.org/greenruby/organews.png?branch=develop)](https://travis-ci.org/greenruby/organews)
-[![Coverage Status](https://coveralls.io/repos/greenruby/organews/badge.png?branch=master)](https://coveralls.io/r/greenruby/organews)
+[![Coverage Status](https://coveralls.io/repos/greenruby/organews/badge.png?branch=develop)](https://coveralls.io/r/greenruby/organews)
 [![Code Climate](https://codeclimate.com/github/greenruby/organews.png)](https://codeclimate.com/github/greenruby/organews)
 
 Status: setup in progress
