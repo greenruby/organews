@@ -1,10 +1,10 @@
 Organews
 ================
 
-[![Dependency Status](https://gemnasium.com/greenruby/organews.png)](https://gemnasium.com/greenruby/greeby)
-[![Build Status](https://travis-ci.org/greenruby/organwews.png?branch=develop)](https://travis-ci.org/mose/greeby)
+[![Dependency Status](https://gemnasium.com/greenruby/organews.png)](https://gemnasium.com/greenruby/organwews)
+[![Build Status](https://travis-ci.org/greenruby/organwews.png?branch=develop)](https://travis-ci.org/greenruby/organwews)
 [![Coverage Status](https://coveralls.io/repos/greenruby/organwews/badge.png?branch=master)](https://coveralls.io/r/greenruby/organwews)
-[![Code Climate](https://codeclimate.com/github/greenruby/organwews.png)](https://codeclimate.com/github/greenruby/organwews)
+[![Code Climate](https://codeclimate.com/github/greenruby/organews.png)](https://codeclimate.com/github/greenruby/organews)
 
 Status: setup in progress
 
