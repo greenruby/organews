@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'ostruct'
-require 'greeby/engine/page'
+require 'organews/engine/page'
 
 module Organews
   module Engine

@@ -10,7 +10,7 @@ require 'mongo'
 require 'json'
 require 'awesome_print'
 
-require 'Organews'
+require 'organews'
 
 DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
 

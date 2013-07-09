@@ -4,7 +4,7 @@ Organews
 [![Dependency Status](https://gemnasium.com/greenruby/organews.png)](https://gemnasium.com/greenruby/greeby)
 [![Build Status](https://travis-ci.org/greenruby/organwews.png?branch=develop)](https://travis-ci.org/mose/greeby)
 [![Coverage Status](https://coveralls.io/repos/greenruby/organwews/badge.png?branch=master)](https://coveralls.io/r/greenruby/organwews)
-[![Code Climate](https://codeclimate.com/github/greenruby/organwews.png)](https://codeclimate.com/github/mose/greeby)
+[![Code Climate](https://codeclimate.com/github/greenruby/organwews.png)](https://codeclimate.com/github/greenruby/organwews)
 
 Status: setup in progress
 
