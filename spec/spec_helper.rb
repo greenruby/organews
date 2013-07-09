@@ -1,7 +1,9 @@
 $LOAD_PATH << File.expand_path('../..',__FILE__)
 
-require 'coveralls'
-Coveralls.wear!
+if ENV['CI']
+  require 'coveralls'
+  Coveralls.wear!
+end
 
 ENV['RACK_ENV'] = 'test'
 

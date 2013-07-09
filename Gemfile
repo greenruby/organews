@@ -20,11 +20,11 @@ group :development do
   gem 'compass-h5bp'
   gem 'awesome_print'
   gem 'pry'
-  gem 'coveralls', require: false
   gem 'rubocop'
 end
 
 group :test do
   gem 'rack-test'
   gem 'rspec'
+  gem 'coveralls', require: false
 end
