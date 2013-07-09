@@ -1,4 +1,8 @@
-@App.Store = DS.Store.extend {
-  revision: 12
-  adapter: 'DS.RESTAdapter'
-}
+@App.Adapter = DS.RESTAdapter.create
+  namespace: "v1"
+
+@App.Store = DS.Store.extend
+  revision: 12,
+  adapter: App.Adapter
+
+

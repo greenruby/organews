@@ -1,0 +1,1 @@
+@App.LettersController = Em.ArrayController.extend {}

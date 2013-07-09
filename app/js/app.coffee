@@ -1,2 +1,3 @@
-@App = Em.Application.create()
+@App = Em.Application.create
+	LOG_TRANSITIONS: true
 
