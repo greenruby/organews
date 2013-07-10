@@ -2,8 +2,8 @@
   "name": "organews",
   "version": "0.0.1",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/mose/greeby.git"
+    "type": "git",
+    "url": "https://github.com/mose/greeby.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -6,3 +6,5 @@
 /.sass-cache
 /.tmp
 /coverage/
+/static/js/app.js
+/static/js/app.min.js

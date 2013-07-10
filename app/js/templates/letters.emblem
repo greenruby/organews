@@ -1,9 +1,9 @@
 .menu
   h2 Archives
   ul
-    each letter in letters
+    each letter in controller
       li
         span | date
         a href=url | #011
 .meat
-  | Archives
+  = outlet

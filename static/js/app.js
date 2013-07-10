@@ -1,6 +1,106 @@
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+        method = methods[length];
+
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
+
 (function() {
 
-  this.App = Em.Application.create();
+  this.App = Em.Application.create({
+    LOG_TRANSITIONS: true
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Adapter = DS.RESTAdapter.create({
+    namespace: "v1"
+  });
+
+  this.App.Store = DS.Store.extend({
+    revision: 12,
+    adapter: App.Adapter
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Article = DS.Model.extend({
+    title: DS.attr('string'),
+    url: DS.attr('string'),
+    pubdate: DS.attr('date'),
+    comment: DS.attr('string'),
+    tags: DS.hasMany('App.Tag'),
+    letter: DS.belongsTo('App.Letter'),
+    section: DS.belongsTo('App.Section'),
+    reporter: DS.belongsTo('App.User')
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Letter = DS.Model.extend({
+    num: DS.attr('number'),
+    edito: DS.attr('string'),
+    pubdate: DS.attr('date'),
+    articles: DS.hasMany('App.Section'),
+    number: (function() {
+      return ("000" + this.get('num')).slice(-3);
+    }).property('num')
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Section = DS.Model.extend({
+    label: DS.attr('string'),
+    intro: DS.attr('string'),
+    order: DS.attr('number')
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.Tag = DS.Model.extend({
+    label: DS.attr('string')
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.User = DS.Model.extend({
+    name: DS.attr('string'),
+    email: DS.attr('string')
+  });
+
+}).call(this);
+
+(function() {
+
+  this.App.LettersController = Em.ArrayController.extend({});
 
 }).call(this);
 
@@ -34,15 +134,6 @@
     return this.route('help', {
       path: '/help'
     });
-  });
-
-}).call(this);
-
-(function() {
-
-  this.App.Store = DS.Store.extend({
-    revision: 12,
-    adapter: 'DS.RESTAdapter'
   });
 
 }).call(this);
@@ -115,28 +206,18 @@
 
 }).call(this);
 
-// Avoid `console` errors in browsers that lack a console.
 (function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
 
-    while (length--) {
-        method = methods[length];
-
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
+  this.App.LettersRoute = Ember.Route.extend({
+    model: function() {
+      return App.Letter.find();
+    },
+    setupController: function(c, m) {
+      return console.log(m);
     }
-}());
+  });
+
+}).call(this);
 
 Ember.TEMPLATES["about"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [3,'>= 1.0.0-rc.4'];
@@ -217,9 +298,23 @@ function program3(depth0,data) {
   data.buffer.push("<div class=\"menu\"><h2>Archives</h2><ul>");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "letter", "in", "letters", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers.each.call(depth0, "letter", "in", "controller", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</ul></div><div class=\"meat\">Archives</div>");
+  data.buffer.push("</ul></div><div class=\"meat\">");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</div>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["letters/index"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [3,'>= 1.0.0-rc.4'];
+helpers = helpers || Ember.Handlebars.helpers; data = data || {};
+  
+
+
+  data.buffer.push("<p>Archives</p>");
   
 });

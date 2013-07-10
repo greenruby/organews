@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     emblem: {
       compile: {
         files: {
-          'app/js/templates.js': ['app/js/templates/*.emblem']
+          'app/js/templates.js': ['app/js/templates/**/*.emblem']
         },
         options: {
           root: 'app/js/templates/',
@@ -45,15 +45,15 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
+          'app/js/lib/*.js',
           '.tmp/js/app.js',
-          '.tmp/js/routes.js',
           '.tmp/js/store.js',
-          '.tmp/js/routes/*.js',
-          'app/js/models/*.js',
-          'app/js/controllers/*.js',
+          '.tmp/js/models/*.js',
+          '.tmp/js/controllers/*.js',
           'app/js/views/*.js',
           'app/js/helpers/*.js',
-          'app/js/lib/*.js',
+          '.tmp/js/routes.js',
+          '.tmp/js/routes/*.js',
           'app/js/templates.js'
         ],
         dest: 'static/js/app.js'
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         events: true
       },
       emblem: {
-        files: 'app/js/templates/*.emblem',
+        files: 'app/js/templates/**/*.emblem',
         tasks: ['emblem', 'concat', 'uglify']
       }
     },
@@ -152,6 +152,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
+    'emblem',
     'coffee',
     'concat',
     'uglify',
