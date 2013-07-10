@@ -10,6 +10,9 @@
     this.resource('index', {
       path: '/'
     });
+    this.resource('dashboard', {
+      path: '/dashboard'
+    });
     this.resource('archives', (function() {
       return this.route('letter', {
         path: '/newsletter/:num'
@@ -48,6 +51,10 @@
 
   this.App.ApplicationRoute = Ember.Route.extend({});
 
+  this.App.ApplicationView = Ember.View.extend({
+    classNames: ['appl-view']
+  });
+
 }).call(this);
 
 (function() {
@@ -68,6 +75,16 @@
 
 (function() {
 
+  this.App.DashboardRoute = Ember.Route.extend({});
+
+  this.App.DashboardView = Ember.View.extend({
+    classNames: ['dash-view']
+  });
+
+}).call(this);
+
+(function() {
+
   this.App.HelpRoute = Ember.Route.extend({
     setupController: function(controller) {
       return jQuery.ajax("/pages/help").done(function(data) {
@@ -80,7 +97,11 @@
 
 (function() {
 
-  this.App.IndexRoute = Ember.Route.extend({});
+  this.App.IndexRoute = Ember.Route.extend({
+    redirect: function() {
+      return this.replaceWith('dashboard');
+    }
+  });
 
 }).call(this);
 
@@ -138,56 +159,24 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Ember.Handlebars.helpers; data = data || {};
-  var buffer = '', stack1, stack2, hashTypes, hashContexts, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', hashTypes, hashContexts, escapeExpression=this.escapeExpression;
 
-function program1(depth0,data) {
-  
-  
-  data.buffer.push("Home");
-  }
 
-function program3(depth0,data) {
-  
-  var buffer = '';
-  return buffer;
-  }
-
-function program5(depth0,data) {
-  
-  
-  data.buffer.push("Help");
-  }
-
-function program7(depth0,data) {
-  
-  
-  data.buffer.push("Archives");
-  }
-
-  data.buffer.push("<div id=\"container\"><div id=\"wrapper\"><div id=\"titlebar\"><div id=\"logo\"><img alt=\"Green Ruby\" height=\"81\" src=\"img/green-ruby-100.png\" width=\"100\" /></div><h1 class=\"head\">Green Ruby NewsRoom</h1></div><div class=\"cell\"><div id=\"content\"><div class=\"topnav\"><ul><li>");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "linkTo", "index", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li><li>");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "help", options) : helperMissing.call(depth0, "linkTo", "help", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li><li>");
-  hashTypes = {};
-  hashContexts = {};
-  options = {hash:{},inverse:self.program(3, program3, data),fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
-  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "letters", options) : helperMissing.call(depth0, "linkTo", "letters", options));
-  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li></ul></div><div class=\"column\">");
+  data.buffer.push("<div id=\"titlebar\"><div id=\"logo\"></div><h1 class=\"head\">Organews</h1></div>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</div></div><div id=\"footer\"><a href=\"http://codegreenit.com\"><img class=\"cg\" align=\"left\" alt=\"CG\" width=\"57\" height=\"57\" src=\"img/codegreen.png\" /></a><a href=\"mailto:news@greenruby.org\" style=\"float:right\">contact</a>The Green Ruby Newsletter is published by Mose<br />Sponsored by <a href=\"http://codegreenit.com\">Code Green IT</a><br /></div></div></div></div>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["dashboard"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [3,'>= 1.0.0-rc.4'];
+helpers = helpers || Ember.Handlebars.helpers; data = data || {};
+  
+
+
+  data.buffer.push("<div id=\"feeds-panel\"><ul class=\"feeds\"><li>feed 1</li><li>feed 2</li><li>feed 3</li><li>feed 4</li><li>feed 5</li><li>feed 6</li><li>feed 7</li><li>feed 8</li><li>feed 9</li><li>feed 10</li><li>feed 11</li><li>feed 12</li></ul></div><div id=\"items-panel\"><ul class=\"items\"><li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li><li>item 5</li><li>item 6</li><li>item 7</li><li>item 8</li><li>item 9</li><li>item 10</li><li>item 11</li><li>item 12</li><li>item 13</li><li>item 14</li><li>item 15</li><li>item 16</li><li>item 17</li><li>item 18</li><li>item 19</li><li>item 20</li></ul></div><div id=\"output-panel\"><div>Select your items on the left</div></div>");
   
 });
 
@@ -197,7 +186,7 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
   
 
 
-  data.buffer.push("<h1>Organews</h1><h2>A ruby based newsletter processor.</h2>");
+  data.buffer.push("<div class=\"meat\">The Green Ruby Newsletter is a weekly newsletter sent by mail to a bunch of web developers.It gathers links to new content from the very past week,about web development, ruby language, but also javascript, html, css and other newsof interest for web developers, coders, scripters, etc.<br /><blockquote>purist &gt; WTF! Rubies are red, you heretic!<br />editor &gt; yeah but if it passes all tests it gets green<br />purist &gt; ...</blockquote></div>");
   
 });
 

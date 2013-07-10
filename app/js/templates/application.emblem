@@ -1,29 +1,4 @@
-#container: #wrapper
-  #titlebar
-    #logo
-      img alt="Green Ruby" height="81" src="img/green-ruby-100.png" width="100"
-    h1.head Green Ruby NewsRoom
-
-  .cell
-    #content
-      .topnav: ul
-        li: linkTo "index" | Home
-        li: linkTo "help" | Help
-        li: linkTo "letters" | Archives
-
-      .column
-        = outlet
-
-    #footer
-      a href="http://codegreenit.com"
-        img class="cg" align="left" alt="CG" width="57" height="57" src="img/codegreen.png"
-
-      a href="mailto:news@greenruby.org" style="float:right" contact
-
-      | The Green Ruby Newsletter is published by Mose
-      br
-
-      | Sponsored by
-      '
-      a href="http://codegreenit.com" Code Green IT
-      br
+#titlebar
+  #logo
+  h1.head Organews
+= outlet

@@ -1,5 +1,6 @@
 @App.Router.map(->
   @resource 'index', { path: '/' }
+  @resource 'dashboard', { path: '/dashboard' }
   @resource 'archives', (->
     @route 'letter', { path: '/newsletter/:num' }
   )
