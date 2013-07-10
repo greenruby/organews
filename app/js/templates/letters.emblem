@@ -1,9 +1,10 @@
 .menu
   h2 Archives
   ul
+  /
     each letter in controller
       li
-        span | date
-        a href=url | #011
+        span = date
+        a href=url = number
 .meat
   = outlet
