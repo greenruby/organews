@@ -8,3 +8,4 @@
 /coverage/
 /static/js/app.js
 /static/js/app.min.js
+/node_modules

@@ -14,9 +14,9 @@ module.exports = function(grunt) {
           root: 'app/js/templates/',
           dependencies: {
             jquery: 'static/js/vendor/jquery-1.9.1.min.js',
-            emblem: 'static/js/vendor/emblem-0.2.9.js',
-            ember: 'static/js/vendor/ember-1.0.0-rc.6.min.js',
-            handlebars: 'static/js/vendor/handlebars-1.0.0-rc.4.js'
+            emblem: 'static/js/vendor/emblem-0.2.9.min.js',
+            handlebars: 'static/js/vendor/handlebars-1.0.0-rc.4.js',
+            ember: 'static/js/vendor/ember-1.0.0-rc.6.min.js'
           }
         }
       }
