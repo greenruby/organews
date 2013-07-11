@@ -1,0 +1,56 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Engadget RSS Feed</title>
+    <link>http://www.engadget.com</link>
+    <description>Engadget</description>
+    <image>
+      <url>
+      http://www.blogsmithmedia.com/www.engadget.com/media/feedlogo.gif
+      </url>
+      <title>Engadget</title>
+      <link>http://www.engadget.com</link>
+    </image>
+    <language>en-us</language>
+    <copyright>
+    Copyright 2013 AOL Inc. The contents of this feed are available for non-commercial use only.
+    </copyright>
+    <generator>Blogsmith http://www.blogsmith.com/</generator>
+    <item>
+      <title>
+      <![CDATA[
+      Inhabitat's Week in Green: floating power plant, water chip and a solar-powered family car
+      ]]>
+      </title>
+      <link>
+        http://www.engadget.com/2013/07/07/floating-power-water-chip-family-solar-car/?utm_medium=feed&utm_source=Feed_Classic&utm_campaign=Engadget
+      </link>
+      <content:encoded>test content</content:encoded>
+      <guid isPermaLink="false">
+        http://www.engadget.com/2013/07/07/floating-power-water-chip-family-solar-car/
+      </guid>
+      <comments>
+        http://www.engadget.com/2013/07/07/floating-power-water-chip-family-solar-car/?utm_source=Feed_Classic&utm_medium=feed&utm_campaign=Engadget#comments
+      </comments>
+      <description>
+        <![CDATA[
+        <p><i>Each week our friends at <a href="http://inhabitat.com/">Inhabitat</a> recap the week's most interesting green developments and clean tech news for us -- it's the Week in Green.</i></p> <p class="image-container" style="text-align: center;"><a href="http://www.engadget.com/2013/07/06/floati
+        ]]>
+        <![CDATA[
+        ng-power-water-chip-family-solar-car/?utm_source=Feed_Classic&amp;utm_medium=feed&amp;utm_campaign=Engadget"><img alt="DNP Inhabitat's Week in Green " data-src-height="400" data-src-width="620" src="http://www.blogcdn.com/www.engadget.com/media/2013/07/stella-solar-family-car0003.jpg" /></a></p> <p>Fresh water is the most precious resource on Earth, and it's becoming increasingly scarce -- but <a href="http://inhabitat.com/nano-water-chip-could-make-desalination-affordable-for-everyone/">a new invention could make desalination an affordable, cost-effective technology</a>. A team of scientists from Germany and the US has developed a "<a href="http://inhabitat.com/nano-water-chip-could-make-desalination-affordable-for-everyone/">water chip</a>" that uses an electrical field to separate salt from seawater. That isn't the only new innovation that has the potential to change the world. This week <a href="http://inhabitat.com/">Inhabitat</a> took a look at the <a href="http://inhabitat.com/horizon-mass-transit-system-is-an-all-electric-train-plane-hybrid/">Horizon mass transit system</a>, a futuristic hybrid train-plane propelled by a maglev-style mechanism. The UK celebrated the launch of the <a href="http://inhabitat.com/worlds-largest-offshore-wind-farm-opens-in-thames-estuary/">world's largest offshore wind farm</a>, and <a href="http://inhabitat.com/apple-announces-plans-to-build-20mw-solar-farm-to-power-reno-data-center/">Apple announced plans to build a 18-20 MW solar plant</a> to power its data center in Reno, Nev. A 15-year-old from Canada created <a href="http://inhabitat.com/15-year-old-develops-hollow-flashlight-powered-by-body-heat/">a flashlight that is powered entirely by body heat from a human hand</a>. And in one of the week's most uplifting stories, an amputee built herself <a href="http://inhabitat.com/amputee-builds-herself-the-worlds-first-prosthetic-leg-made-from-legos/">a prosthetic leg out of Legos</a> (it might not be very practical, but it sure is cool).</p>
+         <p>Filed under: <a href="http://www.engadget.com/category/misc/?utm_source=Feed_Classic&amp;utm_medium=feed&amp;utm_campaign=Engadget" rel="tag">Misc</a>, <a href="http://www.engadget.com/category/science/?utm_source=Feed_Classic&amp;utm_medium=feed&amp;utm_campaign=Engadget" rel="tag">Science</a></p>
+         <p><strong><a href="http://www.engadget.com/2013/07/07/floating-power-water-chip-family-solar-car/?utm_source=Feed_Classic&amp;utm_medium=feed&amp;utm_campaign=Engadget#comments">Comments</a></strong></p>
+        ]]>
+      </description>
+      <category>eco</category>
+      <category>green</category>
+      <category>inhabitat</category>
+      <category>solar</category>
+      <category>transportation</category>
+      <dc:creator>
+      <![CDATA[ Inhabitat ]]>
+      </dc:creator>
+      <pubDate>Sun, 07 Jul 2013 09:00:00 -0400</pubDate>
+      <dc:identifier>21|20650223</dc:identifier>
+    </item>
+  </channel>
+</rss>

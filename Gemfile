@@ -9,22 +9,23 @@ gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
 gem 'sinatra-ember', require: 'sinatra/ember'
+gem 'nokogiri'
+gem "ruby-readability", :require => 'readability'
 
 group :development do
   gem 'thin'
   gem 'rake'
-  gem 'html2haml'
   gem 'oily_png'
   gem 'compass'
   gem 'compass-h5bp'
   gem 'awesome_print'
   gem 'pry'
-  gem 'coveralls', require: false
-  gem 'simplecov'
   gem 'rubocop'
 end
 
 group :test do
+  gem 'rake'
   gem 'rack-test'
   gem 'rspec'
+  gem 'coveralls', require: false
 end

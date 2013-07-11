@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative './app_helper'
 
 describe 'App general behaviour' do
   include Rack::Test::Methods

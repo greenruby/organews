@@ -4,4 +4,9 @@
 /manifest.yml
 /config.yml
 /.sass-cache
+/.tmp
 /coverage/
+/static/js/app.js
+/static/js/app.min.js
+/app/js/templates.js
+/node_modules
