@@ -1,4 +1,0 @@
-#titlebar
-  #logo
-  h1.head Organews
-= outlet

@@ -16,8 +16,17 @@ module.exports = function(grunt) {
             jquery: 'static/js/vendor/jquery-1.9.1.min.js',
             emblem: 'static/js/vendor/emblem-0.2.9.min.js',
             handlebars: 'static/js/vendor/handlebars-1.0.0-rc.4.js',
-            ember: 'static/js/vendor/ember-1.0.0-rc.6.min.js'
+            //ember: 'static/js/vendor/ember-1.0.0-rc.6.min.js'
           }
+        }
+      }
+    },
+    handlebars: {
+      compile: {
+        files: {
+          'app/js/templates.js': ['app/js/templates/**/*.hbs']
+        },
+        options: {
         }
       }
     },
@@ -106,6 +115,10 @@ module.exports = function(grunt) {
       emblem: {
         files: 'app/js/templates/**/*.emblem',
         tasks: ['emblem', 'concat', 'uglify']
+      },
+      handlebars: {
+        files: 'app/js/templates/**/*.hbs',
+        tasks: ['handlebars', 'concat', 'uglify']
       }
     },
     jshint: {
@@ -152,7 +165,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'emblem',
+    'handlebars',
     'coffee',
     'concat',
     'uglify',

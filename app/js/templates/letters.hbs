@@ -1,0 +1,13 @@
+<div class="menu">
+  <h2>Archives</h2>
+  <ul>
+    {{ each letter in controller }}
+      <li>
+        <span>{{ date }}</span>
+        <a href="{{ url }}">{{ number }}</a>
+      </li>
+    {{ endeach }}
+
+<div class="meat">
+  {{ outlet }}
+</div>
