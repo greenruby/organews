@@ -1,17 +1,15 @@
 @App.Router.map(->
   @resource 'index', { path: '/' }
   @resource 'dashboard', { path: '/dashboard' }
-  @resource 'archives', (->
-    @route 'letter', { path: '/newsletter/:num' }
-  )
-  @resource 'letters', (->
+  @resource 'publications', (->
+    @route 'show', { path: '/publications/:num' }
     @route 'new'
     @route 'edit'
   )
   @resource 'articles', (->
-    @route( 'show', { path: '/:article_id' } )
-    @route 'new' 
-    @route( 'edit', { path: '/:article_id/edit' } )
+    @route 'show'
+    @route 'new'
+    @route 'edit'
   )
   @route( 'help', { path: '/help' } )
 )
