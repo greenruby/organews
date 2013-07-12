@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'sinatra', github: "sinatra/sinatra"
 gem 'sinatra-contrib', github: "sinatra/sinatra-contrib"
 gem 'mongo'
-gem 'haml'
 gem 'json'
 gem 'bson_ext'
 gem 'rdiscount'

@@ -53,8 +53,6 @@ GEM
       thor (>= 0.13.6)
     fssm (0.2.10)
     guess_html_encoding (0.0.9)
-    haml (4.0.3)
-      tilt
     json (1.8.0)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
@@ -136,7 +134,6 @@ DEPENDENCIES
   compass-h5bp
   coveralls
   foreman
-  haml
   json
   mongo
   nokogiri
