@@ -8,7 +8,6 @@ require "sinatra/config_file"
 
 require 'mongo'
 require 'json'
-require 'haml'
 require 'awesome_print'
 
 require 'organews'
@@ -33,12 +32,11 @@ class App < Sinatra::Base
   set :environment, :development
   set :sessions, true
   set :stats, { server: '', id: 0 }
-  set :haml, :format => :html5
 
   get '/' do
     @title = 'Newsroom'
     @stats = settings.stats
-    haml :index
+    erb :index
   end
 
   get '/v1/:thing' do
