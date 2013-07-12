@@ -21,12 +21,15 @@ module.exports = function(grunt) {
         }
       }
     },
-    handlebars: {
+    ember_handlebars: {
       compile: {
+        options: {
+          processName: function(filename) {
+            return filename.match(/.*\/(.*).hbs$/)[1];
+          }
+        },
         files: {
           'app/js/templates.js': ['app/js/templates/**/*.hbs']
-        },
-        options: {
         }
       }
     },
@@ -118,7 +121,7 @@ module.exports = function(grunt) {
       },
       handlebars: {
         files: 'app/js/templates/**/*.hbs',
-        tasks: ['handlebars', 'concat', 'uglify']
+        tasks: ['ember_handlebars', 'concat', 'uglify']
       }
     },
     jshint: {
@@ -165,7 +168,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'handlebars',
+    'ember_handlebars',
     'coffee',
     'concat',
     'uglify',
