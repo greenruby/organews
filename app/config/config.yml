@@ -1,5 +1,6 @@
 ---
 production: &default
+  appname: Organews
   db:
     name: greenruby
   stats:

@@ -1,3 +1,11 @@
+$grey: #6f6664;
+$greylight: lighten($grey,30%);
+$greylighter: lighten($grey,50%);
+$greydark: darken($grey,20%);
+$greydarker: darken($grey,30%);
+
+$panel-height: 100%;
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;

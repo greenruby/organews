@@ -8,6 +8,7 @@ require "sinatra/config_file"
 
 require 'mongo'
 require 'json'
+require 'awesome_print'
 
 require 'organews'
 
@@ -21,7 +22,7 @@ class App < Sinatra::Base
   include Organews::Tools
 
   register Sinatra::ConfigFile
-  config_file 'config.yml'
+  config_file 'app/config/config.yml'
 
   set :root, File.dirname(__FILE__)
   set :static, true
@@ -33,8 +34,7 @@ class App < Sinatra::Base
   set :stats, { server: '', id: 0 }
 
   get '/' do
-    @title = 'Newsroom'
-    @stats = settings.stats
+    @title = settings.appname
     erb :index
   end
 
