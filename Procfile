@@ -1,2 +1,2 @@
-grunt: grunt
+grunt: grunt --force
 sinatra: rackup
