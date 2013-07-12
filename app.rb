@@ -41,7 +41,7 @@ class App < Sinatra::Base
   end
 
   get '/v1/:thing' do
-    DB.collection(params[:thing]).find.toa.map{ |t| frombsonid(t) }.to_json
+    DB.collection(params[:thing]).find.to_a.map{ |t| frombsonid(t) }.to_json
   end
 
   get '/v1/:thing/:id' do
