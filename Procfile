@@ -1,2 +1,2 @@
 grunt: grunt --force
-sinatra: rackup
+sinatra: rerun app.rb

@@ -22,6 +22,7 @@ group :development do
   gem 'pry'
   gem 'rubocop'
   gem 'foreman'
+  gem 'rerun'
 end
 
 group :test do
