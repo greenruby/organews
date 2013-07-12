@@ -21,6 +21,7 @@ group :development do
   gem 'awesome_print'
   gem 'pry'
   gem 'rubocop'
+  gem 'foreman'
 end
 
 group :test do
