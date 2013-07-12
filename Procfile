@@ -1,2 +1,2 @@
 grunt: grunt --force
-sinatra: rerun app.rb
+sinatra: rerun app.rb --pattern "**/*.rb"

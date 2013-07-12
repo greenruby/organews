@@ -1,6 +1,6 @@
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
-    @content; 
+    @content;
   }
   @-moz-keyframes #{$name} {
     @content;
@@ -10,7 +10,7 @@
   }
   @keyframes #{$name} {
     @content;
-  } 
+  }
 }
 
 @mixin animation($name, $duration: 3s, $timefn: ease, $delay: 0s, $count: 1, $direction: normal) {
