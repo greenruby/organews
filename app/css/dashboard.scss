@@ -1,13 +1,15 @@
+@import "base";
 .dash-view {
-	height: 100%;
+	height: 90%;
 	font-size: 1.4em;
 }
 
+$panel-height: 100%;
 #feeds-panel {
 	position: relative;
 	display: inline-block;
 	background-color: #333;
-	height: 102%;
+	height: $panel-height;
 	width: 20%;
 	color: #fff;
 	vertical-align: top;
@@ -29,7 +31,7 @@
 	position: relative;
 	display: inline-block;
 	background-color: #3a3a3a;
-	height: 102%;
+	height: $panel-height;
 	width: 30%;
 	color: #fff;
 	vertical-align: top;
@@ -47,12 +49,23 @@
 		}
 	}
 }
+
 #output-panel {
 	position: relative;
 	display: inline-block;
-	height: 102%;
+	height: $panel-height;
 	width: 50%;	
 	vertical-align: top;
 	text-align: center;
-	box-shadow: -2px 0 4px rgba(0,0,0,0.6);
+	box-shadow: -4px 0 4px rgba(0,0,0,0.6);
+	.prompt {
+		font-size: 2.0em;
+		padding: 40px;
+		@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
+	}
+}
+
+@include keyframes(flash) {
+	from { color: #000; }
+	to { color: #eee; }
 }
