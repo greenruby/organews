@@ -1,12 +1,14 @@
-<div class="menu">
-  <h2>Publications</h2>
-  <ul>
+<div class="list-panel">
+  <ul class="publications">
+    <li class="header">Unpublished</li>
     {{ each letter in controller }}
       <li>
         <span>{{ date }}</span>
         <a href="{{ url }}">{{ number }}</a>
       </li>
     {{ endeach }}
+    <li class="header">Published</li>
+    <li>Emerald News #1</li>
   </ul>
 </div>
 

@@ -20,6 +20,9 @@
 			line-height: 30px;
 			padding: 5px 20px;
 			border-bottom: 1px solid $grey;
+			&:hover {
+				background-color: $greydarker;
+			}
 		}
 	}
 }
@@ -41,6 +44,10 @@
 			line-height: 30px;
 			padding: 5px 20px;
 			border-bottom: 1px solid $grey;
+			cursor: pointer;
+			&:hover {
+				background-color: $greydarker;
+			}
 		}
 	}
 }

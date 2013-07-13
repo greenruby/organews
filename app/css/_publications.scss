@@ -1,0 +1,36 @@
+.publications-view {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	.list-panel{
+		display: inline-block;
+		overflow: scroll;
+		width: 30%;
+		height: 100%;
+		background-color: $greydark;
+		.publications {
+			margin: 0;
+			padding: 0;
+			color: #fff;
+			list-style-type: none;
+			li.header {
+				color: $greylight;
+				cursor: default;
+				&:hover {
+					background-color: $greydark;
+				}
+			}
+			li {
+				height: 30px;
+				line-height: 30px;
+				padding: 5px 20px;
+				border-bottom: 1px solid $grey;
+				background-color: $greydark;
+				cursor: pointer;
+				&:hover {
+					background-color: $greydarker;
+				}
+			}
+		}
+	}
+}
