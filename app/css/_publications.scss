@@ -13,26 +13,6 @@
 			padding: 0;
 			color: #fff;
 			list-style-type: none;
-			li.header {
-				color: $greylight;
-				cursor: default;
-				text-align: center;
-				line-height: 40px;
-				&:hover {
-					background-color: $greydark;
-				}
-			}
-			li.new {
-				text-align: center;
-				border: 0;
-				text-decoration: underline;
-				line-height: 40px;
-				&:hover {
-					text-decoration: none;
-					background-color: $button_back_hover;
-					color: $button_fore;
-				}
-			}
 			li {
 				height: 40px;
 				line-height: 20px;

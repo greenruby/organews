@@ -2,68 +2,11 @@
 	height: 100%;
 }
 
-#feeds-panel {
-	position: relative;
-	display: inline-block;
-	background-color: $greydark;
-	height: $panel-height;
-	width: 20%;
-	color: #fff;
-	vertical-align: top;
-	overflow: scroll;
-	.feeds {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		li {
-			height: 60px;
-			line-height: 30px;
-			padding: 5px 20px;
-			border-bottom: 1px solid $grey;
-			&:hover {
-				background-color: $greydarker;
-			}
-		}
-	}
-}
-#items-panel {
-	position: relative;
-	display: inline-block;
-	background-color: $greydark;
-	height: $panel-height;
-	width: 30%;
-	color: #fff;
-	vertical-align: top;
-	overflow: scroll;
-	.items {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		li {
-			height: 30px;
-			line-height: 30px;
-			padding: 5px 20px;
-			border-bottom: 1px solid $grey;
-			cursor: pointer;
-			&:hover {
-				background-color: $greydarker;
-			}
-		}
-	}
-}
 
-#output-panel {
-	position: relative;
-	display: inline-block;
-	height: $panel-height;
-	width: 50%;
-	vertical-align: top;
-	text-align: center;
-	.prompt {
-		font-size: 2.0em;
-		padding: 40px;
-		@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
-	}
+.prompt {
+	font-size: 2.0em;
+	padding: 40px;
+	@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
 }
 
 @include keyframes(flash) {

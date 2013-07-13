@@ -55,6 +55,73 @@ a {
 	width: 100%;
 }
 
+#first-panel {
+	position: relative;
+	display: inline-block;
+	background-color: $greydark;
+	height: $panel-height;
+	width: 20%;
+	color: #fff;
+	vertical-align: top;
+	overflow-y: scroll;
+}
+
+#second-panel {
+	position: relative;
+	display: inline-block;
+	background-color: $greydark;
+	height: $panel-height;
+	width: 30%;
+	color: #fff;
+	vertical-align: top;
+	overflow-y: scroll;
+}
+
+.inpanel {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	li {
+		height: 30px;
+		line-height: 30px;
+		padding: 5px 20px;
+		border-bottom: 1px solid $grey;
+		cursor: pointer;
+		&:hover {
+			background-color: $greydarker;
+		}
+	}
+}
+.large {
+	li {
+		height: 60px;
+	}
+}
+.compact {
+	li {
+		height: 40px;
+		line-height: 20px;
+	}
+}
+.title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.date {
+	font-size: 0.7em;
+	text-align: left;
+	color: $greylighter
+}
+#third-panel {
+	position: relative;
+	display: inline-block;
+	height: $panel-height;
+	width: 50%;
+	vertical-align: top;
+	text-align: center;
+}
+
 #foot {
 	position: absolute;
 	bottom: 0;
@@ -76,6 +143,7 @@ a {
 	background-color: $button_back;
 	color: $button_fore;
 	font-weight: bold;
+	border: 0;
 	&:hover {
 		background-color: $button_back_hover;
 	}
@@ -86,23 +154,19 @@ a {
 	}
 }
 
+.btn.small {
+	padding: .1em .5em;
+	font-size: .8em;
+}
 .padded {
 	margin: 1em 0;
 }
 
-.menu {
-	border-right: 2px dotted $grey;
-	display: inline-block;
-	position: relative;
+.menunav {
+	background-color: $greydarker;
 	bottom: 0;
-	ul {
-		margin: 0;
-		padding: 0;
-		li {
-			padding: 0;
-			margin: 0;
-			padding: .2em 1em;
-			background-color: $greylighter;
-		}
-	}
+	padding: .2em;
+}
+.meat {
+
 }

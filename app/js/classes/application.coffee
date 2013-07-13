@@ -5,7 +5,6 @@
     @replaceWith 'feeds'
 
 @App.PageRoute = Ember.Route.extend
-  console.log(this)
   model: (params)->
     $.ajax("/pages/" + params.page_name).done( (data)->
       controller.set('content', data)
@@ -16,9 +15,8 @@
     )
 
 
-@App.PageController = Em.ArrayController.extend
-  console.log(this)
-
+@App.PageController = Em.ArrayController.extend {
+}
 
 @App.ApplicationView = Ember.View.extend {
 	classNames: ['appl-view']

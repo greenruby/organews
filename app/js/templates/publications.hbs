@@ -1,7 +1,13 @@
-<div class="list-panel">
-  <ul class="publications">
+<div id="first-panel">
+  <div class="menunav">
+    {{#linkTo publications.new class="btn small" }}Create{{/linkTo}}
+    {{#if controller}}
+      <button class="btn small" >Unpublished</button>
+      <button class="btn small" >Published</button>
+    {{/if}}
+  </div>
+  <ul class="inpanel compact">
     {{#each controller }}
-      <li class="header"><a href="#">Unpublished</a> | <a href="#">Published</a></li>
       <li>
         <div class="title">{{ title }}</div>
         <div class="date">{{ date created_at "%Y-%m-%d" }}</div>
@@ -18,6 +24,12 @@
   </ul>
 </div>
 
-<div class="meat">
+
+<div id="second-panel">
+
+</div>
+
+<div id="third-panel">
+  te meat
   {{outlet}}
 </div>

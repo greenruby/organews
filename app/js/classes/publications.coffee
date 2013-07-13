@@ -8,11 +8,14 @@
   ).property('number')
 }
 
-@App.PublicationRoute = Ember.Route.extend
+@App.PublicationRoute = Em.Route.extend
   model: (params)->
     App.Publication.find params.num
 
-@App.PublicationsRoute = Ember.Route.extend
+
+# Collection: Publications
+
+@App.PublicationsRoute = Em.Route.extend
   model: ->
     # mock model, kill me after build the real data
     # App.Publication.find()
@@ -23,7 +26,6 @@
 @App.PublicationsView = Em.View.extend
   classNames: ['publications-view']
 
-@App.PublicationsNewRoute = Ember.Route.extend
-  setupController: (c, m)->
-    @_super(c, m)
-    c.create()
+@App.PublicationsNewRoute = Em.Route.extend {}
+
+
