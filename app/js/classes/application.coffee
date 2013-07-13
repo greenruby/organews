@@ -10,8 +10,6 @@
       controller.set('content', data)
     )
 
-
-
 @App.ApplicationView = Ember.View.extend {
 	classNames: ['appl-view']
 }
