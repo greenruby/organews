@@ -4,6 +4,14 @@ $greylighter: lighten($grey,50%);
 $greydark: darken($grey,20%);
 $greydarker: darken($grey,30%);
 
+$button_back: #607080;
+$button_back_hover: lighten($button_back,10%);
+$button_fore: #fff;
+
+$button_focus_back: darken($button_back,10%);
+$button_focus_back_hover: lighten($button_focus_back,10%);
+$button_focus_fore: #fff;
+
 $panel-height: 100%;
 
 @mixin keyframes($name) {

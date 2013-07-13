@@ -7,6 +7,10 @@ html,body {
 	box-model: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 #head {
 	position: absolute;
 	top: 0;
@@ -21,6 +25,26 @@ html,body {
 		margin: 0;
 		padding: 0 20px;
 		font-size: 2em;
+		display: inline-block;
+	}
+	.nav {
+		display: inline-block;
+		float: right;
+		padding: 0 20px;
+		a {
+			padding: .3em 2em;
+			background-color: $button_back;
+			color: $button_fore;
+			font-weight: bold;
+			&:hover {
+				background-color: $button_back_hover;
+			}
+			&.active {
+				background-color: $button_focus_back;
+				color: $button_focus_fore;
+				padding-bottom: .9em;
+			}
+		}
 	}
 }
 
