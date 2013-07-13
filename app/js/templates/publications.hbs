@@ -1,10 +1,10 @@
 <div class="list-panel">
   <ul class="publications">
-    <li class="header"><a href="#">Unpublished</a> | <a href="#">Published</a></li>
     {{#each controller }}
+      <li class="header"><a href="#">Unpublished</a> | <a href="#">Published</a></li>
       <li>
         <div class="title">{{ title }}</div>
-        <div class="date">{{ date }}</div>
+        <div class="date">{{ date created_at "%Y-%m-%d" }}</div>
       </li>
     {{else}}
       {{this}}
