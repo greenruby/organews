@@ -1,17 +1,18 @@
 <div class="list-panel">
-  <ul>
-    <li class="header">Published</li>
+  <ul class="publications">
+    <li class="header"><a href="#">Unpublished</a> | <a href="#">Published</a></li>
     {{#each controller }}
       <li>
         <div class="title">{{ title }}</div>
         <div class="date">{{ date }}</div>
       </li>
     {{else}}
-      <li>
+      {{this}}
+      <li class="header">
         <div>No publication yet</div>
-        <div class="padded">
-          <a href="#" class="btn" {{action create_publication}}>Create a new one</a>
-        </div>
+      </li>
+      <li class="new" {{action create_publication}}>
+        Create a new one
       </li>
     {{/each }}
   </ul>
