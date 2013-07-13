@@ -2,7 +2,7 @@
   @resource 'index', { path: '/' }
   @resource 'feeds', { path: '/feeds' }
   @resource 'publications', (->
-    @route 'show', { path: '/publications/:num' }
+    @route 'show'
     @route 'new'
     @route 'edit'
   )
