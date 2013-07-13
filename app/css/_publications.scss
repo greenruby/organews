@@ -1,0 +1,66 @@
+.publications-view {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	.list-panel{
+		display: inline-block;
+		overflow-y: scroll;
+		width: 30%;
+		height: 100%;
+		background-color: $greydark;
+		.publications {
+			margin: 0;
+			padding: 0;
+			color: #fff;
+			list-style-type: none;
+			li.header {
+				color: $greylight;
+				cursor: default;
+				text-align: center;
+				line-height: 40px;
+				&:hover {
+					background-color: $greydark;
+				}
+			}
+			li.new {
+				text-align: center;
+				border: 0;
+				text-decoration: underline;
+				line-height: 40px;
+				&:hover {
+					text-decoration: none;
+					background-color: $button_back_hover;
+					color: $button_fore;
+				}
+			}
+			li {
+				height: 40px;
+				line-height: 20px;
+				padding: 5px 20px;
+				border-bottom: 1px solid $grey;
+				background-color: $greydark;
+				cursor: pointer;
+				a {
+					color: #fff;
+					text-decoration: underline;
+					&:hover {
+						color: $link_hover;
+					}
+				}
+				.title {
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+				.date {
+					font-size: 0.5em;
+					text-align: left;
+					color: $greylighter
+				}
+				&:hover {
+					background-color: $greydarker;
+				}
+			}
+		}
+	}
+}

@@ -13,14 +13,17 @@
     App.Publication.find params.num
 
 @App.PublicationsRoute = Ember.Route.extend
-  model: ()->
-    App.Publication.find()
+  model: ->
+    # mock model, kill me after build the real data
+    # App.Publication.find()
+    [{ title: 'Emerald News #1', url: 'http:/www.google.com', date: new Date(), number: 1}]
   setupController: (c, m)->
-    console.log(m)
+    c.set('model', m)
+
+@App.PublicationsView = Em.View.extend
+  classNames: ['publications-view']
 
 @App.PublicationsNewRoute = Ember.Route.extend
   setupController: (c, m)->
     @_super(c, m)
     c.create()
-
-@App.PublicationsController = Em.ArrayController.extend {}
