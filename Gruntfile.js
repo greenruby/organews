@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           dependencies: {
             jquery: 'static/js/vendor/jquery-1.9.1.min.js',
             emblem: 'static/js/vendor/emblem-0.2.9.min.js',
-            handlebars: 'static/js/vendor/handlebars-1.0.0-rc.4.js',
+            handlebars: 'static/js/vendor/handlebars-1.0.0-rc.4.js'
             //ember: 'static/js/vendor/ember-1.0.0-rc.6.min.js'
           }
         }
@@ -60,13 +60,9 @@ module.exports = function(grunt) {
           'app/js/lib/*.js',
           '.tmp/js/app.js',
           '.tmp/js/store.js',
-          '.tmp/js/models/*.js',
-          '.tmp/js/controllers/*.js',
-          'app/js/views/*.js',
-          'app/js/helpers/*.js',
-          '.tmp/js/routes.js',
-          '.tmp/js/routes/*.js',
-          'app/js/templates.js'
+          '.tmp/js/router.js',
+          'app/js/templates.js',
+          '.tmp/js/classes/*.js'
         ],
         dest: 'static/js/app.js'
       }
