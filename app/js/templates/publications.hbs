@@ -1,15 +1,21 @@
 <div class="menu">
-  <h2>Publications</h2>
   <ul>
-    {{ each letter in controller }}
+    {{#each letter in controller }}
       <li>
         <span>{{ date }}</span>
         <a href="{{ url }}">{{ number }}</a>
       </li>
-    {{ endeach }}
+    {{else}}
+      <li>
+        <div>No publication yet</div>
+        <div class="padded">
+          <a href="#" class="btn" {{action create_publication}}>Create a new one</a>
+        </div>
+      </li>
+    {{/each }}
   </ul>
 </div>
 
 <div class="meat">
-  {{ outlet }}
+  {{outlet}}
 </div>

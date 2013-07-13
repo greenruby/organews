@@ -1,1 +1,0 @@
-@App.PublicationsController = Em.ArrayController.extend {}

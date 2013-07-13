@@ -70,3 +70,39 @@ a {
 		font-size: 0.8em;
 	}
 }
+
+.btn {
+	padding: .2em 2em;
+	background-color: $button_back;
+	color: $button_fore;
+	font-weight: bold;
+	&:hover {
+		background-color: $button_back_hover;
+	}
+	&.active {
+		background-color: $button_focus_back;
+		color: $button_focus_fore;
+		padding-bottom: .9em;
+	}
+}
+
+.padded {
+	margin: 1em 0;
+}
+
+.menu {
+	border-right: 2px dotted $grey;
+	display: inline-block;
+	position: relative;
+	bottom: 0;
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			padding: 0;
+			margin: 0;
+			padding: .2em 1em;
+			background-color: $greylighter;
+		}
+	}
+}
