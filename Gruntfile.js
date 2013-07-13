@@ -58,14 +58,7 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'app/js/lib/*.js',
-          '.tmp/js/app.js',
-          '.tmp/js/store.js',
-          '.tmp/js/models/*.js',
-          '.tmp/js/controllers/*.js',
-          'app/js/views/*.js',
-          'app/js/helpers/*.js',
-          '.tmp/js/routes.js',
-          '.tmp/js/routes/*.js',
+          '.tmp/js/**/*.js',
           'app/js/templates.js'
         ],
         dest: 'static/js/app.js'

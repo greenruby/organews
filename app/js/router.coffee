@@ -11,5 +11,5 @@
     @route 'new'
     @route 'edit'
   )
-  @route( 'help', { path: '/help' } )
+  @route( 'page', { path: '/page/:page_name' } )
 )

@@ -7,7 +7,6 @@ gem 'json'
 gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
-gem 'sinatra-ember', require: 'sinatra/ember'
 gem 'nokogiri'
 gem "ruby-readability", :require => 'readability'
 
