@@ -3,5 +3,5 @@
 }
 
 @App.FeedsView = Ember.View.extend {
-	classNames: ['dash-view']
+	classNames: ['inmiddle']
 }

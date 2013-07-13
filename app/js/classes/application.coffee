@@ -19,5 +19,5 @@
 }
 
 @App.ApplicationView = Ember.View.extend {
-	classNames: ['appl-view']
+	classNames: ['inmiddle']
 }

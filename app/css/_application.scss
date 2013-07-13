@@ -54,7 +54,13 @@ a {
 	bottom: 2em;
 	width: 100%;
 }
-
+.inmiddle {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
 #first-panel {
 	position: relative;
 	display: inline-block;
@@ -120,6 +126,7 @@ a {
 	width: 50%;
 	vertical-align: top;
 	text-align: center;
+	overflow-y: scroll;
 }
 
 #foot {

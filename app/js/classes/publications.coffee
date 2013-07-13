@@ -24,7 +24,7 @@
     c.set('model', m)
 
 @App.PublicationsView = Em.View.extend
-  classNames: ['publications-view']
+  classNames: ['inmiddle']
 
 @App.PublicationsNewRoute = Em.Route.extend {}
 
