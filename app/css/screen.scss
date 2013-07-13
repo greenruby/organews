@@ -10,9 +10,9 @@
 @include h5bp-base-styles;
 @include h5bp-chromeframe;
 
-@import "base";
-@import "application";
-@import "dashboard";
+@import "_base";
+@import "_application";
+@import "_dashboard";
 
 @include h5bp-helpers;
 @include h5bp-media;
