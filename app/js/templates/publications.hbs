@@ -5,6 +5,7 @@
       <button class="btn small" >Archives</button>
     {{/if}}
   </div>
+  {{ App.PublicationsController.length }}
   <form class="menuform" id="new_publication" style="display: none">
     <div>{{view Em.TextField id="title" placeholder="Title"}}</div>
     <div>{{view Em.TextArea id="edito" rows="10" placeholder="Edito"}}</div>
@@ -15,13 +16,12 @@
     </div>
   </form>
   <ul class="inpanel compact">
-    {{#each controller }}
+    {{#each controller}}
       <li>
         <div class="title">{{ title }}</div>
         <div class="date">{{ date created_at "%Y-%m-%d" }}</div>
       </li>
     {{else}}
-      {{this}}
       <li class="header">
         <div>No publication yet</div>
       </li>

@@ -65,6 +65,18 @@ module.exports = function(grunt) {
           '.tmp/js/classes/*.js'
         ],
         dest: 'static/js/app.js'
+      },
+      dev: {
+        src: [
+          'app/js/lib/*.js',
+          '.tmp/js/app.js',
+          '.tmp/js/dev.js',
+          '.tmp/js/store.js',
+          '.tmp/js/router.js',
+          'app/js/templates.js',
+          '.tmp/js/classes/*.js'
+        ],
+        dest: 'static/js/app.js'
       }
     },
     uglify: {
@@ -166,7 +178,16 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'ember_handlebars',
     'coffee',
-    'concat',
+    'concat:dist',
+    'uglify',
+    'compass',
+    'regarde'
+  ]);
+
+  grunt.registerTask('dev', [
+    'ember_handlebars',
+    'coffee',
+    'concat:dev',
     'uglify',
     'compass',
     'regarde'
