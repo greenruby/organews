@@ -39,7 +39,7 @@
       case 'Y':
         return get(date, 'year');
       case 'C':
-        return parseInt(get(date, 'year') / 100);
+        return parseInt(get(date, 'year') / 100, 10);
       case 'y':
         return get(date, 'year') % 100;
       case 'm':
@@ -57,7 +57,7 @@
       case 'H':
         return lpad(get(date, 'hour'), 2, '0');
       case 'k':
-        return date.fmt('%_H')
+        return date.fmt('%_H');
       case 'I':
         return lpad(twelvehour(get(date, 'hour')), 2, '0');
       case 'l':
