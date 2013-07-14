@@ -4,11 +4,23 @@ html,body {
 }
 
 * {
-	box-model: border-box;
+	box-sizing: border-box;
 }
 
 a {
 	text-decoration: none;
+}
+input[type=text], textarea {
+	border: 1px solid $grey;
+	background-color: $greylighter;
+	color: $greydarker;
+	padding: .2em .5em;
+	@include border-radius(.2em);
+	@include box-shadow(0 0 3px 1px $greydarker, inset 0 0 12px -4px $grey);
+	&:focus {
+		@include box-shadow(0 0 5px 1px $input_focus, inset 0 0 6px -1px white);
+		border: 1px solid $input_focus;
+	}
 }
 
 #head {
@@ -88,7 +100,7 @@ a {
 	padding: 0;
 	list-style-type: none;
 	li {
-		height: 30px;
+		height: 40px;
 		line-height: 30px;
 		padding: 5px 20px;
 		border-bottom: 1px solid $grey;
@@ -100,12 +112,12 @@ a {
 }
 .large {
 	li {
-		height: 60px;
+		height: 70px;
 	}
 }
 .compact {
 	li {
-		height: 40px;
+		height: 50px;
 		line-height: 20px;
 	}
 }
@@ -151,6 +163,9 @@ a {
 	color: $button_fore;
 	font-weight: bold;
 	border: 0;
+	@include border-radius(.2em);
+	@include text-shadow(-1px 1px 5px $greydark);
+	@include box-shadow(0 0 3px 1px $greydarker, inset 0 0 12px -4px $greylighter);
 	&:hover {
 		background-color: $button_back_hover;
 	}
@@ -165,6 +180,13 @@ a {
 	padding: .1em .5em;
 	font-size: .8em;
 }
+.btn.primary {
+	background-color: $button_primary_back;
+	color: $button_primary_fore;
+	&:hover {
+		background-color: $button_primary_back_hover;
+	}
+}
 .padded {
 	margin: 1em 0;
 }
@@ -174,7 +196,16 @@ a {
 	bottom: 0;
 	padding: .2em;
 }
-
+.menuform {
+	background-color: $grey;
+	padding: .3em;
+	div {
+		margin-bottom: .3em;
+	}
+	input[type=text] {
+		width: 100%;
+	}
+}
 .prompt {
 	font-size: 2.0em;
 	padding: 40px;

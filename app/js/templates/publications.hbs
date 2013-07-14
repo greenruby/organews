@@ -1,11 +1,17 @@
 <div id="first-panel">
   <div class="menunav">
-    {{#linkTo publications.new class="btn small" }}Create{{/linkTo}}
+    <button class="btn small" {{action "new_publication"}}>Create</button>
     {{#if controller}}
-      <button class="btn small" >Unpublished</button>
-      <button class="btn small" >Published</button>
+      <button class="btn small" >Archives</button>
     {{/if}}
   </div>
+  <form class="menuform" id="new_publication">
+    <div>{{view Em.TextField id="title" placeholder="Title"}}</div>
+    <div>
+      <button class="btn" {{action "cancel_new_publication"}}>Cancel</button>
+      <button class="btn primary" {{action "save_new_publication"}}>OK</button>
+    </div>
+  </form>
   <ul class="inpanel compact">
     {{#each controller }}
       <li>

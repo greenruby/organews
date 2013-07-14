@@ -21,11 +21,18 @@
     # App.Publication.find()
     [{ title: 'Emerald News #1', url: 'http:/www.google.com', created_at: new Date(), number: 1}]
   setupController: (c, m)->
+    $('#new_publication').hide()
     c.set('model', m)
+  events:
+    new_publication: ->
+      $('#new_publication').show()
+    cancel_new_publication: ->
+      $('#new_publication').hide()
+    save_new_publication: ->
+      $('#new_publication').hide()
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']
 
-@App.PublicationsNewRoute = Em.Route.extend {}
 
 

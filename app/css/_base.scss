@@ -6,9 +6,15 @@ $greydarker: darken($grey,30%);
 
 $link_hover: #ddd;
 
+$input_focus: #336699;
+
 $button_back: #607080;
 $button_back_hover: lighten($button_back,10%);
 $button_fore: #fff;
+
+$button_primary_back: saturate($button_back,50%);
+$button_primary_back_hover: saturate($button_back_hover,30%);
+$button_primary_fore: #fff;
 
 $button_focus_back: darken($button_back,10%);
 $button_focus_back_hover: lighten($button_focus_back,10%);
