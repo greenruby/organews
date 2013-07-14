@@ -112,7 +112,7 @@ input[type=text], textarea {
 }
 .large {
 	li {
-		height: 70px;
+		height: 60px;
 	}
 }
 .compact {
@@ -130,6 +130,12 @@ input[type=text], textarea {
 	font-size: 0.7em;
 	text-align: left;
 	color: $greylighter
+}
+.header {
+	cursor: default !important;
+	&:hover {
+		background-color: $greydark !important;
+	}
 }
 #third-panel {
 	position: relative;
