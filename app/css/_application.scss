@@ -202,8 +202,11 @@ input[type=text], textarea {
 	div {
 		margin-bottom: .3em;
 	}
-	input[type=text] {
+	input[type=text], textarea {
 		width: 100%;
+	}
+	.action button:last-child {
+		float: right;
 	}
 }
 .prompt {

@@ -7,7 +7,9 @@
   </div>
   <form class="menuform" id="new_publication">
     <div>{{view Em.TextField id="title" placeholder="Title"}}</div>
-    <div>
+    <div>{{view Em.TextArea id="edito" rows="10" placeholder="Edito"}}</div>
+    <div>{{view Em.TextField id="created_at" placeholder="Publication date"}}</div>
+    <div class="action">
       <button class="btn" {{action "cancel_new_publication"}}>Cancel</button>
       <button class="btn primary" {{action "save_new_publication"}}>OK</button>
     </div>
