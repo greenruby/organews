@@ -9,5 +9,6 @@
 /coverage/
 /static/js/app.js
 /static/js/app.min.js
+/static/css/screen.css
 /app/js/templates.js
 /node_modules
