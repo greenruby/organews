@@ -70,6 +70,8 @@ input[type=text], textarea {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	min-width: 1300px;
+	overflow-x: scroll; 
 	margin: 0;
 	padding: 0;
 }
@@ -79,6 +81,7 @@ input[type=text], textarea {
 	background-color: $greydark;
 	height: $panel-height;
 	width: 20%;
+	min-width: 260px;
 	color: #fff;
 	vertical-align: top;
 	overflow-y: scroll;
@@ -90,6 +93,7 @@ input[type=text], textarea {
 	background-color: $greydark;
 	height: $panel-height;
 	width: 30%;
+	min-width: 260px;
 	color: #fff;
 	vertical-align: top;
 	overflow-y: scroll;
@@ -112,7 +116,7 @@ input[type=text], textarea {
 }
 .large {
 	li {
-		height: 70px;
+		height: 60px;
 	}
 }
 .compact {
@@ -131,11 +135,18 @@ input[type=text], textarea {
 	text-align: left;
 	color: $greylighter
 }
+.header {
+	cursor: default !important;
+	&:hover {
+		background-color: $greydark !important;
+	}
+}
 #third-panel {
 	position: relative;
 	display: inline-block;
 	height: $panel-height;
 	width: 50%;
+	overflow: scroll;
 	vertical-align: top;
 	text-align: center;
 	overflow-y: scroll;
