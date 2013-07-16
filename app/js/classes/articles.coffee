@@ -4,15 +4,9 @@
   created_at: DS.attr 'date'
   comment: DS.attr 'string'
   tags: DS.hasMany 'App.Tag'
-  publication: DS.belongsTo 'App.Publication'
+  edition: DS.belongsTo 'App.Edition'
   section: DS.belongsTo 'App.Section'
   reporter: DS.belongsTo 'App.User'
-}
-
-@App.Section = DS.Model.extend {
-  label: DS.attr 'string'
-  intro: DS.attr 'string'
-  order: DS.attr 'number'
 }
 
 @App.ArticleRoute = Ember.Route.extend {

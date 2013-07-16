@@ -1,12 +1,53 @@
+# data models
+
 @App.Publication = DS.Model.extend {
-  number: DS.attr 'number'
-  edito: DS.attr 'string'
-  created_at: DS.attr 'date'
-  articles: DS.hasMany 'App.Section'
-  padded_number: (->
-    ("000" + @get('number')).slice(-3)
-  ).property('number')
+  id: DS.attr 'number'
+  name: DS.attr 'string'
+  title: DS.attr 'string'
+  template: DS.attr 'string'
+  url: DS.attr 'string'
+  editions: DS.hasMany 'App.Edition'
+  sections: DS.hasMany 'App.Section'
 }
+
+@App.Section = DS.Model.extend {
+  id: DS.attr 'number'
+  label: DS.attr 'string'
+  intro: DS.attr 'string'
+  order: DS.attr 'number'
+  publication: DS.belongsTo 'App.Publication'
+}
+
+@App.Publication.FIXTURES = [
+  {
+    id: 1,
+    name: 'Green Ruby',
+    title: 'Green ruby #000',
+    template: 'grn',
+    url: 'http://greenruby.org',
+    edition_ids: [ 1, 2 ],
+    section_ids: [ 1 ]
+  },
+  {
+    id: 2,
+    name: 'La Gazette',
+    title: 'Gazette numero 000',
+    template: 'gaz',
+    url: '',
+    edition_ids: [ ],
+    section_ids: [ ]
+  }
+]
+
+@App.Section.FIXTURES = [
+  {
+    id: 1,
+    label: "Use",
+    intro: "What to use",
+    order: 1,
+    publication_id: 1
+  }
+]
 
 @App.PublicationRoute = Em.Route.extend
   model: (params)->
@@ -17,9 +58,7 @@
 
 @App.PublicationsRoute = Em.Route.extend
   model: ->
-    # mock model, kill me after build the real data
-    # App.Publication.find()
-    [{ title: 'Emerald News #1', url: 'http:/www.google.com', created_at: new Date(), number: 1}]
+   App.Publication.all()
   setupController: (c, m)->
     $('#new_publication').hide()
     c.set('model', m)
@@ -33,6 +72,4 @@
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']
-
-
 
