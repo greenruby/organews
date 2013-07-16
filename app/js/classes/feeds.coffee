@@ -1,3 +1,16 @@
+@App.Item = DS.Model.extend
+	title        : DS.attr 'string'
+	url          : DS.attr 'string'
+	published_at : DS.attr 'date'
+	html         : DS.attr 'stirng'
+
+
+@App.Feeds = DS.Model.extend
+	title      : DS.attr 'string'
+	url        : DS.attr 'string'
+	created_at : DS.attr 'date'
+	items      : DS.hasMany 'App.Item'
+
 @App.FeedsRoute = Ember.Route.extend
 	selectedFeed: {},
 
