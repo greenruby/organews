@@ -11,6 +11,7 @@
 	created_at : DS.attr 'date'
 	items      : DS.hasMany 'App.Item'
 
+
 @App.FeedsRoute = Ember.Route.extend
 	selectedFeed: {},
 

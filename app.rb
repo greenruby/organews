@@ -47,7 +47,7 @@ class App < Sinatra::Base
   end
 
   post '/v1/:thing' do
-    oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read.tos))
+    oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read.to_s))
     "{\"id\": \"#{oid.to_s}\"}"
   end
 
@@ -58,7 +58,7 @@ class App < Sinatra::Base
   put '/v1/:thing/:id' do
     DB.collection(params[:thing]).update({
       'id' => tobsonid(params[:id])},
-      {'$set' => JSON.parse(request.body.read.tos).reject{|k,v| k == 'id'}
+      {'$set' => JSON.parse(request.body.read.to_s).reject{|k,v| k == 'id'}
     })
   end
 
