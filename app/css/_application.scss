@@ -168,6 +168,22 @@ input[type=text], textarea {
 	}
 }
 
+li.btn {
+	line-height: 50px;
+	background-color: $greydark;
+	&:hover {
+		color: $button_fore;
+		background-color: $greydarker;
+	}
+	@include box-shadow(0 0 0 $greydark);
+	border-radius: 0;
+}
+
+input {
+	width: 80%;
+	height: 30px;
+}
+
 .btn {
 	padding: .2em 2em;
 	background-color: $button_back;

@@ -48,12 +48,29 @@
 		]
 
 @App.FeedsController = Ember.ArrayController.extend
+	newFeedUrl: null
+	urlPrompt: false
 	selectFeed: (feed)->
 		@set( 'selectedFeed', feed)
 	selectItem: (item)->
 		@set( 'selectedItem', item)
+	# newFeed: (data)->
+	# 	console.log('new feed')
+	# 	$.post('/v1/feed', data).then( (json)=>
+	# 		console.log "created a feed: #{json.id}"
+	# 		@set('urlPrompt', true)
+	# 	)
 
 
 @App.FeedsView = Ember.View.extend {
 	classNames: ['inmiddle']
 }
+
+@App.NewFeedView = Ember.View.extend
+	click: ->
+		console.log('new feed view')
+		@set('controller.urlPrompt', true)
+	keyUp: (e)->
+		url = @get('controller.newFeedUrl');
+		# if e.keyCode == 13 && !!url
+		# 	@get('controller').newFeed {"url": encodeURIComponent(url)}

@@ -6,6 +6,15 @@
 				<div class="date">{{published_at}}</div>
 			</li>
 		{{/each}}
+		{{#view App.NewFeedView}}
+			<li class="btn">
+				{{#if urlPrompt}} 
+					URL: {{input value=newFeedUrl}}
+				{{else}}
+					+
+				{{/if}}
+			</li>
+		{{/view}}
 	</ul>
 </div><div id="second-panel">
 	<ul class="inpanel">
