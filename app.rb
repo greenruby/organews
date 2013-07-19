@@ -47,7 +47,8 @@ class App < Sinatra::Base
   end
 
   post '/v1/:thing' do
-    oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read.to_s))
+    request.body.rewind
+    oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read))
     "{\"id\": \"#{oid.to_s}\"}"
   end
 
