@@ -1,3 +1,4 @@
+app = @App
 @App.Item = DS.Model.extend
 	title        : DS.attr 'string'
 	url          : DS.attr 'string'
@@ -5,7 +6,7 @@
 	html         : DS.attr 'stirng'
 
 
-@App.Feeds = DS.Model.extend
+@App.Feed = DS.Model.extend
 	title      : DS.attr 'string'
 	url        : DS.attr 'string'
 	created_at : DS.attr 'date'
@@ -69,8 +70,21 @@
 @App.NewFeedView = Ember.View.extend
 	click: ->
 		console.log('new feed view')
+
 		@set('controller.urlPrompt', true)
+		Ember.run.next(=>
+			@$('input').focus()
+		)
 	keyUp: (e)->
-		url = @get('controller.newFeedUrl');
+		url = @get('controller.newFeedUrl')
+		if e.keyCode == 13 && !!url
+			console.log 'create record'
+			feed = app.Feed.createRecord {titel: 'test', url: url}
+			feed.save().then(=>
+				console.log 'saved the feed...'
+				@set('controller.urlPrompt', false)
+				@set('controller.newFeedUrl', null)
+			)
+
 		# if e.keyCode == 13 && !!url
 		# 	@get('controller').newFeed {"url": encodeURIComponent(url)}
