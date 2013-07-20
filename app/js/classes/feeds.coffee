@@ -78,10 +78,11 @@ app = @App
 	keyUp: (e)->
 		url = @get('controller.newFeedUrl')
 		if e.keyCode == 13 && !!url
-			console.log 'create record'
-			feed = app.Feed.createRecord {titel: 'test', url: url}
+			feed = app.Feed.createRecord {id: null, title: 'Test title', url: url, published_at: new Date}
 			feed.save().then(=>
+				console.log(feed)
 				console.log 'saved the feed...'
+				@get('controller.content').pushObject(feed)
 				@set('controller.urlPrompt', false)
 				@set('controller.newFeedUrl', null)
 			)
