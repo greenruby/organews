@@ -9,7 +9,6 @@ describe Organews::Engine::RSS do
 
   it "initialize feeds array and Nokogiri XML object by given source" do
     rss = Organews::Engine::RSS.new @rss_source
-    expect(rss.items).to eq []
     expect(rss.xml).to be_an_instance_of Nokogiri::XML::Document
   end
 
