@@ -5,7 +5,6 @@ describe 'App general behaviour' do
 
   it 'responds to homepage' do
     get '/'
-
     last_response.should be_ok
   end
 
