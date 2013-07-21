@@ -6,5 +6,5 @@ Greeby Changelog
 ### v0.0.1 : wip
 
 * rename project from Greeby to Organews
-* portign all js to coffeescript
+* porting all js to coffeescript
 * basic setup
