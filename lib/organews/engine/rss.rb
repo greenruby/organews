@@ -12,6 +12,8 @@ module Organews
         @url = url
         puts "open #{url} as RSS node"
         @xml = Nokogiri::XML open(url)
+
+        parse
       end
 
       def digest
