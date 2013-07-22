@@ -1,5 +1,5 @@
-@App.Adapter = @App.Adapter || DS.RESTAdapter.reopen
-# @App.Adapter = DS.RESTAdapter.reopen
+# @App.Adapter = @App.Adapter || DS.RESTAdapter.reopen
+@App.Adapter = DS.RESTAdapter.reopen
 	url: 'http://localhost:9292'
 	namespace: 'v1'
 
