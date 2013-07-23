@@ -20,6 +20,7 @@ class App < Sinatra::Base
 
   include Organews::Mongo
   include Organews::Tools
+  include Organews::Engine
 
   register Sinatra::ConfigFile
   config_file 'app/config/config.yml'
@@ -44,6 +45,22 @@ class App < Sinatra::Base
 
   get '/v1/:thing/:id' do
     frombsonid(DB.collection(params[:thing]).findone(tobsonid(params[:id]))).to_json
+  end
+
+  get 'v1/feeds/:id' do
+    frombsonid(DB.collection('feeds').findone(tobsonid(params[:id]))).to_json
+  end
+
+  post '/v1/feeds' do
+    request.body.rewind
+    hash = JSON.parse(request.body.read)
+    # hash['feed']['url'] = 'http://www.inside.com.tw/feed'
+
+    rss = JSON.parse(RSS.new(hash['feed']['url']).to_json)
+    hash['feed']['title'] = rss['channel']
+    hash['feed']['items'] = rss['items']
+    oid = DB.collection("feeds").insert(hash)
+    "{\"id\": \"#{oid.to_s}\"}"
   end
 
   post '/v1/:thing' do
