@@ -44,19 +44,16 @@ class App < Sinatra::Base
   end
 
   get '/v1/:thing/:id' do
-    frombsonid(DB.collection(params[:thing]).findone(tobsonid(params[:id]))).to_json
-  end
-
-  get 'v1/feeds/:id' do
-    frombsonid(DB.collection('feeds').findone(tobsonid(params[:id]))).to_json
+    frombsonid(DB.collection(params[:thing]).find_one(tobsonid(params[:id]))).to_json
   end
 
   post '/v1/feeds' do
     request.body.rewind
-    hash = JSON.parse(request.body.read)
     # hash['feed']['url'] = 'http://www.inside.com.tw/feed'
 
-    rss = JSON.parse(RSS.new(hash['feed']['url']).to_json)
+    rss = JSON.parse(RSS.new(params[:url]).to_json)
+    hash = {}
+    hash['feed'] = {}
     hash['feed']['title'] = rss['channel']
     hash['feed']['items'] = rss['items']
     oid = DB.collection("feeds").insert(hash)
