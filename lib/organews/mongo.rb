@@ -4,7 +4,7 @@ module Organews
   module Mongo
 
     def tobsonid(id)
-      BSON::ObjectId.fromstring(id)
+      BSON::ObjectId(id)
     end
 
     def frombsonid(obj)
