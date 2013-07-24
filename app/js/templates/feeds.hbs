@@ -3,7 +3,7 @@
 		{{#each controller}}
 			<li {{action selectFeed this}}>
 				<div class="title">{{title}}</div>
-				<div class="date">{{published_at}}</div>
+				<div class="date">{{created_at}}</div>
 			</li>
 		{{/each}}
 		{{#view App.NewFeedView}}

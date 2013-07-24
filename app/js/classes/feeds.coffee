@@ -22,7 +22,7 @@ app = @App
 			{
 				title: 'The Wreck Channel'
 				url: 'http://www.google.com/rss'
-				published_at: new Date()
+				created_at: new Date()
 				items: [
 					{
 						title: 'How to sleep on the street?'
@@ -39,7 +39,7 @@ app = @App
 			{
 				title: 'UFO Hotline'
 				url: 'http://www.blizzard.com/rss'
-				published_at: new Date()
+				created_at: new Date()
 				items: [{
 					title: 'Who kidnapped my grandpa?'
 					url: 'http://www.google.com'
@@ -77,15 +77,21 @@ app = @App
 		)
 	keyUp: (e)->
 		url = @get('controller.newFeedUrl')
+		view = @
 		if e.keyCode == 13 && !!url
-			feed = app.Feed.createRecord {id: null, title: 'Test title', url: url, published_at: new Date}
-			feed.save().then(=>
-				console.log(feed)
-				console.log 'saved the feed...'
-				@get('controller.content').pushObject(feed)
-				@set('controller.urlPrompt', false)
-				@set('controller.newFeedUrl', null)
-			)
+			$.post( '/v1/feeds', {url: url} ).done (json)->
+					json = JSON.parse(json)
+					$.get( 'v1/feeds/' + json.id ).done (json)->
+						json = JSON.parse(json)
+						feed = App.Feed.createRecord {
+							title: json.feed.title
+							url: url
+							created_at: new Date()
+							items: json.feed.items
+						}
+						view.get('controller.content').pushObject( feed )
+						view.set('controller.urlPrompt', false)
+						view.set('controller.newFeedUrl', null)
 
 		# if e.keyCode == 13 && !!url
 		# 	@get('controller').newFeed {"url": encodeURIComponent(url)}
