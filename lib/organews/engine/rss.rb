@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'ostruct'
 require 'organews/engine/page'
 
 module Organews
@@ -36,17 +35,17 @@ module Organews
             content = nil
           end
 
-          item = OpenStruct.new
-          item.title = title
-          item.link = link
-          item.published_at = published_at
+          item = {}
+          item['title'] = title
+          item['link'] = link
+          item['published_at'] = published_at
           if content.nil?
             threads << Thread.new {
-              item.content = Page.new(link).content
+              item['content'] = Page.new(link).content
               @items << item
             }
           else
-            item.content = content
+            item['content'] = content
             @items << item
           end
         end
