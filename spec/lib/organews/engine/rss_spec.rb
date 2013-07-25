@@ -17,9 +17,9 @@ describe Organews::Engine::RSS do
   	rss.parse
   	expect(rss.items.count).to be > 0
   	rss.items.each do |f|
-  		f.should respond_to :title
-  		f.should respond_to :link
-  		f.should respond_to :published_at
+      f['title'].should_not be_nil
+      f['link'].should_not be_nil
+      f['published_at'].should_not be_nil
   	end
  	end
 
