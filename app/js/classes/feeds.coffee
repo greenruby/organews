@@ -26,13 +26,13 @@ app = @App
 				items: [
 					{
 						title: 'How to sleep on the street?'
-						url: 'http://www.google.com'
-						html: '<div>How to sleep on the street?</div>'
+						link: 'http://www.google.com'
+						content: '<div>How to sleep on the street?</div>'
 					}
 					{
 						title: 'The 10 best insects you should try'
-						url: 'http://www.yahoo.com'
-						html: '<div>The 10 best insects you should try</div>'
+						link: 'http://www.yahoo.com'
+						content: '<div>The 10 best insects you should try</div>'
 					}
 				]
 			}
@@ -42,8 +42,8 @@ app = @App
 				created_at: new Date()
 				items: [{
 					title: 'Who kidnapped my grandpa?'
-					url: 'http://www.google.com'
-					html: '<div>Who kidnapped my grandpa?</div>'
+					link: 'http://www.google.com'
+					content: '<div>Who kidnapped my grandpa?</div>'
 				}]
 			},
 		]
@@ -52,6 +52,7 @@ app = @App
 	newFeedUrl: null
 	urlPrompt: false
 	selectFeed: (feed)->
+		console.log feed
 		@set( 'selectedFeed', feed)
 	selectItem: (item)->
 		@set( 'selectedItem', item)
@@ -83,7 +84,7 @@ app = @App
 					json = JSON.parse(json)
 					$.get( 'v1/feeds/' + json.id ).done (json)->
 						json = JSON.parse(json)
-						feed = App.Feed.createRecord {
+						feed = {
 							title: json.feed.title
 							url: url
 							created_at: new Date()
