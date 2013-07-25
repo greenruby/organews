@@ -13,41 +13,8 @@ app = @App
 	items      : DS.hasMany 'App.Item'
 
 
-@App.FeedsRoute = Ember.Route.extend
-	selectedFeed: {},
-
-	# mock
-	model: ->
-		[
-			{
-				title: 'The Wreck Channel'
-				url: 'http://www.google.com/rss'
-				created_at: new Date()
-				items: [
-					{
-						title: 'How to sleep on the street?'
-						link: 'http://www.google.com'
-						content: '<div>How to sleep on the street?</div>'
-					}
-					{
-						title: 'The 10 best insects you should try'
-						link: 'http://www.yahoo.com'
-						content: '<div>The 10 best insects you should try</div>'
-					}
-				]
-			}
-			{
-				title: 'UFO Hotline'
-				url: 'http://www.blizzard.com/rss'
-				created_at: new Date()
-				items: [{
-					title: 'Who kidnapped my grandpa?'
-					link: 'http://www.google.com'
-					content: '<div>Who kidnapped my grandpa?</div>'
-				}]
-			},
-		]
-
+# @App.FeedsRoute = Ember.Route.extend
+	
 @App.FeedsController = Ember.ArrayController.extend
 	newFeedUrl: null
 	urlPrompt: false
