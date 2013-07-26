@@ -1,6 +1,6 @@
 # data models
 
-@App.Publication = DS.Model.extend {
+@App.Publication = DS.Model.extend
   id: DS.attr 'number'
   name: DS.attr 'string'
   title: DS.attr 'string'
@@ -8,15 +8,15 @@
   url: DS.attr 'string'
   editions: DS.hasMany 'App.Edition'
   sections: DS.hasMany 'App.Section'
-}
 
-@App.Section = DS.Model.extend {
+
+@App.Section = DS.Model.extend
   id: DS.attr 'number'
   label: DS.attr 'string'
   intro: DS.attr 'string'
   order: DS.attr 'number'
   publication: DS.belongsTo 'App.Publication'
-}
+
 
 @App.Publication.FIXTURES = [
   {
