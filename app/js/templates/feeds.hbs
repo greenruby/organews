@@ -1,7 +1,7 @@
 <div id="first-panel">
 	<ul class="inpanel large">
 		{{#each controller}}
-			<li {{action selectFeed this}}>
+			<li {{action selectFeed this}} {{bindAttr class="selected"}}>
 				<div class="title">{{title}}</div>
 				<div class="date">{{created_at}}</div>
 			</li>
@@ -19,7 +19,7 @@
 </div><div id="second-panel">
 	<ul class="inpanel">
 		{{#each selectedFeed.items}}
-			<li class="title" {{action selectItem this}}>{{title}}</li>
+			<li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>{{title}}</li>
 		{{else}}
 			<li class="header">Choose one feed...</li>
 		{{/each}}
