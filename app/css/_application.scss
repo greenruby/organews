@@ -85,6 +85,12 @@ input[type=text], textarea {
 	color: #fff;
 	vertical-align: top;
 	overflow-y: scroll;
+	li {
+		cursor: pointer;
+		&.selected {
+			background-color: $grey;
+		}
+	}
 }
 
 #second-panel {
@@ -97,6 +103,12 @@ input[type=text], textarea {
 	color: #fff;
 	vertical-align: top;
 	overflow-y: scroll;
+	li {
+		cursor: pointer;
+		&.selected {
+			background-color: $grey;
+		}
+	}
 }
 
 .inpanel {
