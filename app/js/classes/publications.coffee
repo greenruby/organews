@@ -68,8 +68,23 @@
     cancel_new_publication: ->
       $('#new_publication').hide()
     save_new_publication: ->
+      $.post( '/v1/publications', {title: title, edito: edito, created_at: created_at} ).done (json)->
+        json = JSON.parse(json)
+        $.get( '/v1/publications/' + json.id ).done (json)->
+          json = JSON.parse(json)
+          publication = {
+            title: title
+            edito: edito
+            created_at: created_at
+            articles: []
+          }
+          view.get('controller.content').pushObject( publication )
       $('#new_publication').hide()
+
+@App.PublicationsController = Em.ArrayController.extend
+  selectPublication: (publication)->
+    @set( 'selectedPublication', publication)
+
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']
-

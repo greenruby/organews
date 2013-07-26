@@ -14,7 +14,7 @@ app = @App
 
 
 # @App.FeedsRoute = Ember.Route.extend
-	
+
 @App.FeedsController = Ember.ArrayController.extend
 	newFeedUrl: null
 	urlPrompt: false
