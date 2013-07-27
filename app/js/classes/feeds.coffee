@@ -1,6 +1,21 @@
 app = @App
 
-# @App.FeedsRoute = Ember.Route.extend
+@App.FeedsRoute = Ember.Route.extend
+	setupController: (controller, model)->
+		console.log 'v1 feeds'
+		$.get('/v1/feeds').done (json)->
+			# console.log json
+			data = JSON.parse(json)
+			console.log data
+			feeds = data.map( (f)->
+				o = Ember.Object.create().setProperties(f.feed) 
+				o.items = f.feed.items.map( (i)->
+					Ember.Object.create().setProperties(i)
+				)
+				o
+			) || []
+			console.log feeds
+			controller.set('content', feeds)
 	
 @App.FeedsController = Ember.ArrayController.extend
 	newFeedUrl: null
