@@ -1,5 +1,12 @@
 <div id="first-panel">
   <div class="menunav">
+    <select>
+      {{#each pub in controller}}
+        <option >{{pub}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="menunav">
     <button class="btn small" {{action "new_publication"}}>Create</button>
     {{#if controller}}
       <button class="btn small" >Archives</button>
