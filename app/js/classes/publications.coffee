@@ -1,6 +1,6 @@
 # data models
 
-@App.Publication = DS.Model.extend {
+@App.Publication = DS.Model.extend
   id: DS.attr 'number'
   name: DS.attr 'string'
   title: DS.attr 'string'
@@ -8,15 +8,15 @@
   url: DS.attr 'string'
   editions: DS.hasMany 'App.Edition'
   sections: DS.hasMany 'App.Section'
-}
 
-@App.Section = DS.Model.extend {
+
+@App.Section = DS.Model.extend
   id: DS.attr 'number'
   label: DS.attr 'string'
   intro: DS.attr 'string'
   order: DS.attr 'number'
   publication: DS.belongsTo 'App.Publication'
-}
+
 
 @App.Publication.FIXTURES = [
   {
@@ -68,8 +68,23 @@
     cancel_new_publication: ->
       $('#new_publication').hide()
     save_new_publication: ->
+      $.post( '/v1/publications', {title: title, edito: edito, created_at: created_at} ).done (json)->
+        json = JSON.parse(json)
+        $.get( '/v1/publications/' + json.id ).done (json)->
+          json = JSON.parse(json)
+          publication = {
+            title: title
+            edito: edito
+            created_at: created_at
+            articles: []
+          }
+          view.get('controller.content').pushObject( publication )
       $('#new_publication').hide()
+
+@App.PublicationsController = Em.ArrayController.extend
+  selectPublication: (publication)->
+    @set( 'selectedPublication', publication)
+
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']
-

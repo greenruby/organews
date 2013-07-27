@@ -16,7 +16,8 @@ app = @App
 			) || []
 			console.log feeds
 			controller.set('content', feeds)
-	
+
+
 @App.FeedsController = Ember.ArrayController.extend
 	newFeedUrl: null
 	urlPrompt: false
@@ -43,6 +44,7 @@ app = @App
 
 @App.FeedsView = Ember.View.extend
 	classNames: ['inmiddle']
+
 
 @App.NewFeedView = Ember.View.extend
 	click: ->
