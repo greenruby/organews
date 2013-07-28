@@ -22,6 +22,10 @@ app = @App
 	newFeedUrl: null
 	urlPrompt: false
 	isProcessing: false
+	isEditMode: false
+	toggleEditMode: ->
+		console.log('toggleEditMode');
+		@set('isEditMode', !@get('isEditMode'))
 	selectFeed: (feed)->
 		@get('content').forEach( (i)->
 			i.set('selected', false)

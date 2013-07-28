@@ -1,7 +1,9 @@
 <div id="first-panel">
+	<div><div class="edit-btn btn" {{action toggleEditMode}}>edit</div></div>
 	<ul class="inpanel large">
 		{{#each controller}}
 			<li {{action selectFeed this}} {{bindAttr class="selected"}}>
+				{{#if controller.isEditMode}}<div class="delete-btn">x</div>{{/if}}
 				<div class="title">{{title}}</div>
 				<div class="date">{{created_at}}</div>
 			</li>
