@@ -86,6 +86,7 @@ input[type=text], textarea {
 	vertical-align: top;
 	overflow-y: scroll;
 	li {
+		position: relative;
 		cursor: pointer;
 		&.selected {
 			background-color: $grey;
@@ -200,12 +201,35 @@ input {
 	height: 30px;
 }
 
+.edit-btn {
+	width: 80px;
+	text-align: center;
+	margin: 5px;
+}
+
+.delete-btn {
+	position: absolute;
+	background-color: rgba(0,0,0,0.1);
+	right: 0;
+	top: 0;
+	height: 100%;
+	line-height: 40px;
+	width: 40px;
+	padding: .2em;
+	font-size: 1em;
+	text-align: center;
+	&:hover {
+		color: red;
+	}
+}
+
 .btn {
-	padding: .2em 2em;
+	padding: .2em;
 	background-color: $button_back;
 	color: $button_fore;
 	font-weight: bold;
 	border: 0;
+	cursor: pointer;
 	@include border-radius(.2em);
 	@include text-shadow(-1px 1px 5px $greydark);
 	@include box-shadow(0 0 3px 1px $greydarker, inset 0 0 12px -4px $greylighter);
