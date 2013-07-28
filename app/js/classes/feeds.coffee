@@ -26,6 +26,9 @@ app = @App
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
 	deleteFeed: (feed)->
+		if @get('selectedFeed') == feed
+			@set('selectedItem', null)
+			@set('selectedFeed', null)
 		@get('content').removeObject(feed)
 	selectFeed: (feed)->
 		@get('content').forEach( (i)->
