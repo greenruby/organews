@@ -3,7 +3,7 @@
 	<ul class="inpanel large">
 		{{#each controller}}
 			<li {{action selectFeed this}} {{bindAttr class="selected"}}>
-				{{#if controller.isEditMode}}<div class="delete-btn">x</div>{{/if}}
+				{{#if controller.isEditMode}}<div class="delete-btn" {{action deleteFeed this}}>x</div>{{/if}}
 				<div class="title">{{title}}</div>
 				<div class="date">{{created_at}}</div>
 			</li>

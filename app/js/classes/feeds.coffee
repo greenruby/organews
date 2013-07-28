@@ -24,8 +24,9 @@ app = @App
 	isProcessing: false
 	isEditMode: false
 	toggleEditMode: ->
-		console.log('toggleEditMode');
 		@set('isEditMode', !@get('isEditMode'))
+	deleteFeed: (feed)->
+		@get('content').removeObject(feed)
 	selectFeed: (feed)->
 		@get('content').forEach( (i)->
 			i.set('selected', false)
