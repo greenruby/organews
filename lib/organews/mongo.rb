@@ -8,7 +8,7 @@ module Organews
     end
 
     def frombsonid(obj)
-      obj.merge({'id' => obj['id'].to_s})
+      obj.merge({'id' => obj['_id'].to_s})
     end
 
   end
