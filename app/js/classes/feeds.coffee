@@ -1,14 +1,15 @@
 app = @App
+FEEDS_URL = '/v1/feeds'
 
 @App.FeedsRoute = Ember.Route.extend
 	setupController: (controller, model)->
-		console.log 'v1 feeds'
 		$.get('/v1/feeds').done (json)->
 			# console.log json
 			data = JSON.parse(json)
 			console.log data
 			feeds = data.map( (f)->
-				o = Ember.Object.create().setProperties(f.feed) 
+				properties = $.extend(f, f.feed)
+				o = Ember.Object.create().setProperties(properties)
 				o.items = f.feed.items.map( (i)->
 					Ember.Object.create().setProperties(i)
 				)
@@ -26,10 +27,15 @@ app = @App
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
 	deleteFeed: (feed)->
-		if @get('selectedFeed') == feed
-			@set('selectedItem', null)
-			@set('selectedFeed', null)
-		@get('content').removeObject(feed)
+		$.ajax {
+			url: FEEDS_URL + '/' + feed.id,
+			type: 'DELETE',
+			success: =>	
+				if @get('selectedFeed') == feed
+					@set('selectedItem', null)
+					@set('selectedFeed', null)
+				@get('content').removeObject(feed)
+		}
 	selectFeed: (feed)->
 		@get('content').forEach( (i)->
 			i.set('selected', false)
