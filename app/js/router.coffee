@@ -1,11 +1,7 @@
 @App.Router.map(->
   @resource 'index', { path: '/' }
   @resource 'feeds', { path: '/feeds' }
-  @resource 'publications', (->
-    @route 'show'
-    @route 'new'
-    @route 'edit'
-  )
+  @resource 'publications', { path: '/publications' }
   @resource 'articles', (->
     @route 'show'
     @route 'new'

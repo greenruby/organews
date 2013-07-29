@@ -1,8 +1,9 @@
 <div id="first-panel">
   <div class="menunav">
+    {{ controller.length }}
     <select>
-      {{#each pub in controller}}
-        <option >{{pub}}</option>
+      {{#each controller}}
+        <option >{{name}}</option>
       {{/each}}
     </select>
   </div>
@@ -12,7 +13,6 @@
       <button class="btn small" >Archives</button>
     {{/if}}
   </div>
-  {{ App.PublicationsController.length }}
   <form class="menuform" id="new_publication" style="display: none">
     <div>{{view Em.TextField id="title" placeholder="Title"}}</div>
     <div>{{view Em.TextArea id="edito" rows="10" placeholder="Edito"}}</div>

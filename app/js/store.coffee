@@ -1,6 +1,6 @@
 # @App.Adapter = @App.Adapter || DS.RESTAdapter.reopen
 @App.Adapter = DS.RESTAdapter.reopen
-	url: 'http://localhost:9292'
+	url: 'http://localhost:5100'
 	namespace: 'v1'
 
 @App.Store = DS.Store.extend
