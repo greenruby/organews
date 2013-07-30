@@ -8,9 +8,8 @@ FEEDS_URL = '/v1/feeds'
 			data = JSON.parse(json)
 			console.log data
 			feeds = data.map( (f)->
-				properties = $.extend(f, f.feed)
-				o = Ember.Object.create().setProperties(properties)
-				o.items = f.feed.items.map( (i)->
+				o = Ember.Object.create().setProperties(f)
+				o.items = f.items.map( (i)->
 					Ember.Object.create().setProperties(i)
 				)
 				o
@@ -80,12 +79,12 @@ FEEDS_URL = '/v1/feeds'
 					@set('isProcessing', false)
 					@$('input').attr('disabled', false)
 					json = JSON.parse(json)
-					items = json.feed.items.map((i)->
+					items = json.items.map((i)->
 						o = Ember.Object.create().setProperties(i)
 						o.set('selected', false)
 					)
 					feed = Ember.Object.create {
-						title: json.feed.title
+						title: json.title
 						url: url
 						created_at: new Date()
 						items: items

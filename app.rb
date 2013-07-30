@@ -53,9 +53,9 @@ class App < Sinatra::Base
 
     rss = JSON.parse(RSS.new(params[:url]).to_json)
     hash = {}
-    hash['feed'] = {}
-    hash['feed']['title'] = rss['channel']
-    hash['feed']['items'] = rss['items']
+    hash['title'] = rss['channel']
+    hash['items'] = rss['items']
+    hash['created_at'] = Time.now
     oid = DB.collection("feeds").insert(hash)
     "{\"id\": \"#{oid.to_s}\"}"
   end
