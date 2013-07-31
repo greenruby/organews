@@ -55,6 +55,9 @@ class App < Sinatra::Base
     hash = {}
     hash['title'] = rss['channel']
     hash['items'] = rss['items']
+    hash['items'].map {|i|
+      i['published_at'] = Time.now if i['published_at'].nil? || i['published_at'].empty?
+    }
     hash['created_at'] = Time.now
     oid = DB.collection("feeds").insert(hash)
     "{\"id\": \"#{oid.to_s}\"}"

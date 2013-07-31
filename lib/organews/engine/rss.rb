@@ -41,7 +41,11 @@ module Organews
           item['published_at'] = published_at
           if content.nil?
             threads << Thread.new {
-              item['content'] = Page.new(link).content
+              begin
+                item['content'] = Page.new(link).content
+              rescue
+                item['content'] = "Error in parsing content"
+              end
               @items << item
             }
           else
