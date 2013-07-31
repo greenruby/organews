@@ -58,7 +58,7 @@
 
 @App.PublicationsRoute = Em.Route.extend
   model: ->
-   App.Publication.all()
+   App.Publication.find()
   setupController: (c, m)->
     $('#new_publication').hide()
     c.set('model', m)
