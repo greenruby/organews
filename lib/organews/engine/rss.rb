@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'organews/engine/page'
 
 module Organews
   module Engine
