@@ -71,6 +71,7 @@ class App < Sinatra::Base
 
   delete '/v1/:thing/:id' do
     DB.collection(params[:thing]).remove( {'_id' => tobsonid(params[:id])} )
+    "SUCCESS"
   end
 
   put '/v1/:thing/:id' do
