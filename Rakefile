@@ -18,4 +18,10 @@ end
 
 task :default => :spec
 
+desc "Scrape feeds and commit to mongo db"
+task :scrape do
+	require 'mongo'
+	require 'json'
 
+	puts 'scraping feeds...'
+end
