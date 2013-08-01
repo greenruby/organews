@@ -38,10 +38,10 @@ Run it
 
 ```
 bundle
-rackup
-open http://localhost:9292
+foreman start
+open http://localhost:5100
 ```
-The sinatra server is serving the frontend and the backend.
+The sinatra server is serving the frontend and the backend. FOreman also launches grunt at same time.
 
 
 Contribute

@@ -1,4 +1,4 @@
-Greeby Changelog
+Organews Changelog
 ==================
 
 **Warning** All Dates are GMT+8 (Asia/Taipei)
