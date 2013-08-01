@@ -75,7 +75,8 @@ FEEDS_URL = '/v1/feeds'
 			@$('input').attr('disabled', true)
 			$.post( '/v1/feeds', {url: url} ).done (json)=>
 				json = JSON.parse(json)
-				$.get( 'v1/feeds/' + json.id ).done (json)=>
+				id = json.id
+				$.get( 'v1/feeds/' + id ).done (json)=>
 					@set('isProcessing', false)
 					@$('input').attr('disabled', false)
 					json = JSON.parse(json)
@@ -84,6 +85,7 @@ FEEDS_URL = '/v1/feeds'
 						o.set('selected', false)
 					)
 					feed = Ember.Object.create {
+						id: id
 						title: json.title
 						url: url
 						created_at: new Date()
