@@ -7,7 +7,8 @@ gem 'json'
 gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
-gem 'nokogiri'
+#gem 'nokogiri'
+gem 'feedzirra'
 gem "ruby-readability", :require => 'readability'
 
 group :development do
