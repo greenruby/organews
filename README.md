@@ -41,7 +41,7 @@ bundle
 foreman start
 open http://localhost:5100
 ```
-The sinatra server is serving the frontend and the backend. FOreman also launches grunt at same time.
+The sinatra server is serving the frontend and the backend. Foreman also launches grunt at same time.
 
 
 Contribute
