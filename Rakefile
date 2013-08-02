@@ -26,13 +26,14 @@ task :scrape do
 	require 'mongo'
 	require 'json'
 	require 'time'
+	require 'net/http'
 	include Organews
 	include Organews::Mongo
 
 	puts 'scraping feeds...'
 	DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
-	feeds_str = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) }.to_json
-	feeds = JSON.parse feeds_str
+	url = URI('http://localhost:9292/v1/feeds')
+	feeds = JSON.parse Net::HTTP.get(url)
 	feeds.each {|f| 
 		puts f['title'] 
 
