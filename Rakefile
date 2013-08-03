@@ -17,3 +17,16 @@ task :spec do
 end
 
 task :default => :spec
+
+namespace :db do
+	desc 'Reset mongodb, all data will be deleted'
+	task :reset do
+		require 'mongo'
+		
+		DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+		collections = DB.collection_names.reject { |c| c == 'system.indexes' }
+		collections.each do |c|
+			DB.collection(c).drop()
+		end
+	end
+end
