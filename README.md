@@ -28,7 +28,7 @@ and for now we are talking about a combination of:
   as a preprocessing helper of SCSS files and sprites generation
 * fontcustom
   for generating icon fonts from inkscape SVG files.
-* Ember.js, with emblem.js and jquery
+* Ember.js, with jquery
   for the front-end rendering and general navigation
 * Rspec and Zombie (not sure yet about that one)
   one for the backend REST server, the other for the front-end
