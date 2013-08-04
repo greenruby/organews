@@ -164,9 +164,6 @@ input[type=text], textarea {
 	text-align: center;
 	overflow-y: scroll;
 	padding: 10px;
-	* {
-		text-align: left;
-	}
 }
 
 #foot {
@@ -279,6 +276,7 @@ input {
 .prompt {
 	font-size: 2.0em;
 	padding: 40px;
+	text-align: center;
 	@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
 }
 
