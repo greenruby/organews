@@ -37,6 +37,7 @@ module Organews
           item = {}
           item['title'] = title
           item['link'] = link
+          item['digest'] = Digest::MD5.hexdigest link
           item['published_at'] = published_at
           if content.nil?
             threads << Thread.new {
