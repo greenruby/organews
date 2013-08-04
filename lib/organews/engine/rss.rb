@@ -3,7 +3,7 @@ require 'nokogiri'
 module Organews
   module Engine
     class RSS
-      attr_accessor :channel, :language, :items, :xml
+      attr_accessor :channel, :url, :language, :items, :xml
 
       def initialize(url)
         @items = []
@@ -58,6 +58,7 @@ module Organews
       def to_json(options = {})
         {
           channel: @channel,
+          url: @url,
           language: @language,
           items: @items
         }.to_json options
