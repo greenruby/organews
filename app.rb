@@ -13,6 +13,7 @@ require 'json'
 require 'organews'
 
 DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+UPDATE_INTERVAL_SECS = 1800
 
 Encoding.default_external = 'utf-8' if defined?(::Encoding)
 
@@ -44,7 +45,7 @@ class App < Sinatra::Base
     feeds = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) }
     updated = false
     feeds.each do |f| 
-      if Time.now - f['updated_at'] > 0
+      if Time.now - f['updated_at'] > UPDATE_INTERVAL_SECS
         begin
           rss = JSON.parse RSS.new(f['url']).to_json
         rescue
@@ -58,7 +59,7 @@ class App < Sinatra::Base
           DB.collection('feeds').update(
             { '_id' => tobsonid(f['id']) }, 
             { 
-              '$push' => { 'items' => { '$each' => new_items } ,
+              '$push' => { 'items' => { '$each' => new_items } },
               '$set' => { 'updated_at' => Time.now }
             }
           )
