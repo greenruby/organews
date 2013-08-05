@@ -23,6 +23,7 @@ FEEDS_URL = '/v1/feeds'
 	urlPrompt: false
 	isProcessing: false
 	isEditMode: false
+	pickedItems: []
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
 	deleteFeed: (feed)->
@@ -41,18 +42,24 @@ FEEDS_URL = '/v1/feeds'
 		)
 		feed.set('selected', true)
 		@set( 'selectedFeed', feed)
+		@get('selectedFeed.items').forEach( (i)->
+			i.set('picked', false)
+		)
+		@set('pickedItems', [])
 	selectItem: (item)->
 		@get('selectedFeed.items').forEach( (i)->
 			i.set('selected', false)
 		)
 		item.set('selected', true)
 		@set( 'selectedItem', item)
-	# newFeed: (data)->
-	# 	console.log('new feed')
-	# 	$.post('/v1/feed', data).then( (json)=>
-	# 		console.log "created a feed: #{json.id}"
-	# 		@set('urlPrompt', true)
-	# 	)
+	pickItem: (item)->
+		item.set('picked', !item.get('picked'))
+		if item.get('picked')
+			@get('pickedItems').pushObject(item)
+
+
+
+
 
 
 @App.FeedsView = Ember.View.extend
@@ -73,12 +80,14 @@ FEEDS_URL = '/v1/feeds'
 		if e.keyCode == 13 && !!url && !@get('isProcessing')
 			@set('isProcessing', true)
 			@$('input').attr('disabled', true)
+			@$('input').parent().append('<span> Parsing feeds ...</span>')
 			$.post( '/v1/feeds', {url: url} ).done (json)=>
 				json = JSON.parse(json)
 				id = json.id
 				$.get( 'v1/feeds/' + id ).done (json)=>
 					@set('isProcessing', false)
 					@$('input').attr('disabled', false)
+					@$('input').siblings('span').remove()
 					json = JSON.parse(json)
 					items = json.items.map((i)->
 						o = Ember.Object.create().setProperties(i)
@@ -95,6 +104,3 @@ FEEDS_URL = '/v1/feeds'
 					view.get('controller.content').pushObject( feed )
 					view.set('controller.urlPrompt', false)
 					view.set('controller.newFeedUrl', null)
-
-		# if e.keyCode == 13 && !!url
-		# 	@get('controller').newFeed {"url": encodeURIComponent(url)}

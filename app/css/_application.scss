@@ -279,6 +279,15 @@ input {
 	text-align: center;
 	@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
 }
+span.picker {
+	font-size: 30px;
+	&.picked {
+		color: $green;
+	}
+	&.unpick {
+		color: #fff;
+	}
+}
 
 @include keyframes(flash) {
 	from { color: #000; }

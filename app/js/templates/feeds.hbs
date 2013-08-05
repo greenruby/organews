@@ -21,7 +21,14 @@
 </div><div id="second-panel">
 	<ul class="inpanel">
 		{{#each selectedFeed.items}}
-			<li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>{{title}}</li>
+			<li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>				
+				{{#if this.picked}}
+				 	<span {{action pickItem this}} class="picker picked">✔</span>
+				{{else}}
+					<span {{action pickItem this}} class="picker unpick">○</span>
+				{{/if}}
+				{{title}}
+			</li>
 		{{else}}
 			<li class="header">Choose one feed...</li>
 		{{/each}}

@@ -3,13 +3,13 @@ require 'feedzirra'
 module Organews
   module Engine
     class RSS
-      attr_accessor :channel, :url, :items, :xml
+      attr_accessor :title, :url, :items, :xml
 
       def initialize(url)
         @url = url
         @items = []
         feed = Feedzirra::Feed.fetch_and_parse(url)
-        @channel = feed.title
+        @title = feed.title
         @language = feed.language || feed.entries.first.language
         threads = []
         feed.entries.each do |e|
@@ -38,7 +38,7 @@ module Organews
 
       def to_json(options = {})
         {
-          channel: @channel,
+          title: @title,
           language: @language,
           url: @url,
           items: @items
