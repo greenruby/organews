@@ -35,9 +35,15 @@
     {{/each }}
   </ul>
 </div><div id="second-panel">
-  <div>
-    where the articles are listed
-  </div>
+  <ul class="inpanel">
+    {{#each selectedItems}}
+      <li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>        
+        {{title}}
+      </li>
+    {{else}}
+      <li class="header">No feed item selected.</li>
+    {{/each}}
+  </ul>
 </div><div id="third-panel">
   where the selection of items is listed
   {{outlet}}

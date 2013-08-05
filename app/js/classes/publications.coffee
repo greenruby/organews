@@ -62,6 +62,7 @@
   setupController: (c, m)->
     $('#new_publication').hide()
     c.set('model', m)
+
   events:
     new_publication: ->
       $('#new_publication').show()
@@ -82,9 +83,13 @@
       $('#new_publication').hide()
 
 @App.PublicationsController = Em.ArrayController.extend
+  selectedItems: []
+  needs: 'feeds'
+  selectedItemsBinding: 'controllers.feeds.pickedItems'
   selectPublication: (publication)->
     @set( 'selectedPublication', publication)
-
+  selectItem: (item)->
+    # TODO: adding into publication
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']

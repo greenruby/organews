@@ -6,7 +6,7 @@ FEEDS_URL = '/v1/feeds'
 		$.get('/v1/feeds').done (json)->
 			# console.log json
 			data = JSON.parse(json)
-			console.log data
+			# console.log data
 			feeds = data.map( (f)->
 				o = Ember.Object.create().setProperties(f)
 				o.items = f.items.map( (i)->
@@ -14,7 +14,7 @@ FEEDS_URL = '/v1/feeds'
 				)
 				o
 			) || []
-			console.log feeds
+			# console.log feeds
 			controller.set('content', feeds)
 
 
@@ -42,10 +42,6 @@ FEEDS_URL = '/v1/feeds'
 		)
 		feed.set('selected', true)
 		@set( 'selectedFeed', feed)
-		@get('selectedFeed.items').forEach( (i)->
-			i.set('picked', false)
-		)
-		@set('pickedItems', [])
 	selectItem: (item)->
 		@get('selectedFeed.items').forEach( (i)->
 			i.set('selected', false)
@@ -68,7 +64,7 @@ FEEDS_URL = '/v1/feeds'
 
 @App.NewFeedView = Ember.View.extend
 	click: ->
-		console.log('new feed view')
+		# console.log('new feed view')
 
 		@set('controller.urlPrompt', true)
 		Ember.run.next(=>
