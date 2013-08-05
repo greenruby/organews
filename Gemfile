@@ -8,7 +8,7 @@ gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
 #gem 'nokogiri'
-gem 'feedzirra'
+gem 'feedzirra', github: "tubaxenor/feedzirra", branch: 'language-patch'
 gem "ruby-readability", :require => 'readability'
 
 group :development do
