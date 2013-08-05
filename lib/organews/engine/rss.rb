@@ -39,7 +39,7 @@ module Organews
       def to_json(options = {})
         {
           channel: @channel,
-          language: @language
+          language: @language,
           url: @url,
           items: @items
         }.to_json options
