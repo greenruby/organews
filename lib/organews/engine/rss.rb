@@ -18,7 +18,7 @@ module Organews
           if content.nil?
             threads << Thread.new {
               begin
-                item[:content] = Page.new(link).content
+                item[:content] = Page.new(e.url).content
               rescue
                 item[:content] = "Error in parsing content"
               end

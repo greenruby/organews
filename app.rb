@@ -35,6 +35,10 @@ class App < Sinatra::Base
   set :sessions, true
   set :stats, { server: '', id: 0 }
 
+  configure :development do
+    enable :logging
+  end
+
   get '/' do
     @title = settings.appname
     erb :index
@@ -45,6 +49,7 @@ class App < Sinatra::Base
     feeds = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) }
     updated = false
     feeds.each do |f| 
+      logger.info f.inspect
       if Time.now - f['updated_at'] > UPDATE_INTERVAL_SECS
         begin
           rss = JSON.parse RSS.new(f['url']).to_json
@@ -74,7 +79,7 @@ class App < Sinatra::Base
     request.body.rewind
     # hash['feed']['url'] = 'http://www.inside.com.tw/feed'
 
-    rss = JSON.parse(RSS.new(params[:url]).to_json)
+    rss = JSON.parse(RSS.new(params['url']).to_json)
     hash = {}
     hash['title'] = rss['channel']
     hash['url'] = rss['url']
