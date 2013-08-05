@@ -8,7 +8,6 @@ require "sinatra/config_file"
 
 require 'mongo'
 require 'json'
-#require 'awesome_print'
 
 require 'organews'
 
@@ -47,10 +46,10 @@ class App < Sinatra::Base
   # will triggger scrapers if need
   get '/v1/feeds' do
     feeds = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) }
-    updated = false
+    has_update_feed = false
     feeds.each do |f| 
-      logger.info f.inspect
-      if Time.now - f['updated_at'] > UPDATE_INTERVAL_SECS
+      
+      if Time.now.to_i - f['updated_at'].to_i > UPDATE_INTERVAL_SECS
         begin
           rss = JSON.parse RSS.new(f['url']).to_json
         rescue
@@ -60,36 +59,29 @@ class App < Sinatra::Base
           f['items'].select{ |old_i| old_i['digest'] == i['digest'] }.size == 0
         end
         unless new_items.empty?
-          updated = true
-          DB.collection('feeds').update(
-            { '_id' => tobsonid(f['id']) }, 
-            { 
-              '$push' => { 'items' => { '$each' => new_items } },
-              '$set' => { 'updated_at' => Time.now }
-            }
-          )
+          has_update_feed = true if !has_update_feed
         end
+        DB.collection('feeds').update(
+          { '_id' => tobsonid(f['id']) }, 
+          { 
+            '$push' => { 'items' => { '$each' => new_items } },
+            '$set' => { 'updated_at' => Time.now }
+          }
+        )
       end
     end
-    feeds = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) } if updated
+    feeds = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) } if has_update_feed
     feeds.to_json
   end
 
   post '/v1/feeds' do
     request.body.rewind
     # hash['feed']['url'] = 'http://www.inside.com.tw/feed'
-
+    now = Time.now
     rss = JSON.parse(RSS.new(params['url']).to_json)
-    hash = {}
-    hash['title'] = rss['channel']
-    hash['url'] = rss['url']
-    hash['items'] = rss['items']
-    # hash['items'].map {|i|
-    #   i['published_at'] = Time.now if i['published_at'].nil? || i['published_at'].empty?
-    # }
-    hash['created_at'] = Time.now
-    hash['updated_at'] = Time.now
-    oid = DB.collection("feeds").insert(hash)
+    rss.merge!({ 'created_at' => now, 'updated_at' => now })
+
+    oid = DB.collection("feeds").insert(rss)
     "{\"id\": \"#{oid.to_s}\"}"
   end
 
