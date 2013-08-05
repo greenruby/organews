@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/pauldix/sax-machine.git
+  revision: 4027000775ae17eb7ecb8b1a4660044d7041559c
+  specs:
+    sax-machine (0.2.0.rc1)
+      nokogiri (>= 1.5.6)
+
+GIT
   remote: git://github.com/sinatra/sinatra-contrib.git
   revision: 1aed2897edebbea5e18a5772af9e060a689013fe
   specs:
@@ -21,14 +28,13 @@ GIT
 
 GIT
   remote: git://github.com/tubaxenor/feedzirra.git
-  revision: b1faf19be0f685e1851ae98db969a2568bfc6835
+  revision: 6ef3e364a6d03d6920e190077b2bb937165d66fb
   branch: language-patch
   specs:
     feedzirra (0.2.0.rc2)
       curb (~> 0.8.1)
       loofah (~> 1.2.1)
-      nokogiri (~> 1.5.3)
-      sax-machine (~> 0.2.0.rc1)
+      nokogiri (>= 1.6.0)
 
 GEM
   remote: https://rubygems.org/
@@ -74,10 +80,12 @@ GEM
       nokogiri (>= 1.4.4)
     method_source (0.8.2)
     mime-types (1.23)
+    mini_portile (0.5.1)
     mongo (1.9.1)
       bson (~> 1.9.1)
     multi_json (1.7.8)
-    nokogiri (1.5.10)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oily_png (1.1.0)
       chunky_png (~> 1.2.7)
     parser (2.0.0.pre2)
@@ -123,8 +131,6 @@ GEM
       nokogiri (>= 1.4.2)
     rubypants (0.2.0)
     sass (3.2.10)
-    sax-machine (0.2.0.rc1)
-      nokogiri (~> 1.5.2)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -161,6 +167,7 @@ DEPENDENCIES
   rspec
   rubocop
   ruby-readability
+  sax-machine!
   sinatra!
   sinatra-contrib!
   thin

@@ -8,6 +8,7 @@ gem 'bson_ext'
 gem 'rdiscount'
 gem 'typogruby'
 #gem 'nokogiri'
+gem 'sax-machine', github: "pauldix/sax-machine"
 gem 'feedzirra', github: "tubaxenor/feedzirra", branch: 'language-patch'
 gem "ruby-readability", :require => 'readability'
 
