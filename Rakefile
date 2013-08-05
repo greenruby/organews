@@ -1,3 +1,5 @@
+require 'mongo'
+
 #!/usr/bin/env rake
 begin
   require 'bundler/setup'
@@ -18,27 +20,13 @@ end
 
 task :default => :spec
 
-desc "Scrape feeds and commit to mongo db"
-task :scrape do
-	require './lib/organews/mongo'
-	require './lib/organews/engine/page'
-	require './lib/organews/engine/rss'
-	require 'mongo'
-	require 'json'
-	require 'time'
-	include Organews
-	include Organews::Mongo
-
-	puts 'scraping feeds...'
-	DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
-	feeds_str = DB.collection('feeds').find.to_a.map{ |t| frombsonid(t) }.to_json
-	feeds = JSON.parse feeds_str
-	feeds.each {|f| 
-		puts f['title'] 
-
-		feed_create_time = Time.parse(f['created_at'])
-		passed_seconds = (Time.now - feed_create_time)
-		puts "Last updated time is #{passed_seconds} seconds ago"
-		# p f['items'][0]['published_at']
-	}
+namespace :db do
+	desc 'Reset mongodb, all data will be deleted'
+	task :reset do
+		DB = Mongo::Connection.new.db("greenmongo", pool_size: 5, timeout: 5)
+		collections = DB.collection_names.reject { |c| c == 'system.indexes' }
+		collections.each do |c|
+			DB.collection(c).drop()
+		end
+	end
 end
