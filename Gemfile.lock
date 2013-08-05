@@ -12,12 +12,23 @@ GIT
 
 GIT
   remote: git://github.com/sinatra/sinatra.git
-  revision: c1fbe4e7561021d97c0b95a4abc4d897cbe4db50
+  revision: be4bddaa98ecb5b84a540ad721787f372e1b2d1c
   specs:
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+
+GIT
+  remote: git://github.com/tubaxenor/feedzirra.git
+  revision: b1faf19be0f685e1851ae98db969a2568bfc6835
+  branch: language-patch
+  specs:
+    feedzirra (0.2.0.rc2)
+      curb (~> 0.8.1)
+      loofah (~> 1.2.1)
+      nokogiri (~> 1.5.3)
+      sax-machine (~> 0.2.0.rc1)
 
 GEM
   remote: https://rubygems.org/
@@ -43,6 +54,7 @@ GEM
       rest-client
       simplecov (>= 0.7)
       thor
+    curb (0.8.4)
     daemons (1.1.9)
     diff-lcs (1.2.4)
     dotenv (0.8.0)
@@ -58,19 +70,20 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    method_source (0.8.1)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
+    method_source (0.8.2)
     mime-types (1.23)
-    mini_portile (0.5.1)
     mongo (1.9.1)
       bson (~> 1.9.1)
-    multi_json (1.7.7)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    multi_json (1.7.8)
+    nokogiri (1.5.10)
     oily_png (1.1.0)
       chunky_png (~> 1.2.7)
-    parser (2.0.0.pre1)
+    parser (2.0.0.pre2)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
+    powerpack (0.0.1)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -96,23 +109,27 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rspec-core (2.14.2)
+    rspec-core (2.14.4)
     rspec-expectations (2.14.0)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.1)
-    rubocop (0.9.1)
-      parser (= 2.0.0.pre1)
+    rspec-mocks (2.14.2)
+    rubocop (0.10.0)
+      backports (~> 3.3.3)
+      parser (= 2.0.0.pre2)
+      powerpack (= 0.0.1)
       rainbow (>= 1.1.4)
     ruby-readability (0.5.7)
       guess_html_encoding (>= 0.0.4)
       nokogiri (>= 1.4.2)
     rubypants (0.2.0)
-    sass (3.2.9)
+    sass (3.2.10)
+    sax-machine (0.2.0.rc1)
+      nokogiri (~> 1.5.2)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
-    slop (3.4.5)
+    slop (3.4.6)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -131,10 +148,10 @@ DEPENDENCIES
   compass
   compass-h5bp
   coveralls
+  feedzirra!
   foreman
   json
   mongo
-  nokogiri
   oily_png
   pry
   rack-test
