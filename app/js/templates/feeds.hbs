@@ -28,11 +28,9 @@
 	<ul class="inpanel">
 		{{#each selectedFeed.items}}
 			<li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>				
-				{{#if this.picked}}
-				 	<span {{action pickItem this}} class="picker picked">✔</span>
-				{{else}}
-					<span {{action pickItem this}} class="picker unpick">○</span>
-				{{/if}}
+				<span {{action pickItem this}} {{bindAttr class=":picker picked:picked:unpick"}}>
+					{{#if picked}}✔{{else}}○{{/if}}
+				</span>
 				<span>{{title}}</span>
 			</li>
 		{{else}}
