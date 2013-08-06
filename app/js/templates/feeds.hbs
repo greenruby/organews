@@ -35,7 +35,10 @@
 	</ul>
 </div><div id="third-panel">
 	{{#if selectedItem}}
-		{{{selectedItem.content}}}
+		<h4>{{selectedItem.title}}</h4>
+		<div class="feeditem-content">
+			{{{selectedItem.content}}}
+		</div>
 	{{else}}
 		<div class="prompt">
 			Select your item on the left.

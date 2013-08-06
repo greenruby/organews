@@ -1,7 +1,6 @@
 # data models
 
 @App.Publication = DS.Model.extend
-  id: DS.attr 'number'
   name: DS.attr 'string'
   title: DS.attr 'string'
   template: DS.attr 'string'
@@ -11,7 +10,6 @@
 
 
 @App.Section = DS.Model.extend
-  id: DS.attr 'number'
   label: DS.attr 'string'
   intro: DS.attr 'string'
   order: DS.attr 'number'
@@ -51,7 +49,7 @@
 
 @App.PublicationRoute = Em.Route.extend
   model: (params)->
-    App.Publication.find params.num
+    App.Publication.find params.id
 
 
 # Collection: Publications
@@ -61,7 +59,7 @@
    App.Publication.find()
   setupController: (c, m)->
     $('#new_publication').hide()
-    c.set('model', m)
+    c.set('content', m)
 
   events:
     new_publication: ->
@@ -69,7 +67,13 @@
     cancel_new_publication: ->
       $('#new_publication').hide()
     save_new_publication: ->
-      $.post( '/v1/publications', {title: title, edito: edito, created_at: created_at} ).done (json)->
+      self = @
+      formData = {
+        title: encodeURIComponent(title.value), 
+        edito: encodeURIComponent(edito.value), 
+        created_at: encodeURIComponent(created_at.value) 
+      }
+      $.post( '/v1/publications', formData ).done (json)->
         json = JSON.parse(json)
         $.get( '/v1/publications/' + json.id ).done (json)->
           json = JSON.parse(json)
@@ -79,7 +83,7 @@
             created_at: created_at
             articles: []
           }
-          view.get('controller.content').pushObject( publication )
+          self.controller.set('content').pushObject( publication )
       $('#new_publication').hide()
 
 @App.PublicationsController = Em.ArrayController.extend

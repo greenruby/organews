@@ -80,7 +80,7 @@ FEEDS_URL = '/v1/feeds'
 			$.post( '/v1/feeds', {url: url} ).done (json)=>
 				json = JSON.parse(json)
 				id = json.id
-				$.get( 'v1/feeds/' + id ).done (json)=>
+				$.get( '/v1/feeds/' + id ).done (json)=>
 					@set('isProcessing', false)
 					@$('input').attr('disabled', false)
 					@$('input').siblings('span').remove()

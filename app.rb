@@ -86,7 +86,7 @@ class App < Sinatra::Base
   end
 
   get '/v1/:thing' do
-    DB.collection(params[:thing]).find.to_a.map{ |t| frombsonid(t) }.to_json
+    { params[:thing] => DB.collection(params[:thing]).find.to_a.map{ |t| frombsonid(t) } }.to_json
   end
 
   get '/v1/:thing/:id' do
@@ -95,8 +95,14 @@ class App < Sinatra::Base
 
   post '/v1/:thing' do
     request.body.rewind
-    oid = DB.collection(params[:thing]).insert(JSON.parse(request.body.read))
-    "{\"id\": \"#{oid.to_s}\"}"
+    meat = params.dup
+    ['splat', 'captures', 'thing'].each {|k| meat.delete(k)}
+    if meat.empty?
+      "{\"error\": \"no content provided for #{params[:thing]}\"}"
+    else
+      oid = DB.collection(params[:thing]).insert(JSON.parse(meat.to_json))
+      "{\"id\": \"#{oid.to_s}\"}"
+    end
   end
 
   delete '/v1/:thing/:id' do
