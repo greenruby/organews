@@ -1,11 +1,7 @@
 <div id="first-panel">
   <div class="menunav">
     {{ controller.length }}
-    <select>
-      {{#each controller}}
-        <option >{{name}}</option>
-      {{/each}}
-    </select>
+    {{view Em.Select contentBinding="controller.nameFilter"}}
   </div>
   <div class="menunav">
     <button class="btn small" {{action "new_publication"}}>Create</button>

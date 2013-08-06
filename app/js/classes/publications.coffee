@@ -75,7 +75,7 @@
       }
       $.post( '/v1/publications', formData ).done (json)->
         json = JSON.parse(json)
-        self.controller.set('model', App.Publication.find())
+        self.controller.set('model', App.Publication.find()) # reload model
         $("#new_publication input, #new_publication textarea").val ''
       $('#new_publication').hide()
 
@@ -83,8 +83,9 @@
   selectedItems: []
   needs: 'feeds'
   selectedItemsBinding: 'controllers.feeds.pickedItems'
+  nameFilter: ['Green Ruby', 'La Gazette']
   selectPublication: (publication)->
-    @set( 'selectedPublication', publication)
+    @set('selectedPublication', publication)
   selectItem: (item)->
     # TODO: adding into publication
 
