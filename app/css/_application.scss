@@ -167,6 +167,12 @@ input[type=text], textarea {
 	.feeditem-content {
 		text-align: left;
 	}
+	h4 {
+		width: 100%;
+		font-size: 2em;
+		margin-top: 0;
+		background-color: #ccc;
+	}
 }
 
 #foot {
@@ -283,7 +289,11 @@ input {
 	@include animation(flash, 5s, ease-in, 0s, infinite, alternate);
 }
 span.picker {
-	font-size: 30px;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.5em;
+	width: 20px;
 	&.picked {
 		color: $green;
 	}
