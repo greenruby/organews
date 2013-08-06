@@ -7,6 +7,12 @@
 				<div class="title">{{title}}</div>
 				<div class="date">{{created_at}}</div>
 			</li>
+		{{else}}
+			{{#if noFeed}}
+				No feed source, please add one.
+			{{else}}
+				Loading feeds ...
+			{{/if}}
 		{{/each}}
 		{{#view App.NewFeedView}}
 			<li class="btn">

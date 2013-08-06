@@ -5,6 +5,7 @@
   title: DS.attr 'string'
   template: DS.attr 'string'
   url: DS.attr 'string'
+  created_at: DS.attr 'string'
   editions: DS.hasMany 'App.Edition'
   sections: DS.hasMany 'App.Section'
 
@@ -59,8 +60,7 @@
    App.Publication.find()
   setupController: (c, m)->
     $('#new_publication').hide()
-    c.set('content', m)
-
+    c.set('model', m)
   events:
     new_publication: ->
       $('#new_publication').show()
@@ -75,15 +75,8 @@
       }
       $.post( '/v1/publications', formData ).done (json)->
         json = JSON.parse(json)
-        $.get( '/v1/publications/' + json.id ).done (json)->
-          json = JSON.parse(json)
-          publication = {
-            title: title
-            edito: edito
-            created_at: created_at
-            articles: []
-          }
-          self.controller.set('content').pushObject( publication )
+        self.controller.set('model', App.Publication.find())
+        $("#new_publication input, #new_publication textarea").val ''
       $('#new_publication').hide()
 
 @App.PublicationsController = Em.ArrayController.extend

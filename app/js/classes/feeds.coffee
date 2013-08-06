@@ -3,7 +3,7 @@ FEEDS_URL = '/v1/feeds'
 
 @App.FeedsRoute = Ember.Route.extend
 	setupController: (controller, model)->
-		$.get('/v1/feeds').done (json)->
+		$.get('/v1/feeds', ->).done (json)->
 			# console.log json
 			data = JSON.parse(json)
 			# console.log data
@@ -16,6 +16,9 @@ FEEDS_URL = '/v1/feeds'
 			) || []
 			# console.log feeds
 			controller.set('content', feeds)
+			console.log feeds
+			if feeds.length == 0
+				controller.set('noFeed', true)
 
 
 @App.FeedsController = Ember.ArrayController.extend
@@ -23,6 +26,7 @@ FEEDS_URL = '/v1/feeds'
 	urlPrompt: false
 	isProcessing: false
 	isEditMode: false
+	noFeed: false
 	pickedItems: []
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
