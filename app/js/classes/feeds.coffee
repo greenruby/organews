@@ -56,6 +56,8 @@ FEEDS_URL = '/v1/feeds'
 		item.set('picked', !item.get('picked'))
 		if item.get('picked')
 			@get('pickedItems').pushObject(item)
+		else
+			@get('pickedItems').removeObject(item)
 
 
 

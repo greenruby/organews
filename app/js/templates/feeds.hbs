@@ -28,7 +28,7 @@
 	<ul class="inpanel">
 		{{#each selectedFeed.items}}
 			<li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>				
-				<span {{action pickItem this}} {{bindAttr class=":picker picked:picked:unpick"}}>
+				<span {{bindAttr class=":picker picked:picked:unpick"}}>
 					{{#if picked}}✔{{else}}○{{/if}}
 				</span>
 				<span>{{title}}</span>
@@ -39,7 +39,11 @@
 	</ul>
 </div><div id="third-panel">
 	{{#if selectedItem}}
-		<h4>{{selectedItem.title}}</h4>
+		<div class="title">
+			<h4>{{selectedItem.title}}</h4><span class="btn inline" {{action pickItem selectedItem}}>
+				{{#if selectedItem.picked}}Cancel{{else}}Pick{{/if}}
+			</span>
+		</div>
 		<div class="feeditem-content">
 			{{{selectedItem.content}}}
 		</div>

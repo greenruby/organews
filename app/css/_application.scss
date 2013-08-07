@@ -167,11 +167,21 @@ input[type=text], textarea {
 	.feeditem-content {
 		text-align: left;
 	}
-	h4 {
+	.title {
 		width: 100%;
-		font-size: 2em;
-		margin: 0 0 20px 0;
+		h4 {
+			display: inline;
+			font-size: 2em;
+			margin: 0;
+		}
+		.btn {
+			margin-left: 10px;
+			display: inline-block;
+			width: 60px;
+			text-align: center;
+		}
 		padding: 10px;
+		margin-bottom: 20px;
 		background-color: #ccc;
 	}
 }
@@ -243,10 +253,10 @@ input {
 	&:hover {
 		background-color: $button_back_hover;
 	}
-	&.active {
+	&:active {
 		background-color: $button_focus_back;
 		color: $button_focus_fore;
-		padding-bottom: .9em;
+		padding-bottom: .3em;
 	}
 }
 
@@ -302,7 +312,6 @@ span.picker {
 		color: #fff;
 	}
 }
-
 @include keyframes(flash) {
 	from { color: #000; }
 	to { color: #eee; }
