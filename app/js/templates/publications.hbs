@@ -1,11 +1,11 @@
 <div id="first-panel">
   <div class="menunav">
-    {{ controller.length }}
-    {{view Em.Select contentBinding="controller.nameFilter"}}
+    {{ controller.collection.length }}
+    {{view Em.Select contentBinding="controller.nameFilter" selectionBinding="controller.selectedNameFilter"}}
   </div>
   <div class="menunav">
     <button class="btn small" {{action "new_publication"}}>Create</button>
-    {{#if controller}}
+    {{#if controller.collection}}
       <button class="btn small" >Archives</button>
     {{/if}}
   </div>
@@ -19,7 +19,7 @@
     </div>
   </form>
   <ul class="inpanel compact">
-    {{#each controller}}
+    {{#each controller.collection}}
       <li>
         <div class="title">{{ title }}</div>
         <div class="date">{{ date created_at "%Y-%m-%e" }}</div>

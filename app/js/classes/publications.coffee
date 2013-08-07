@@ -61,6 +61,7 @@
   setupController: (c, m)->
     $('#new_publication').hide()
     c.set('model', m)
+    c.set('collection', m)
   events:
     new_publication: ->
       $('#new_publication').show()
@@ -68,7 +69,9 @@
       $('#new_publication').hide()
     save_new_publication: ->
       self = @
+      name = self.controller.get('selectedNameFilter') || "Green Ruby"
       formData = {
+        name: name
         title: encodeURIComponent(title.value), 
         edito: encodeURIComponent(edito.value), 
         created_at: encodeURIComponent(created_at.value) 
@@ -84,10 +87,17 @@
   needs: 'feeds'
   selectedItemsBinding: 'controllers.feeds.pickedItems'
   nameFilter: ['Green Ruby', 'La Gazette']
+  selectedNameFilter: 'Green Ruby'
   selectPublication: (publication)->
     @set('selectedPublication', publication)
   selectItem: (item)->
     # TODO: adding into publication
+  filterDidChange: (->
+    if @get('selectedNameFilter') != ''
+      filtered = @get('model').filterProperty('name', @get('selectedNameFilter'))
+      @set('collection', filtered)
+      
+  ).observes('selectedNameFilter')
 
 @App.PublicationsView = Em.View.extend
   classNames: ['inmiddle']
