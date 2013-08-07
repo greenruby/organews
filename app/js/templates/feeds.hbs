@@ -30,7 +30,8 @@
 			<li class="title"  {{bindAttr class="selected"}}>				
 				<span {{action pickItem this}} {{bindAttr class=":picker picked:picked:unpick"}}>
 					{{#if picked}}✔{{else}}○{{/if}}
-				</span><span class="item" {{action selectItem this}}>{{title}}</span>
+				</span>
+				<span class="item" {{action selectItem this}}>{{title}}</span>
 			</li>
 		{{else}}
 			<li class="header">Choose one feed...</li>
