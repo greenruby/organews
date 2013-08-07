@@ -106,8 +106,20 @@ input[type=text], textarea {
 	overflow-y: scroll;
 	li {
 		cursor: pointer;
+		padding: 0;
+		margin: 0;
 		&.selected {
 			background-color: $grey;
+		}
+		.item {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			width: 92%;
+			height: 100%;
+			line-height: 40px;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 }
@@ -305,9 +317,13 @@ input {
 span.picker {
 	position: relative;
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	font-size: 1.5em;
-	width: 20px;
+	width: 8%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	padding: 0 5px;
 	&.picked {
 		color: $green;
 	}
