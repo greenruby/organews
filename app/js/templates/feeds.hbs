@@ -38,12 +38,17 @@
 		{{/each}}
 	</ul>
 </div><div id="third-panel">
-	{{#if selectedItem}}
-		<div class="title">
-			<h4>{{selectedItem.title}}</h4><span class="btn inline" {{action pickItem selectedItem}}>
+	<div class="toolbar">
+		{{#if selectedItem}}
+		<span class="btn inline" {{action pickItem selectedItem}}>
 				{{#if selectedItem.picked}}Cancel{{else}}Pick{{/if}}
-			</span>
-		</div>
+		</span>
+		{{/if}}
+	</div>
+	{{#if selectedItem}}
+		<h4 class="title">
+			{{selectedItem.title}}
+		</h4>
 		<div class="feeditem-content">
 			{{{selectedItem.content}}}
 		</div>

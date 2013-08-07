@@ -183,12 +183,13 @@ input[type=text], textarea {
 	.feeditem-content {
 		text-align: left;
 	}
+	.toolbar {
+		height: 40px;
+	}
 	.title {
 		width: 100%;
-		h4 {
-			font-size: 2em;
-			margin: 0;
-		}
+		font-size: 2em;
+		margin: 0;
 		.btn {
 			margin-left: 10px;
 			display: inline-block;
