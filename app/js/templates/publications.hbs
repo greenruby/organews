@@ -34,7 +34,7 @@
   <ul class="inpanel">
     {{#each selectedItems}}
       <li class="title" {{action selectItem this}}  {{bindAttr class="selected"}}>        
-        {{title}}
+      <span>{{title}}</span>
       </li>
     {{else}}
       <li class="header">No feed item selected.</li>
