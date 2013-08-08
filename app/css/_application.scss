@@ -1,6 +1,7 @@
 html,body {
 	height: 100%;
 	font-size: 100%;
+	line-height: 1.75em;
 }
 
 * {
@@ -154,6 +155,7 @@ input[type=text], textarea {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	line-height: 1.2em;
 }
 .date {
 	font-size: 0.7em;
