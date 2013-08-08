@@ -157,6 +157,10 @@ input[type=text], textarea {
 	overflow: hidden;
 	line-height: 1.2em;
 }
+.time {
+	margin: 0;
+	color: $grey;
+}
 .date {
 	font-size: 0.7em;
 	text-align: left;

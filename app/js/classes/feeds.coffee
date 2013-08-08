@@ -10,13 +10,14 @@ FEEDS_URL = '/v1/feeds'
 			feeds = data.map( (f)->
 				o = Ember.Object.create().setProperties(f)
 				o.items = f.items.map( (i)->
+					if i.published_at
+						i.published_at = (new Date( Date.parse(i.published_at) )).fmt('%Y-%m-%e %A')
 					Ember.Object.create().setProperties(i)
 				)
 				o
 			) || []
 			# console.log feeds
 			controller.set('content', feeds)
-			console.log feeds
 			if feeds.length == 0
 				controller.set('noFeed', true)
 
