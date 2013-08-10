@@ -9,11 +9,16 @@ FEEDS_URL = '/v1/feeds'
 			# console.log data
 			feeds = data.map( (f)->
 				o = Ember.Object.create().setProperties(f)
-				o.items = f.items.map( (i)->
+				o.items = Ember.ArrayController.create {
+					sortProperties: ['published_at']
+					sortAscending: false
+				}
+				o.items.setObjects f.items.map( (i)->
 					if i.published_at
 						i.published_at = (new Date( Date.parse(i.published_at) )).fmt('%Y-%m-%e %A')
 					Ember.Object.create().setProperties(i)
 				)
+
 				o
 			) || []
 			# console.log feeds
@@ -29,6 +34,8 @@ FEEDS_URL = '/v1/feeds'
 	isEditMode: false
 	noFeed: false
 	pickedItems: []
+	sortProperties: ['created_at']
+	sortAscending: false
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
 	deleteFeed: (feed)->
