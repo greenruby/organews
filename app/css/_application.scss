@@ -9,6 +9,7 @@ html,body {
 }
 
 a {
+	color: $grey;
 	text-decoration: none;
 }
 input[type=text], textarea {
@@ -193,6 +194,12 @@ input[type=text], textarea {
 		}
 		h1,h2,h3 {
 			margin: 2em 0 0.5em 0;
+		}
+		a {
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 	.toolbar {
