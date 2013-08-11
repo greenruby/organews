@@ -32,6 +32,8 @@ and for now we are talking about a combination of:
   for the front-end rendering and general navigation
 * Rspec and Zombie (not sure yet about that one)
   one for the backend REST server, the other for the front-end
+ * store.js
+  Use [store.js](https://github.com/marcuswestin/store.js/blob/master/store.js) as application cache.
 
 Run it
 ---------
