@@ -39,7 +39,7 @@ FEEDS_URL = '/v1/feeds'
 	sortAscending: false
 	isEmpty: (->
 		@get('content').length == 0
-	).property('content')
+	).property('content.@each')
 	toggleEditMode: ->
 		@set('isEditMode', !@get('isEditMode'))
 	deleteFeed: (feed)->
