@@ -46,3 +46,7 @@ $panel-height: 100%;
   -moz-animation: $name $duration $timefn $delay $count $direction;
   -ms-animation: $name $duration $timefn $delay $count $direction;
 }
+
+html {
+  font-family: "Lucida Grande", Arial, Helvetica
+}

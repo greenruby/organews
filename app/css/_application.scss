@@ -187,10 +187,13 @@ input[type=text], textarea {
 		max-width: 100%;
 		height: auto;
 	}
-	h4 a {
-		color: #000;
-		&:hover {
-			color: $grey;
+	h4 {
+		font-family: 'EB Garamond', Arial, Helvetica;
+		a {
+			color: #000;
+			&:hover {
+				color: $grey;
+			}
 		}
 	}
 	.feeditem-content {
