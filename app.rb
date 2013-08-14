@@ -79,9 +79,12 @@ class App < Sinatra::Base
     # hash['feed']['url'] = 'http://www.inside.com.tw/feed'
     now = Time.now
     rss = JSON.parse(RSS.new(params['url']).to_json)
+    items = rss['items']
     rss.merge!({ 'created_at' => now, 'updated_at' => now })
 
     oid = DB.collection("feeds").insert(rss)
+    items.each {|i| i.merge!( {'oid' => oid} ) }
+    DB.collection('items').insert(items)
     "{\"id\": \"#{oid.to_s}\"}"
   end
 
