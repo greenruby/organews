@@ -83,7 +83,7 @@ class App < Sinatra::Base
     rss.merge!({ 'created_at' => now, 'updated_at' => now })
 
     oid = DB.collection("feeds").insert(rss)
-    items.each {|i| i.merge!( {'oid' => oid} ) }
+    items.each {|i| i.merge!( {'fid' => oid} ) }
     DB.collection('items').insert(items)
     "{\"id\": \"#{oid.to_s}\"}"
   end
