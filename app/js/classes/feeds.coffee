@@ -111,7 +111,7 @@ FEEDS_URL = '/v1/feeds'
 						id: id
 						title: json.title
 						url: url
-						created_at: new Date()
+						created_at: ''
 						items: items
 						selected: false
 					}
