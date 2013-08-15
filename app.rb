@@ -55,9 +55,8 @@ class App < Sinatra::Base
         rescue
           break
         end
-        new_items = rss['items'].select do |i|
-          f['items'].select{ |old_i| old_i['digest'] == i['digest'] }.size == 0
-        end
+        new_items = rss['items'].select { |i| f['items'].select{ |old_i| old_i['digest'] == i['digest'] }.size == 0 }
+        new_items.each {|i| i.merge!( {'fid' => f['id']} ) }
         unless new_items.empty?
           has_update_feed = true if !has_update_feed
         end
