@@ -6,17 +6,23 @@ Organews
 [![Coverage Status](https://coveralls.io/repos/greenruby/organews/badge.png?branch=develop)](https://coveralls.io/r/greenruby/organews?branch=develop)
 [![Code Climate](https://codeclimate.com/github/greenruby/organews.png)](https://codeclimate.com/github/greenruby/organews)
 
-This project was initially a sinatra + ember project and was abandonned. Now it becomes a grape api server for an angular front-end.
+This project includes
 
-Run it
----------
+* a grape api server for an angular front-end.
+* a static pages generator
+* a mailchimp publication runner
 
-```
-bundle
-foreman start
-open http://localhost:5100
-```
-The sinatra server is serving the frontend and the backend. Foreman also launches grunt at same time.
+The need for Organews comes from the newsletter publication Green Ruby http://greenruby.org where the information management follows a specific set of constraints:
+
+* there are modifications made by only one editor
+* modifications are made once a week
+* the html newsletter is sent via mailchimp
+* a website keeps track of the archives
+* the archives have to be searchable by article, tag, title, etc.
+
+Currently the Greeen Ruby publication had one year of existence and 1300 links publiched, each with a small set of metadata. So the choice is to use an in-memory database, load everything at api server start. This is of course not a scalable choice but for the start it will do it. The use of the sequel gem anyways permits evolution later on.
+
+Organews is designed to be used by https://github.com/greenruby/grn-static which holds all the content.
 
 Contribute
 --------------
