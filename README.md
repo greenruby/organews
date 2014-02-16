@@ -6,34 +6,7 @@ Organews
 [![Coverage Status](https://coveralls.io/repos/greenruby/organews/badge.png?branch=develop)](https://coveralls.io/r/greenruby/organews?branch=develop)
 [![Code Climate](https://codeclimate.com/github/greenruby/organews.png)](https://codeclimate.com/github/greenruby/organews)
 
-Status: setup in progress
-
-Taskboard: [trello taskboard](https://trello.com/board/greeby-platform/513fd48aa7ed906115001a04)
-
-This code is intended to power http://greenruby.org as a helper
-for writing a ruby newsletter, collecting news, triaging them,
-collaboratively evaluating them, in a limited group of people.
-It could be viewed as a kind of small hackernews on the top of newsblur,
-with some extra tools for generating mailchimp letters.
-
-The technology stack in this project is probably very mobile,
-and for now we are talking about a combination of:
-
-* sinatra 1.4 on ruby 2
-  as a main server, to serve static pages for the front-end and
-  handle the REST interface to the db
-* mongodb
-  as a data store.
-* compass
-  as a preprocessing helper of SCSS files and sprites generation
-* fontcustom
-  for generating icon fonts from inkscape SVG files.
-* Ember.js, with jquery
-  for the front-end rendering and general navigation
-* Rspec and Zombie (not sure yet about that one)
-  one for the backend REST server, the other for the front-end
-* store.js
-  Use [store.js](https://github.com/marcuswestin/store.js/blob/master/store.js) as application cache.
+This project was initially a sinatra + ember project and was abandonned. Now it becomes a grape api server for an angular front-end.
 
 Run it
 ---------
@@ -56,14 +29,12 @@ Contribute
 Contributors
 ---------------
 
-* @mose project lead
-* @eguitarz dev
-* @tubaxenor dev
+* @mose, author
 
 License - MIT
 -----------
 
-Copyright (c) 2013 Mose, Dale Ma, William Chang
+Copyright (c) 2014 Mose
 
 ```
 Permission is hereby granted, free of charge, to any person obtaining

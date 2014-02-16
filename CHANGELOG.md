@@ -5,6 +5,6 @@ Organews Changelog
 
 ### v0.0.1 : wip
 
+* recenter to an api-only server based on grape +
 * rename project from Greeby to Organews
-* porting all js to coffeescript
 * basic setup

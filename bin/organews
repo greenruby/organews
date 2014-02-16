@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler"
+require "organews/version"
+require "organews/cli"
+
+Organews::Cli.start

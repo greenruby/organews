@@ -2,7 +2,7 @@ language: ruby
 bundler_args: --without development
 services: mongodb
 rvm:
-  - 2.0.0
+  - 2.1.0
 env:
   RACK_ENV: test
   CI: true
