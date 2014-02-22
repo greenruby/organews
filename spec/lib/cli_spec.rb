@@ -3,6 +3,6 @@
 require 'spec_helper'
 require "organews/cli"
 
-describe Logring::Cli do
+describe Organews::Cli do
 
 end
