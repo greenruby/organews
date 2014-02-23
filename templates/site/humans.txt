@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    who -- Author, coder, designer -- twitter-account
+
+# THANKS
+
+    Everyody
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Ruby, Compass, HAML
+    Bootstrap, jQuery, Modernizr

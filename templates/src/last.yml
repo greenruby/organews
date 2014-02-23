@@ -1,0 +1,42 @@
+---
+edition: "01"
+pubdate: "jan 10th 2020"
+edito: "Example edito"
+topics:
+- title: News
+  baseline: "Wht's in the news ..."
+  links:
+  - title: "xx"
+    url: "http://example.com"
+    pubdate: jan 1
+    comment: "x x x x"
+    tags:
+    - tag1
+    - tag2
+  - title: "yyy"
+    url: http://example.com/yyy
+    pubdate: jan 2
+    comment: "yyyy"
+    tags:
+    - tag3
+    - tag1
+- title: Events
+  baseline: "What's happening ..."
+  links:
+  - title: big code party
+    url: "http://example.com/party
+    pubdate: jan 5
+    comment: lotta fun
+    duration: 2 days
+    startdate: feb 2
+    tags:
+    - tag5
+  - title: a conf
+    url: http://example.com/conf
+    pubdate: jan 6
+    comment: "yyyy"
+    startdate: feb 2
+    city: Taipei
+    country: Taiwan
+    tags:
+    - tag3
