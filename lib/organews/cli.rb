@@ -1,3 +1,5 @@
+require 'thor'
+
 module Organews
   class Cli < Thor
     include Thor::Actions
