@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module Organews
   module Utils
 

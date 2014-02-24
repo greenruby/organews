@@ -5,14 +5,14 @@ module Organews
     include Utils
     extend self
 
-    CONFIGFILE_TEMPLATE = File.expand_path("../../../config.default.yml", __FILE__)
-
     def load(configfile)
       @__configfile = configfile
     end
 
     def vars
-      FileUtils.cp(CONFIGFILE_TEMPLATE, configfile) unless File.exists? configfile
+      unless File.exists? configfile
+        raise RuntimeError, "Missing configuration file, run `organews init` or create a config.yml file."
+      end
       @__config ||= to_ostruct(YAML::load_file(configfile))
       @__config
     end
