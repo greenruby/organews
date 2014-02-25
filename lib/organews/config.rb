@@ -1,3 +1,4 @@
+require "yaml"
 require "organews/utils"
 
 module Organews
@@ -10,7 +11,7 @@ module Organews
     end
 
     def vars
-      unless File.exists? configfile
+      unless File.exists?(configfile)
         raise RuntimeError, "Missing configuration file, run `organews init` or create a config.yml file."
       end
       @__config ||= to_ostruct(YAML::load_file(configfile))
@@ -18,7 +19,12 @@ module Organews
     end
 
     def configfile
-      @__configfile
+      @__configfile || ""
+    end
+
+    def reset
+      @__configfile = nil
+      @__config = nil
     end
 
   end
