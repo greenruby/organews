@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     organews (0.0.2)
+      feralchimp
       goliath
       grape
       rack-fiber_pool
@@ -47,6 +48,11 @@ GEM
       eventmachine (>= 0.12.9)
     equalizer (0.0.9)
     eventmachine (1.0.3)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    feralchimp (1.0.1)
+      faraday (~> 0.8)
+      json (~> 1.8)
     goliath (1.0.3)
       async-rack
       em-synchrony (>= 1.0.0)
@@ -83,6 +89,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.4)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     parser (2.1.4)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)

@@ -5,5 +5,4 @@
 coverage/
 vendor/ruby
 .bundle/
-bin/
-!bin/organews
+localbin/
