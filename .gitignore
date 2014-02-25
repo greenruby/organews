@@ -6,3 +6,4 @@ config.yml
 coverage/
 vendor/ruby
 .bundle/
+bin/
