@@ -1,7 +1,8 @@
 *.swo
 *.swp
+*.log
 *~
-/manifest.yml
-/config.yml
-/.sass-cache
-/coverage/
+coverage/
+vendor/ruby
+.bundle/
+bin/

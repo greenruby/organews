@@ -1,0 +1,84 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title
+      News
+      - if name
+        = ": #{name}"
+    %meta{ content: "", name: "description" }
+    %meta{ content: "", name: "keywords" }
+    %meta{ content: "width=device-width, minimum-scale=1.0, maximum-scale=1.0", name: "viewport" }
+
+    %link{ href: "feed.rss", rel: "alternate", title: "Green Ruby", type: "application/rss+xml" }
+    %link{ href: "css/bootstrap.min.css", rel: "stylesheet" }
+    %link{ href: "css/bootstrap-theme.min.css", rel: "stylesheet" }
+    %link{ href: "css/style.css", rel: "stylesheet" }
+    %script{ src: "js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" }
+  %body
+    /[if lt IE 7]
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+
+    .navbar.navbar-fixed-top.topnav
+      .container
+        .navbar-header
+          %button.navbar-toggle( data-toggle="collapse" data-target=".navbar-collapse")
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a{ href: 'index.html', class: "navbar-brand"}
+            Newsletter
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{ href: 'index.html'} Home
+            %li
+              %a{ href: 'about.html'} About
+            %li
+              %a{ href: 'mailto:news@example.com'} Contact
+    .container
+      .row
+        .col-sm-3.col-md-2.leftbar
+          %h3
+            %a{ href: "feed.rss", style: "float:right"}
+              %img{ src: "img/rss.png" }
+            Archives
+          %ul.nav.nav-sidebar.letters
+
+        .col-sm-5.col-md-7.main
+          = content
+
+        .col-sm-4.col-md-3.rightbar
+          %blockquote
+            %p Green Ruby News is a feed of fresh links of the week about ruby, javascript, webdev, devops, collected by mose every sunday.
+            %p
+            %form{ action: "http://greenruby.us6.list-manage.com/subscribe/post?u=f1b3b59d2383eeb07537f6440&amp;id=7136c985cf", method: 'post'}
+              .text-center
+                %b Subscribe
+              .text-center
+                to the
+              .text-center
+                %b weekly newsletter
+              %p
+              %p
+                %input.form-control(name="EMAIL" placeholder="email address" type="email")
+                %input(type="hidden" name="b_f1b3b59d2383eeb07537f6440_7136c985cf" value="")
+                %input.form-control.btn.btn-primary(type="submit" name="subscribe" value="Subscribe")
+          %small.text-center Email distribution is powered by mailchimp.
+
+    #footer
+      %a{ href: 'mailto:news@greenruby.org', class: 'contact'}
+        contact
+      The Green Ruby Newsletter is published by <a href="http://mose.com">Mose</a>
+      .copyright
+        Copyright &copy; 2013-2014 Mose
+        %a( rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/")
+          %img( alt="Creative Commons License" style="border-width:0" src="img/cc-80x15.png" )
+
+    %script{ src: "//code.jquery.com/jquery-1.10.2.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+
+    %script{ src: "js/static.js" }
