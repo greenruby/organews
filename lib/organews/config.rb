@@ -11,7 +11,7 @@ module Organews
     end
 
     def vars
-      unless File.exists?(configfile)
+      unless File.exist?(configfile)
         raise RuntimeError, "Missing configuration file, run `organews init` or create a config.yml file."
       end
       @__config ||= to_ostruct(YAML::load_file(configfile))
@@ -23,8 +23,8 @@ module Organews
     end
 
     def reset
-      @__configfile = nil
-      @__config = nil
+      remove_instance_variable :@__configfile if instance_variable_get :@__configfile
+      remove_instance_variable :@__config if instance_variable_get :@__config
     end
 
   end

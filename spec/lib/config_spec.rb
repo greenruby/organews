@@ -9,6 +9,28 @@ describe Organews::Config do
     Organews::Config.reset
   end
 
+  describe "#load" do
+
+    it "loads config file" do
+      file = File.expand_path("../../../templates/config.yml",__FILE__)
+      Organews::Config.load file
+      expect( Organews::Config.instance_variable_get(:@__configfile)).to eq file
+    end
+
+  end
+
+  describe "#reset" do
+
+    it "resets the configuration" do
+      Organews::Config.load File.expand_path("../../../templates/config.yml",__FILE__)
+      Organews::Config.vars
+      expect( Organews::Config.instance_variables.count ).to be 2
+      Organews::Config.reset
+      expect( Organews::Config.instance_variables.count ).to be 0
+    end
+
+  end
+
   describe "#vars" do
 
     context "with no config file loaded" do
