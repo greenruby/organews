@@ -12,7 +12,7 @@ describe Organews::Config do
   describe "#load" do
 
     it "loads config file" do
-      file = File.expand_path("../../../templates/config.yml",__FILE__)
+      file = File.expand_path("../../files/config.yml",__FILE__)
       Organews::Config.load file
       expect( Organews::Config.instance_variable_get(:@__configfile)).to eq file
     end
@@ -22,7 +22,7 @@ describe Organews::Config do
   describe "#reset" do
 
     it "resets the configuration" do
-      Organews::Config.load File.expand_path("../../../templates/config.yml",__FILE__)
+      Organews::Config.load File.expand_path("../../files/config.yml",__FILE__)
       Organews::Config.vars
       expect( Organews::Config.instance_variables.count ).to be 2
       Organews::Config.reset
@@ -44,7 +44,7 @@ describe Organews::Config do
 
     context "with the default config file set" do
       before :each do
-        Organews::Config.load File.expand_path("../../../templates/config.yml",__FILE__)
+        Organews::Config.load File.expand_path("../../files/config.yml",__FILE__)
       end
       it "gets you the structs of config vars" do
         expect( Organews::Config.vars ).to be_an OpenStruct
