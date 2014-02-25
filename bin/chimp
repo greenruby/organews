@@ -2,6 +2,6 @@
 
 require "bundler"
 require "organews/version"
-require "organews/cli"
+require "organews/chimp/cli"
 
-Organews::Cli.start
+Organews::Chimp::Cli.start

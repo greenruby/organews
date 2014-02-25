@@ -13,7 +13,7 @@ module Organews
       class_option :configfile,
         aliases: "-c",
         banner: "PATH",
-        default: File.expand_path("config-chimp.yml", Dir.pwd),
+        default: File.expand_path("config.yml", Dir.pwd),
         desc: "Path to the configuration file to use"
 
       desc "check", "checks that config is ok to communicate with mailchimp."
