@@ -20,7 +20,7 @@ describe Organews::Cli do
       @cli.shell.mute do
         @cli.init @testdir
       end
-      expect(File.file? 'config.yml').to be_true
+      expect(File.file? File.join(@testdir,'config.yml')).to be_true
     end
   end
 
