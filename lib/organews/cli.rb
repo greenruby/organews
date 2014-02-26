@@ -16,8 +16,8 @@ module Organews
       desc: "Path to the configuration file to use"
 
     desc "init", "creates base tree for organews."
-    def init
-      directory "templates", "./"
+    def init(dir=".")
+      directory "templates", dir
     end
 
   end
