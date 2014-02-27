@@ -77,4 +77,24 @@ describe Organews::Chimp::Cli do
     end
   end
 
+  describe "#template" do
+    it "responds to templates del" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:template_del).with(1) { "ok" }
+      expect(@cli).to receive(:say).with("ok")
+      @cli.shell.mute do
+        @cli.template('del',1)
+      end
+    end
+    it "raises en error if something is wrong" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:template_del).with(1).and_raise("error occured")
+      expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
+      expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
+      @cli.shell.mute do
+        @cli.template('del',1)
+      end
+    end
+  end
+
 end

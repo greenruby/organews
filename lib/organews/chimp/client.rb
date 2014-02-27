@@ -30,6 +30,10 @@ module Organews
         end
       end
 
+      def template_del(id)
+        @api.templates.del(id)
+      end
+
     end
   end
 end

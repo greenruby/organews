@@ -8,6 +8,11 @@ describe Organews::Chimp::Client do
   before :each do
     Organews::Config.load File.expand_path("../../../files/config.yml",__FILE__)
     @client = Organews::Chimp::Client.new
+    @headers = {
+      'Content-Type'=>'application/json',
+      'Host'=>'us1.api.mailchimp.com:443',
+      'User-Agent'=>'excon/0.31.0'
+    }
   end
 
   after :each do
@@ -19,11 +24,7 @@ describe Organews::Chimp::Client do
       stub_request(:post, "https://us1.api.mailchimp.com/2.0/helper/ping.json").
         with(
           body: { apikey: Organews::Config.vars.chimp_key }.to_json,
-          headers: {
-            'Content-Type'=>'application/json',
-            'Host'=>'us1.api.mailchimp.com:443',
-            'User-Agent'=>'excon/0.31.0'
-          }
+          headers: @headers
         ).
         to_return(
           status: 200,
@@ -46,11 +47,7 @@ describe Organews::Chimp::Client do
             sort_dir: "DESC",
             apikey: Organews::Config.vars.chimp_key
           }.to_json,
-          headers: {
-            'Content-Type'=>'application/json',
-            'Host'=>'us1.api.mailchimp.com:443',
-            'User-Agent'=>'excon/0.31.0'
-          }
+          headers: @headers
         ).
         to_return(
           status: 200,
@@ -70,11 +67,7 @@ describe Organews::Chimp::Client do
             filters: [],
             apikey: Organews::Config.vars.chimp_key
           }.to_json,
-          headers: {
-            'Content-Type'=>'application/json',
-            'Host'=>'us1.api.mailchimp.com:443',
-            'User-Agent'=>'excon/0.31.0'
-          }
+          headers: @headers
         ).
         to_return(
           status: 200,
@@ -82,6 +75,25 @@ describe Organews::Chimp::Client do
           headers: {}
         )
       @client.templates
+    end
+  end
+
+  describe "#template_del" do
+    it "calls mailchimp api and returns its response" do
+      stub_request(:post, "https://us1.api.mailchimp.com/2.0/templates/del.json").
+        with(
+          body: {
+            template_id: 1,
+            apikey: Organews::Config.vars.chimp_key
+          }.to_json,
+          headers: @headers
+        ).
+        to_return(
+          status: 200,
+          body: { user: [{ id: "1", name: 'test' }]}.to_json,
+          headers: {}
+        )
+      @client.template_del(1)
     end
   end
 
