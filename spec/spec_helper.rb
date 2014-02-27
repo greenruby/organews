@@ -8,6 +8,7 @@ end
 ENV['RACK_ENV'] = 'test'
 
 require "rspec"
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   config.mock_with :rspec

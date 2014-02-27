@@ -5,12 +5,14 @@ module Organews
   module Chimp
     class Client
 
+      attr_reader :api
+
       def initialize
-        @mailchimp = Mailchimp::API.new Organews::Config.vars.chimp_key
+        @api = Mailchimp::API.new Organews::Config.vars.chimp_key
       end
 
       def ping
-        @mailchimp.helper.ping
+        @api.helper.ping
       end
 
     end
