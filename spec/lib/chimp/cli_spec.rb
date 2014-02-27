@@ -2,6 +2,8 @@
 
 require 'spec_helper'
 require "organews/chimp/cli"
+class Fake
+end
 
 describe Organews::Chimp::Cli do
 
@@ -9,20 +11,19 @@ describe Organews::Chimp::Cli do
     @cli = Organews::Chimp::Cli.new([], {
       'configfile' => File.expand_path('../../../files/config.yml', __FILE__)
     } )
+    Organews::Chimp::Client.stub(:new).and_return(Fake)
   end
 
   describe "#check" do
     it "responds to ping" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:ping) { "ha" }
+      Fake.stub(:ping) { "ha" }
       expect(@cli).to receive(:say).with(subject.set_color "All good.", :green, :bold)
       @cli.shell.mute do
         @cli.check
       end
     end
     it "raises en error if api key is wrong" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:ping).and_raise("invalid key")
+      Fake.stub(:ping).and_raise("invalid key")
       expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
       expect(@cli).to receive(:say).with(subject.set_color "invalid key", :red)
       @cli.shell.mute do
@@ -33,8 +34,7 @@ describe Organews::Chimp::Cli do
 
   describe "#lists" do
     it "responds to lists" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:lists).and_return([{ id: 1, name: 'test', members: 3 }])
+      Fake.stub(:lists).and_return([{ id: 1, name: 'test', members: 3 }])
       expect(@cli).to receive(:say).
         with(
           sprintf("%12s %-20s %s", subject.set_color("1", :cyan), 'test', '3')
@@ -44,8 +44,7 @@ describe Organews::Chimp::Cli do
       end
     end
     it "raises en error if something is wrong" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:lists).and_raise("error occured")
+      Fake.stub(:lists).and_raise("error occured")
       expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
       expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
       @cli.shell.mute do
@@ -56,8 +55,7 @@ describe Organews::Chimp::Cli do
 
   describe "#templates" do
     it "responds to templates" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:templates).and_return([{ id: 1, name: 'test' }])
+      Fake.stub(:templates).and_return([{ id: 1, name: 'test' }])
       expect(@cli).to receive(:say).
         with(
           sprintf("%12s %s", subject.set_color("1", :cyan), 'test')
@@ -67,8 +65,7 @@ describe Organews::Chimp::Cli do
       end
     end
     it "raises en error if something is wrong" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:templates).and_raise("error occured")
+      Fake.stub(:templates).and_raise("error occured")
       expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
       expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
       @cli.shell.mute do
@@ -79,16 +76,21 @@ describe Organews::Chimp::Cli do
 
   describe "#template" do
     it "responds to templates del" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:template_del).with(1) { "ok" }
-      expect(@cli).to receive(:say).with("ok")
+      Fake.stub(:template_del).with(1)
+      expect(@cli).to receive(:say).with(subject.set_color("Template disabled.", :green))
       @cli.shell.mute do
         @cli.template('del',1)
       end
     end
+    it "fails if subcommand is not found" do
+      expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :yellow, :bold)
+      expect(@cli).to receive(:say).with(subject.set_color "Action xxx unknown.", :yellow)
+      @cli.shell.mute do
+        @cli.template('xxx',1)
+      end
+    end
     it "raises en error if something is wrong" do
-      Organews::Chimp::Client.stub(:new).and_return(Object)
-      Object.stub(:template_del).with(1).and_raise("error occured")
+      Fake.stub(:template_del).with(1).and_raise("error occured")
       expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
       expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
       @cli.shell.mute do
