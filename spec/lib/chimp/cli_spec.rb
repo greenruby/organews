@@ -43,6 +43,15 @@ describe Organews::Chimp::Cli do
         @cli.lists
       end
     end
+    it "raises en error if something is wrong" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:lists).and_raise("error occured")
+      expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
+      expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
+      @cli.shell.mute do
+        @cli.lists
+      end
+    end
   end
 
   describe "#templates" do
@@ -57,5 +66,15 @@ describe Organews::Chimp::Cli do
         @cli.templates
       end
     end
+    it "raises en error if something is wrong" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:templates).and_raise("error occured")
+      expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
+      expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
+      @cli.shell.mute do
+        @cli.templates
+      end
+    end
   end
+
 end
