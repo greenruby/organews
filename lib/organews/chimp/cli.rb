@@ -61,7 +61,8 @@ module Organews
         mailchimp = Organews::Chimp::Client.new
         begin
           if mailchimp.respond_to? "template_#{action}".to_sym
-            say mailchimp.send("template_#{action}".to_sym, id)
+            mailchimp.send("template_#{action}".to_sym, id)
+            say set_color("Template disabled.", :green)
           else
             say set_color("*** Error ***", :yellow, :bold)
             say set_color("Action #{action} unknown.", :yellow)

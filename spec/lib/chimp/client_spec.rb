@@ -90,7 +90,7 @@ describe Organews::Chimp::Client do
         ).
         to_return(
           status: 200,
-          body: { user: [{ id: "1", name: 'test' }]}.to_json,
+          body: { complete: true }.to_json,
           headers: {}
         )
       @client.template_del(1)
