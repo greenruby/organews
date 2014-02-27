@@ -34,4 +34,31 @@ describe Organews::Chimp::Client do
     end
   end
 
+  describe "#lists" do
+    it "calls mailchimp api and returns its response" do
+      stub_request(:post, "https://us1.api.mailchimp.com/2.0/lists/list.json").
+        with(
+          body: {
+            filters: [],
+            start: 0,
+            limit: 25,
+            sort_field: "created",
+            sort_dir: "DESC",
+            apikey: Organews::Config.vars.chimp_key
+          }.to_json,
+          headers: {
+            'Content-Type'=>'application/json',
+            'Host'=>'us1.api.mailchimp.com:443',
+            'User-Agent'=>'excon/0.31.0'
+          }
+        ).
+        to_return(
+          status: 200,
+          body: { data: [{ id: "1", name: 'test', stats: { member_count: "3" }}]}.to_json,
+          headers: {}
+        )
+      @client.lists
+    end
+  end
+
 end

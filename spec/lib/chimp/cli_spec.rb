@@ -31,4 +31,18 @@ describe Organews::Chimp::Cli do
     end
   end
 
+  describe "#lists" do
+    it "responds to lists" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:lists).and_return([{ id: 1, name: 'test', members: 3 }])
+      expect(@cli).to receive(:say).
+        with(
+          sprintf("%12s %-20s %s", subject.set_color("1", :cyan), 'test', '3')
+        )
+      @cli.shell.mute do
+        @cli.lists
+      end
+    end
+  end
+
 end

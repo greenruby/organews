@@ -9,10 +9,18 @@ module Organews
 
       def initialize
         @api = Mailchimp::API.new Organews::Config.vars.chimp_key
+        @listid = Organews::Config.vars.chimp_listid
       end
 
       def ping
         @api.helper.ping
+      end
+
+      def lists
+        @api.lists.list['data'].reduce([]) do |a,e|
+          a << { id: e['id'], name: e['name'], members: e['stats']['member_count'] }
+          a
+        end
       end
 
     end

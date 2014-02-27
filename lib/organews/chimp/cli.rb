@@ -27,6 +27,20 @@ module Organews
         end
       end
 
+      desc "lists", "lists the available lists for this account."
+      def lists
+        Organews::Config.load options[:configfile]
+        mailchimp = Organews::Chimp::Client.new
+        begin
+          mailchimp.lists.each do |l|
+            say sprintf("%12s %-20s %s", set_color(l[:id], :cyan), l[:name], l[:members])
+          end
+        rescue Exception => e
+          say set_color("*** Error ***", :red, :bold)
+          say set_color(e.message, :red)
+        end
+      end
+
     end
   end
 end
