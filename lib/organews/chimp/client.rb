@@ -23,6 +23,13 @@ module Organews
         end
       end
 
+      def templates
+        @api.templates.list['user'].reduce([]) do |a,e|
+          a << { id: e['id'], name: e['name']}
+          a
+        end
+      end
+
     end
   end
 end

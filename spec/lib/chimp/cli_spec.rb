@@ -45,4 +45,17 @@ describe Organews::Chimp::Cli do
     end
   end
 
+  describe "#templates" do
+    it "responds to templates" do
+      Organews::Chimp::Client.stub(:new).and_return(Object)
+      Object.stub(:templates).and_return([{ id: 1, name: 'test' }])
+      expect(@cli).to receive(:say).
+        with(
+          sprintf("%12s %s", subject.set_color("1", :cyan), 'test')
+        )
+      @cli.shell.mute do
+        @cli.templates
+      end
+    end
+  end
 end

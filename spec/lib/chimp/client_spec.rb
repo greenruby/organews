@@ -61,4 +61,28 @@ describe Organews::Chimp::Client do
     end
   end
 
+  describe "#templates" do
+    it "calls mailchimp api and returns its response" do
+      stub_request(:post, "https://us1.api.mailchimp.com/2.0/templates/list.json").
+        with(
+          body: {
+            types: [],
+            filters: [],
+            apikey: Organews::Config.vars.chimp_key
+          }.to_json,
+          headers: {
+            'Content-Type'=>'application/json',
+            'Host'=>'us1.api.mailchimp.com:443',
+            'User-Agent'=>'excon/0.31.0'
+          }
+        ).
+        to_return(
+          status: 200,
+          body: [{ id: "1", name: 'test' }].to_json,
+          headers: {}
+        )
+      @client.templates
+    end
+  end
+
 end

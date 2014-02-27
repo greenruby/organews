@@ -41,6 +41,20 @@ module Organews
         end
       end
 
+      desc "templates", "lists the available templates for this account."
+      def templates
+        Organews::Config.load options[:configfile]
+        mailchimp = Organews::Chimp::Client.new
+        begin
+          mailchimp.templates.each do |l|
+            say sprintf("%12s %s", set_color(l[:id], :cyan), l[:name])
+          end
+        rescue Exception => e
+          say set_color("*** Error ***", :red, :bold)
+          say set_color(e.message, :red)
+        end
+      end
+
     end
   end
 end
