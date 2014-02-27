@@ -78,7 +78,7 @@ describe Organews::Chimp::Client do
         ).
         to_return(
           status: 200,
-          body: [{ id: "1", name: 'test' }].to_json,
+          body: { user: [{ id: "1", name: 'test' }]}.to_json,
           headers: {}
         )
       @client.templates
