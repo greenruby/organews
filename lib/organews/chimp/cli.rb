@@ -20,10 +20,10 @@ module Organews
         mailchimp = Organews::Chimp::Client.new
         begin
           mailchimp.ping
-          puts set_color("All good.", :green, :bold)
+          say set_color("All good.", :green, :bold)
         rescue Exception => e
-          puts set_color("*** Error ***", :red, :bold)
-          puts set_color(e.message, :red)
+          say set_color("*** Error ***", :red, :bold)
+          say set_color(e.message, :red)
         end
       end
 
