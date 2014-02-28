@@ -11,6 +11,7 @@ This project includes
 * a grape api server for an angular front-end.
 * a static pages generator
 * a mailchimp publication runner
+  * includes a limited cli. If you need a fully functionnal cli tool for mailchimp control checkout the mc gem
 
 The need for Organews comes from the newsletter publication Green Ruby http://greenruby.org where the information management follows a specific set of constraints:
 

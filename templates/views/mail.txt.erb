@@ -1,0 +1,38 @@
+----------------------------------------------------
+*|MC:SUBJECT|* #<%= c.edition %> - <%= c.pubdate %>
+----------------------------------------------------
+
+Edito
+----------------------------------------------------
+<%= c.edito %>
+
+<% c.topics.each do |t| %>
+<%= t.title %>
+----------------------------------------------------
+<%= t.baseline %>
+<% t.links.each do |l| %>
+* <%= l.title %>
+<% if l.tags %>  <%= l.tags.join(", ") %><% if l.pubdate %> - <%= l.pubdate %><% end %><% if l.duration %> - <%= l.duration %><% end %>
+<% end %>  <%= l.url %>
+  <%= l.comment %>
+<% end %>
+<% end %>
+
+====================================================
+EOF
+
+Feel free to send us feedback or information at
+news@greenruby.org
+
+follow on Twitter @greenrubist
+forward to a friend *|FORWARD|*
+Subscribe *|LIST:SUBSCRIBE|*
+
+Copyright (c) *|CURRENT_YEAR|* Mose
+http://creativecommons.org/licenses/by-sa/3.0/
+This publication is licensed under a
+Creative Commons Attribution-ShareAlike 3.0 License
+
+
+
+

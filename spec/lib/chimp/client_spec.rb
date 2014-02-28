@@ -97,4 +97,10 @@ describe Organews::Chimp::Client do
     end
   end
 
+  describe "#campain_new" do
+    it "creates a campain" do
+      # stub_request
+    end
+  end
+
 end

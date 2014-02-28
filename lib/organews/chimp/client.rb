@@ -34,6 +34,9 @@ module Organews
         @api.templates.del(id)
       end
 
+      def campain_new(list, html, txt)
+      end
+
     end
   end
 end

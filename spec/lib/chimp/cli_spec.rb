@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 require 'spec_helper'
-require "organews/chimp/cli"
+require 'organews/chimp/cli'
+
 class Fake
 end
 
@@ -79,14 +80,7 @@ describe Organews::Chimp::Cli do
       Fake.stub(:template_del).with(1)
       expect(@cli).to receive(:say).with(subject.set_color("Template disabled.", :green))
       @cli.shell.mute do
-        @cli.template('del',1)
-      end
-    end
-    it "fails if subcommand is not found" do
-      expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :yellow, :bold)
-      expect(@cli).to receive(:say).with(subject.set_color "Action xxx unknown.", :yellow)
-      @cli.shell.mute do
-        @cli.template('xxx',1)
+        @cli.template_del(1)
       end
     end
     it "raises en error if something is wrong" do
@@ -94,7 +88,7 @@ describe Organews::Chimp::Cli do
       expect(@cli).to receive(:say).with(subject.set_color "*** Error ***", :red, :bold)
       expect(@cli).to receive(:say).with(subject.set_color "error occured", :red)
       @cli.shell.mute do
-        @cli.template('del',1)
+        @cli.template_del(1)
       end
     end
   end
