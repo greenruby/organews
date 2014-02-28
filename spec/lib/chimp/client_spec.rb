@@ -11,7 +11,7 @@ describe Organews::Chimp::Client do
     @headers = {
       'Content-Type'=>'application/json',
       'Host'=>'us1.api.mailchimp.com:443',
-      'User-Agent'=>'excon/0.31.0'
+      'User-Agent'=>'excon/0.32.0'
     }
   end
 

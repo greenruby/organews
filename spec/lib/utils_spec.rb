@@ -8,6 +8,8 @@ end
 
 describe Organews::Utils do
 
+  let(:tmpdir) { File.expand_path("../../files/tmp",__FILE__) }
+
   before :each do
     @dummy = Dummy.new
     @dummy.extend(Organews::Utils)
@@ -23,6 +25,34 @@ describe Organews::Utils do
       expect(s.c).to be_an Array
       expect(s.c[0].cb).to be_an Array
       expect(s.c[0].cb[0]).to eq 'b'
+    end
+  end
+
+  describe "#write_erb" do
+    let(:dest) { File.join(tmpdir, "erb_sample.html") }
+    after :each do
+      FileUtils.rm dest if File.exist? dest
+    end
+    it "writes a compiled file" do
+      ostruct = OpenStruct.new(title: "t", content: "c")
+      tpl = File.expand_path("../../files/sample.erb",__FILE__)
+      @dummy.write_erb ostruct, tpl, dest
+      expect(File.exist? dest).to be_true
+      expect(File.read dest).to eq "<h1>t</h1><div>c</div>\n"
+    end
+  end
+
+  describe "#write_haml" do
+    let(:dest) { File.join(tmpdir, "haml_sample.html") }
+    after :each do
+      FileUtils.rm dest if File.exist? dest
+    end
+    it "writes a compiled file" do
+      ostruct = OpenStruct.new(title: "t", content: "c")
+      tpl = File.expand_path("../../files/sample.haml",__FILE__)
+      @dummy.write_haml ostruct, tpl, dest
+      expect(File.exist? dest).to be_true
+      expect(File.read dest).to eq "<h1>\n  t\n</h1>\n<div>\n  c\n</div>\n"
     end
   end
 

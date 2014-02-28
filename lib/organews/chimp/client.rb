@@ -9,7 +9,7 @@ module Organews
 
       def initialize
         @api = Mailchimp::API.new Organews::Config.vars.chimp_key
-        @listid = Organews::Config.vars.chimp_listid
+        @listid = Organews::Config.vars.chimp_list
       end
 
       def ping
@@ -34,7 +34,7 @@ module Organews
         @api.templates.del(id)
       end
 
-      def campain_new(list, html, txt)
+      def campain_new(html, txt)
       end
 
     end

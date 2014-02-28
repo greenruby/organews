@@ -1,4 +1,6 @@
 require 'ostruct'
+require 'erb'
+require 'haml'
 
 module Organews
   module Utils
@@ -15,6 +17,22 @@ module Organews
         result = result.map { |r| to_ostruct(r) }
       end
       result
+    end
+
+    def write_erb(ostruct, tpl, dest)
+      erb = ERB.new(File.read(tpl)).result(ostruct.instance_eval { binding })
+      File.open(dest, 'w') do |f|
+        f.puts erb
+      end
+      return erb
+    end
+
+    def write_haml(ostruct, tpl, dest)
+      haml = Haml::Engine.new(File.read(tpl)).render(ostruct.instance_eval { binding })
+      File.open(dest, 'w') do |f|
+        f.puts haml
+      end
+      return haml
     end
 
   end

@@ -2,21 +2,21 @@
   #templateHeader
     %h1
       #
-      = @c.edition
+      = edition
       -
-      = @c.pubdate
+      = pubdate
   #templateBody
     %div
       .baseline
         %h2 Edito
-        = @c.edito
-        - if @c.contributors
+        = edito
+        - if contributors
           %br
           %br
           %em
-            = @c.contributors
+            = contributors
 
-  - @c.topics.each do |t|
+  - topics.each do |t|
     %h3 = t.title
     .baseline = t.baseline
     %table.meat{ cellpadding: 0, cellspacing: 0, border: 0 }
