@@ -28,29 +28,22 @@ describe Organews::Utils do
     end
   end
 
-  describe "#write_erb" do
-    let(:dest) { File.join(tmpdir, "erb_sample.html") }
+  describe "#compile" do
+    let(:dest) { File.join(tmpdir, "sample.html") }
     after :each do
       FileUtils.rm dest if File.exist? dest
     end
-    it "writes a compiled file" do
+    it "writes a compiled erb file" do
       ostruct = OpenStruct.new(title: "t", content: "c")
-      tpl = File.expand_path("../../files/sample.erb",__FILE__)
-      @dummy.write_erb ostruct, tpl, dest
+      tpl = File.expand_path("../../files/sample.html.erb",__FILE__)
+      @dummy.compile ostruct, tpl, dest
       expect(File.exist? dest).to be_true
       expect(File.read dest).to eq "<h1>t</h1><div>c</div>\n"
     end
-  end
-
-  describe "#write_haml" do
-    let(:dest) { File.join(tmpdir, "haml_sample.html") }
-    after :each do
-      FileUtils.rm dest if File.exist? dest
-    end
-    it "writes a compiled file" do
+    it "writes a compiled haml file" do
       ostruct = OpenStruct.new(title: "t", content: "c")
       tpl = File.expand_path("../../files/sample.haml",__FILE__)
-      @dummy.write_haml ostruct, tpl, dest
+      @dummy.compile ostruct, tpl, dest
       expect(File.exist? dest).to be_true
       expect(File.read dest).to eq "<h1>\n  t\n</h1>\n<div>\n  c\n</div>\n"
     end
