@@ -24,7 +24,6 @@ module Organews
 
       @c.edition = nil
       compile @c, File.join(@views_path, 'index.haml'), File.join(@site_path, "index.html")
-
     end
 
     def letters
